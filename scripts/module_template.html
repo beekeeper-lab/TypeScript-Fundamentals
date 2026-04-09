@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TITLE}} — TypeScript Fundamentals</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --bg: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f4f4f4;
+    --text: #1a1a2e;
+    --text-secondary: #555;
+    --border: #e0e0e0;
+    --accent: #3178c6;
+    --accent-light: #d6e4f0;
+    --narration-bg: #fef3c7;
+    --narration-border: #f59e0b;
+    --shadow: 0 1px 3px rgba(0,0,0,0.1);
+    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+}
+
+[data-theme="dark"] {
+    --bg: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-code: #1e293b;
+    --text: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --border: #334155;
+    --accent: #60a5fa;
+    --accent-light: #1e3a5f;
+    --narration-bg: #422006;
+    --narration-border: #d97706;
+    --shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 17px;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* ── Layout ── */
+.page-wrapper { display: flex; min-height: 100vh; }
+
+.sidebar {
+    position: fixed; top: 0; left: 0;
+    width: 280px; height: 100vh;
+    overflow-y: auto;
+    background: var(--bg-secondary);
+    border-right: 1px solid var(--border);
+    padding: 1.5rem 1rem;
+    font-size: 14px; z-index: 100;
+    transition: transform 0.3s;
+}
+
+.sidebar-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 1rem; padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.sidebar-header a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 13px; }
+
+.sidebar .toc ul { list-style: none; padding-left: 0; }
+.sidebar .toc li { margin: 0.3rem 0; }
+.sidebar .toc a {
+    color: var(--text-secondary); text-decoration: none;
+    display: block; padding: 0.25rem 0.5rem; border-radius: 4px;
+    transition: background 0.2s, color 0.2s; cursor: pointer;
+}
+.sidebar .toc a:hover, .sidebar .toc a.active {
+    background: var(--accent-light); color: var(--accent);
+}
+.sidebar .toc ul ul { padding-left: 1rem; }
+.sidebar .toc ul ul a { font-size: 13px; }
+
+.theme-toggle {
+    background: none; border: 1px solid var(--border); border-radius: 6px;
+    padding: 0.3rem 0.5rem; cursor: pointer; font-size: 16px; color: var(--text);
+}
+
+.main-content {
+    margin-left: 280px;
+    max-width: 820px;
+    padding: 2rem 3rem 4rem;
+    flex: 1;
+}
+
+/* ── Pages ── */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ── Page Controls ── */
+.page-controls {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 2rem; padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    gap: 1rem;
+}
+
+.page-controls button {
+    padding: 0.6rem 1.25rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer; font-size: 0.9rem;
+    color: var(--text);
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.page-controls button:hover { border-color: var(--accent); background: var(--accent-light); }
+.page-controls button:disabled { opacity: 0.3; cursor: default; }
+.page-controls button:disabled:hover { border-color: var(--border); background: var(--bg-secondary); }
+
+.page-counter {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* ── Module Navigation ── */
+.module-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 2rem; padding-top: 1.25rem;
+    border-top: 2px solid var(--border); gap: 1rem;
+}
+
+.module-nav a {
+    display: block; padding: 0.75rem 1.25rem;
+    background: var(--bg-secondary); border: 1px solid var(--border);
+    border-radius: 8px; text-decoration: none; color: var(--text);
+    font-size: 0.9rem; transition: border-color 0.2s, background 0.2s;
+    max-width: 45%;
+}
+
+.module-nav a:hover { border-color: var(--accent); background: var(--accent-light); }
+.nav-prev { text-align: left; }
+.nav-next { text-align: right; margin-left: auto; }
+
+/* ── Tier Badges ── */
+.tier-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    margin: 0.25rem 0 1rem 0;
+}
+
+.tier-start-here {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+}
+
+.tier-useful-soon {
+    background: #dbeafe;
+    color: #1e40af;
+    border: 1px solid #93c5fd;
+}
+
+.tier-when-ready {
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fcd34d;
+}
+
+.tier-advanced {
+    background: #f3e8ff;
+    color: #6b21a8;
+    border: 1px solid #c4b5fd;
+}
+
+[data-theme="dark"] .tier-start-here { background: #052e16; color: #86efac; border-color: #166534; }
+[data-theme="dark"] .tier-useful-soon { background: #172554; color: #93c5fd; border-color: #1e40af; }
+[data-theme="dark"] .tier-when-ready { background: #451a03; color: #fcd34d; border-color: #92400e; }
+[data-theme="dark"] .tier-advanced { background: #3b0764; color: #c4b5fd; border-color: #6b21a8; }
+
+.readiness-note {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin: -0.5rem 0 1rem 0;
+    padding-left: 0.25rem;
+}
+
+/* ── Where This Fits (cycle anchor) ── */
+.cycle-anchor {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    margin: 0 0 1.25rem 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.cycle-anchor-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.cycle-anchor strong {
+    color: var(--accent);
+}
+
+/* ── Remember One Thing ── */
+.remember-one-thing {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: #fdf2f8;
+    border: 2px solid #ec4899;
+    border-radius: 10px;
+    padding: 1.1rem 1.25rem;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+[data-theme="dark"] .remember-one-thing {
+    background: #500724;
+    border-color: #f472b6;
+}
+
+.remember-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.remember-content {
+    flex: 1;
+}
+
+.remember-content p {
+    margin: 0.2rem 0;
+}
+
+.remember-content strong {
+    color: #db2777;
+}
+
+[data-theme="dark"] .remember-content strong {
+    color: #f9a8d4;
+}
+
+/* ── Teaching Intent Blocks ── */
+.teaching-intent {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: #ecfdf5;
+    border-left: 4px solid #10b981;
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    margin: 0 0 1.5rem 0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+[data-theme="dark"] .teaching-intent {
+    background: #052e16;
+    border-left-color: #34d399;
+}
+
+.intent-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.intent-content {
+    flex: 1;
+}
+
+.intent-content p {
+    margin: 0.25rem 0;
+}
+
+.intent-content strong {
+    color: #059669;
+}
+
+[data-theme="dark"] .intent-content strong {
+    color: #6ee7b7;
+}
+
+/* ── Typography ── */
+h1 { font-size: 2rem; margin: 0 0 0.5rem; line-height: 1.3; }
+h2 { font-size: 1.5rem; margin: 1.5rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2rem 0 0.75rem; }
+h4 { font-size: 1.05rem; margin: 1.5rem 0 0.5rem; }
+p { margin: 0.75rem 0; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+strong { font-weight: 600; }
+
+blockquote {
+    border-left: 4px solid var(--accent);
+    margin: 1rem 0; padding: 0.75rem 1.25rem;
+    background: var(--bg-secondary); border-radius: 0 6px 6px 0;
+}
+blockquote p { margin: 0.3rem 0; }
+
+/* ── Images ── */
+img { max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; box-shadow: var(--shadow); }
+img + em, p > em:only-child {
+    display: block; text-align: center; font-size: 0.9rem;
+    color: var(--text-secondary); margin-top: -0.5rem; margin-bottom: 1rem;
+}
+
+/* ── Code ── */
+code { font-family: var(--font-mono); font-size: 0.88em; background: var(--bg-code); padding: 0.15em 0.4em; border-radius: 4px; }
+pre { background: var(--bg-code); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.25rem; overflow-x: auto; margin: 1rem 0; line-height: 1.5; }
+pre code { background: none; padding: 0; font-size: 0.85em; }
+
+/* ── Tables ── */
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95em; }
+th, td { border: 1px solid var(--border); padding: 0.5rem 0.75rem; text-align: left; }
+th { background: var(--bg-secondary); font-weight: 600; }
+tr:nth-child(even) { background: var(--bg-secondary); }
+
+/* ── Lists ── */
+ul, ol { margin: 0.75rem 0; padding-left: 1.75rem; }
+li { margin: 0.3rem 0; }
+li > ul, li > ol { margin: 0.2rem 0; }
+
+/* ── Narration Blocks ── */
+.narration-block {
+    display: flex; align-items: flex-start; gap: 0.75rem;
+    background: var(--narration-bg);
+    border-left: 4px solid var(--narration-border);
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem; margin: 1.25rem 0; position: relative;
+}
+.narration-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; }
+.narration-content { flex: 1; line-height: 1.6; }
+.narration-content p { margin: 0; }
+.narration-play {
+    flex-shrink: 0; background: var(--narration-border); color: white;
+    border: none; border-radius: 50%; width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: transform 0.2s, opacity 0.2s; margin-top: 0.1rem;
+}
+.narration-play:hover { transform: scale(1.1); }
+.narration-play.playing { opacity: 0.7; }
+
+/* ── Narration Mute Toggle ── */
+.narration-mute {
+    background: none; border: 1px solid var(--border); border-radius: 6px;
+    padding: 0.3rem 0.5rem; cursor: pointer; font-size: 16px; color: var(--text);
+    margin-right: 0.35rem;
+}
+
+/* ── Mobile ── */
+.sidebar-toggle {
+    display: none; position: fixed; top: 0.75rem; left: 0.75rem; z-index: 300;
+    background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px;
+    padding: 0.4rem 0.6rem; cursor: pointer; font-size: 18px; color: var(--text);
+}
+
+@media (max-width: 900px) {
+    .sidebar { transform: translateX(-100%); }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-toggle { display: block; }
+    .main-content { margin-left: 0; padding: 1.5rem 1.25rem 3rem; }
+}
+
+/* ── Print ── */
+@media print {
+    .sidebar, .sidebar-toggle, .page-controls, .module-nav, .theme-toggle,
+    .narration-play, audio { display: none !important; }
+    .main-content { margin: 0; max-width: 100%; padding: 0; }
+    .page { display: block !important; border-bottom: 1px solid #ccc; padding-bottom: 1rem; margin-bottom: 1rem; }
+    body { font-size: 11pt; }
+    pre { white-space: pre-wrap; word-wrap: break-word; }
+    img { max-width: 80%; }
+}
+</style>
+</head>
+<body>
+
+<button class="sidebar-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')" aria-label="Toggle sidebar">☰</button>
+
+<div class="page-wrapper">
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="../index.html">← Course Home</a>
+            <span>
+                <button class="narration-mute" id="narrationMute" onclick="toggleNarrationMute()" aria-label="Toggle narration audio" title="Hush narration">🤫</button>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌓</button>
+            </span>
+        </div>
+        <div class="toc">
+            {{TOC}}
+        </div>
+    </nav>
+
+    <main class="main-content">
+        {{BODY}}
+
+        <div class="page-controls">
+            <button id="prevBtn" onclick="prevPage()">← Previous</button>
+            <span class="page-counter" id="pageCounter">1 / 1</span>
+            <button id="nextBtn" onclick="nextPage()">Next →</button>
+        </div>
+
+        <nav class="module-nav" id="moduleNav" style="display:none;">
+            {{PREV_LINK}}
+            {{NEXT_LINK}}
+        </nav>
+    </main>
+</div>
+
+<script>
+// Theme
+function toggleTheme() {
+    const html = document.documentElement;
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+}
+(function() {
+    const saved = localStorage.getItem('theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches)
+        document.documentElement.setAttribute('data-theme', 'dark');
+})();
+
+// Pagination
+const pages = document.querySelectorAll('.page');
+const totalPages = pages.length;
+let currentPage = 0;
+
+function showPage(idx, autoPlay) {
+    if (idx < 0 || idx >= totalPages) return;
+
+    // Stop any playing audio
+    document.querySelectorAll('audio').forEach(a => { a.pause(); a.currentTime = 0; });
+    document.querySelectorAll('.narration-play').forEach(b => b.classList.remove('playing'));
+
+    // Hide all, show target
+    pages.forEach(p => p.classList.remove('active'));
+    pages[idx].classList.add('active');
+    currentPage = idx;
+
+    // Scroll to top of content
+    document.querySelector('.main-content').scrollTop = 0;
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    // Update counter
+    document.getElementById('pageCounter').textContent = `${idx + 1} / ${totalPages}`;
+
+    // Update buttons
+    document.getElementById('prevBtn').disabled = (idx === 0);
+    const nextBtn = document.getElementById('nextBtn');
+
+    // On last page, show module nav instead of Next
+    if (idx === totalPages - 1) {
+        nextBtn.textContent = 'Finish →';
+        document.getElementById('moduleNav').style.display = 'flex';
+    } else {
+        nextBtn.textContent = 'Next →';
+        nextBtn.disabled = false;
+        document.getElementById('moduleNav').style.display = 'none';
+    }
+
+    // Highlight active TOC item
+    document.querySelectorAll('.toc a').forEach(a => a.classList.remove('active'));
+    const activeHeading = pages[idx].querySelector('h1, h2');
+    if (activeHeading && activeHeading.id) {
+        const tocLink = document.querySelector(`.toc a[href="#${activeHeading.id}"]`);
+        if (tocLink) tocLink.classList.add('active');
+    }
+
+    // Auto-play narration on this page if requested
+    if (autoPlay) {
+        autoPlayPageNarration(idx);
+    }
+}
+
+function nextPage() {
+    if (currentPage < totalPages - 1) {
+        showPage(currentPage + 1, true);
+    }
+}
+
+function prevPage() {
+    if (currentPage > 0) {
+        showPage(currentPage - 1, false);
+    }
+}
+
+// TOC click → jump to correct page
+document.querySelectorAll('.toc a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href')?.replace('#', '');
+        if (!targetId) return;
+
+        // Find which page contains this heading
+        for (let i = 0; i < totalPages; i++) {
+            const heading = pages[i].querySelector(`#${targetId}`);
+            if (heading) {
+                showPage(i, false);
+                setTimeout(() => heading.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+                break;
+            }
+        }
+
+        // Close mobile sidebar
+        if (window.innerWidth <= 900) document.querySelector('.sidebar').classList.remove('open');
+    });
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') { nextPage(); e.preventDefault(); }
+    if (e.key === 'ArrowLeft') { prevPage(); e.preventDefault(); }
+});
+
+// Narration audio
+let narrationMuted = localStorage.getItem('tsfund_narration_muted') === 'true';
+
+function updateMuteUI() {
+    const btn = document.getElementById('narrationMute');
+    if (!btn) return;
+    btn.textContent = narrationMuted ? '▶️' : '🤫';
+    btn.title = narrationMuted ? 'Narration hushed — click to resume' : 'Click to hush narration';
+}
+
+function toggleNarrationMute() {
+    narrationMuted = !narrationMuted;
+    localStorage.setItem('tsfund_narration_muted', narrationMuted);
+    updateMuteUI();
+    if (narrationMuted) {
+        document.querySelectorAll('audio').forEach(a => { a.pause(); a.currentTime = 0; });
+        document.querySelectorAll('.narration-play').forEach(b => b.classList.remove('playing'));
+    }
+}
+
+function playNarration(btn) {
+    const audio = btn.nextElementSibling;
+    if (!audio) return;
+    if (audio.paused) {
+        document.querySelectorAll('audio').forEach(a => { a.pause(); a.currentTime = 0; });
+        document.querySelectorAll('.narration-play').forEach(b => b.classList.remove('playing'));
+        audio.play();
+        btn.classList.add('playing');
+        audio.onended = () => {
+            btn.classList.remove('playing');
+            if (!narrationMuted) {
+                const allNarrations = Array.from(pages[currentPage].querySelectorAll('.narration-play'));
+                const idx = allNarrations.indexOf(btn);
+                if (idx >= 0 && idx < allNarrations.length - 1) {
+                    setTimeout(() => playNarration(allNarrations[idx + 1]), 600);
+                }
+            }
+        };
+    } else {
+        audio.pause();
+        audio.currentTime = 0;
+        btn.classList.remove('playing');
+    }
+}
+
+function autoPlayPageNarration(pageIdx) {
+    if (narrationMuted) return;
+    const firstNarration = pages[pageIdx].querySelector('.narration-play');
+    if (firstNarration) {
+        setTimeout(() => playNarration(firstNarration), 500);
+    }
+}
+
+updateMuteUI();
+
+// Mark module as visited
+(function() {
+    const key = 'tsfund_visited';
+    const visited = JSON.parse(localStorage.getItem(key) || '[]');
+    const current = window.location.pathname.split('/').pop().replace('.html', '');
+    if (!visited.includes(current)) {
+        visited.push(current);
+        localStorage.setItem(key, JSON.stringify(visited));
+    }
+})();
+
+// Initialize: show first page, auto-play narration by default
+showPage(0, true);
+
+// Close sidebar on mobile when clicking a link
+document.querySelectorAll('.sidebar a:not(.toc a)').forEach(a => {
+    a.addEventListener('click', () => {
+        if (window.innerWidth <= 900) document.querySelector('.sidebar').classList.remove('open');
+    });
+});
+</script>
+
+</body>
+</html>
