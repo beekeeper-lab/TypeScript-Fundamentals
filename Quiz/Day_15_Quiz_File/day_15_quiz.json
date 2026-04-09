@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 15: JSON and APIs",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What does JSON.stringify() do?",
+      "options": [
+        "A) Parses a JSON string into an object",
+        "B) Converts a JavaScript value to a JSON string",
+        "C) Validates JSON syntax",
+        "D) Creates a JSON schema"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "question": "What does JSON.parse() do?",
+      "options": [
+        "A) Converts an object to a JSON string",
+        "B) Validates a JSON file",
+        "C) Parses a JSON string and returns the corresponding JavaScript value",
+        "D) Reads a JSON file from disk"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 3,
+      "question": "What does this output?\n\nconst obj = { name: 'Alice', age: 30 };\nconst json = JSON.stringify(obj);\nconsole.log(typeof json);",
+      "options": [
+        "A) 'object'",
+        "B) 'string'",
+        "C) 'json'",
+        "D) 'undefined'"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 4,
+      "question": "What is the purpose of the 'replacer' parameter in JSON.stringify()?",
+      "options": [
+        "A) To replace the entire object",
+        "B) To filter or transform properties during serialization",
+        "C) To replace JSON with XML",
+        "D) To fix invalid JSON"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "question": "What does this output?\n\nconst obj = { name: 'Bob', password: 'secret', age: 25 };\nconst json = JSON.stringify(obj, ['name', 'age']);\nconsole.log(json);",
+      "options": [
+        "A) '{\"name\":\"Bob\",\"password\":\"secret\",\"age\":25}'",
+        "B) '{\"name\":\"Bob\",\"age\":25}'",
+        "C) '{\"password\":\"secret\"}'",
+        "D) '{}'"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 6,
+      "question": "What is the 'reviver' parameter in JSON.parse()?",
+      "options": [
+        "A) A function that validates the parsed output",
+        "B) A function that transforms each key-value pair during parsing",
+        "C) A fallback value if parsing fails",
+        "D) A schema for the expected type"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 7,
+      "question": "What does this output?\n\nconst json = '{\"date\":\"2024-01-15T00:00:00.000Z\"}';\nconst obj = JSON.parse(json);\nconsole.log(typeof obj.date);",
+      "options": [
+        "A) 'object' (Date)",
+        "B) 'string'",
+        "C) 'number'",
+        "D) 'undefined'"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 8,
+      "question": "What does JSON.stringify() do with undefined values in an object?",
+      "options": [
+        "A) Converts them to null",
+        "B) Converts them to the string 'undefined'",
+        "C) Omits the key-value pair entirely",
+        "D) Throws an error"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 9,
+      "question": "What does JSON.stringify() do with function values in an object?",
+      "options": [
+        "A) Serializes the function body as a string",
+        "B) Converts them to null",
+        "C) Omits the key-value pair entirely",
+        "D) Throws a TypeError"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 10,
+      "question": "Why is a type guard important when handling data from JSON.parse()?",
+      "options": [
+        "A) JSON.parse() can return any type, so you need to verify the shape at runtime",
+        "B) TypeScript automatically validates JSON structure",
+        "C) JSON.parse() always returns a string",
+        "D) Type guards improve JSON parsing performance"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 11,
+      "question": "Which type does JSON.parse() return by default in TypeScript?",
+      "options": [
+        "A) unknown",
+        "B) any",
+        "C) object",
+        "D) string"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 12,
+      "question": "What is a type guard for validating external data?",
+      "options": [
+        "A) A try/catch block",
+        "B) A function that checks runtime values and returns a 'value is Type' predicate",
+        "C) A JSON schema file",
+        "D) A TypeScript generic"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 13,
+      "question": "What does this type guard return for { name: 'Alice', age: 30 }?\n\ninterface User { name: string; age: number; }\n\nfunction isUser(data: unknown): data is User {\n  return typeof data === 'object' && data !== null\n    && 'name' in data && typeof (data as any).name === 'string'\n    && 'age' in data && typeof (data as any).age === 'number';\n}\n\nconsole.log(isUser({ name: 'Alice', age: 30 }));",
+      "options": [
+        "A) false",
+        "B) true",
+        "C) undefined",
+        "D) Compile error"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 14,
+      "question": "What is schema validation in the context of JSON data?",
+      "options": [
+        "A) Checking if JSON syntax is valid",
+        "B) Verifying that parsed data matches an expected structure and types",
+        "C) Encrypting JSON data",
+        "D) Compressing JSON for storage"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 15,
+      "question": "What does a typed fetch function look like in TypeScript?",
+      "options": [
+        "A) A fetch call that returns Promise<any>",
+        "B) A fetch wrapper that validates the response and returns a typed Promise",
+        "C) A function that only fetches TypeScript files",
+        "D) A fetch that converts response to TypeScript types automatically"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 16,
+      "question": "What does this code output?\n\nconst data = JSON.parse('{\"x\": 1, \"y\": 2}');\nconsole.log(data.x + data.y);",
+      "options": [
+        "A) '12'",
+        "B) 3",
+        "C) NaN",
+        "D) undefined"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 17,
+      "question": "What happens when you call JSON.parse() with invalid JSON?",
+      "options": [
+        "A) Returns null",
+        "B) Returns undefined",
+        "C) Throws a SyntaxError",
+        "D) Returns an empty object"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 18,
+      "question": "What does the third argument to JSON.stringify() control?",
+      "options": [
+        "A) The maximum depth of serialization",
+        "B) The indentation (spacing) of the output",
+        "C) The encoding format",
+        "D) Whether to include null values"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 19,
+      "question": "What does this output?\n\nconsole.log(JSON.stringify({ a: 1 }, null, 2));",
+      "options": [
+        "A) '{\"a\":1}'",
+        "B) '{\\n  \"a\": 1\\n}'",
+        "C) '{ a: 1 }'",
+        "D) 'a: 1'"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 20,
+      "question": "How should you handle a fetch response that might not be valid JSON?",
+      "options": [
+        "A) Always call response.json() without checking",
+        "B) Check response.ok and wrap response.json() in a try/catch",
+        "C) Use response.text() only",
+        "D) Assume it's always valid"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 21,
+      "question": "What does response.ok check in the Fetch API?",
+      "options": [
+        "A) Whether the response body is not empty",
+        "B) Whether the HTTP status code is in the 200-299 range",
+        "C) Whether the response is JSON",
+        "D) Whether the network connection succeeded"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 22,
+      "question": "What does JSON.stringify() do with a Date object?",
+      "options": [
+        "A) Throws an error",
+        "B) Converts it to a number (timestamp)",
+        "C) Calls .toISOString() and outputs it as a string",
+        "D) Omits it"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 23,
+      "question": "What does this reviver function do?\n\nJSON.parse(jsonStr, (key, value) => {\n  if (key === 'date' && typeof value === 'string') return new Date(value);\n  return value;\n});",
+      "options": [
+        "A) Removes all date fields",
+        "B) Converts string values with key 'date' into Date objects during parsing",
+        "C) Validates that dates are valid",
+        "D) Stringifies Date objects"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 24,
+      "question": "What types CANNOT be represented in JSON?",
+      "options": [
+        "A) Arrays and objects",
+        "B) Strings and numbers",
+        "C) Functions, undefined, Symbols, and BigInt",
+        "D) Booleans and null"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 25,
+      "question": "Why is 'as Type' (type assertion) on JSON.parse() result considered unsafe?",
+      "options": [
+        "A) It causes runtime errors",
+        "B) It tells TypeScript to trust you without any runtime validation, so invalid data slips through",
+        "C) It changes the parsed value",
+        "D) It's deprecated in TypeScript"
+      ],
+      "answer": "B"
+    }
+  ]
+}

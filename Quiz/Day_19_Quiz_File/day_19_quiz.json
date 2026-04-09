@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 19: Decorators and Advanced Patterns",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is a decorator in TypeScript?",
+      "options": [
+        "A) A CSS styling function",
+        "B) A special function that can modify or annotate classes, methods, and properties",
+        "C) A type alias for object properties",
+        "D) A way to format console output"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "question": "What is the syntax for applying a decorator to a class?",
+      "options": [
+        "A) class @MyDecorator Foo {}",
+        "B) @MyDecorator class Foo {}",
+        "C) class Foo extends @MyDecorator {}",
+        "D) decorate(MyDecorator, class Foo {})"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "question": "In the TC39 (Stage 3) decorator proposal, what arguments does a class decorator receive?",
+      "options": [
+        "A) The class name and prototype",
+        "B) The target class and a context object",
+        "C) The constructor arguments",
+        "D) The class instance"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 4,
+      "question": "What is the Builder pattern?",
+      "options": [
+        "A) A pattern for building npm packages",
+        "B) A creational pattern that constructs complex objects step-by-step with a fluent interface",
+        "C) A pattern for building TypeScript types",
+        "D) A pattern for constructing HTML"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "question": "What does this builder code produce?\n\nconst user = new UserBuilder()\n  .setName('Alice')\n  .setAge(30)\n  .setEmail('alice@example.com')\n  .build();",
+      "options": [
+        "A) A UserBuilder instance",
+        "B) A User object with name, age, and email set",
+        "C) A Promise<User>",
+        "D) A JSON string"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 6,
+      "question": "How does the Builder pattern enable method chaining?",
+      "options": [
+        "A) By using async/await",
+        "B) By returning 'this' from each setter method",
+        "C) By extending Array",
+        "D) By using Proxy objects"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 7,
+      "question": "What is the Singleton pattern?",
+      "options": [
+        "A) A class that can only have one method",
+        "B) A pattern ensuring a class has exactly one instance, with global access to it",
+        "C) A single-file module pattern",
+        "D) A pattern for handling single values"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 8,
+      "question": "How is a Singleton typically implemented in TypeScript?",
+      "options": [
+        "A) Using a global variable",
+        "B) With a private constructor and a static getInstance() method",
+        "C) By freezing the object",
+        "D) Using the 'unique' keyword"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 9,
+      "question": "What is a mapped type in TypeScript?",
+      "options": [
+        "A) A type that maps strings to numbers",
+        "B) A type that transforms each property of an existing type using a mapping syntax",
+        "C) A Map<K,V> type alias",
+        "D) A type for geographic coordinates"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 10,
+      "question": "What does this mapped type produce?\n\ntype Readonly<T> = { readonly [K in keyof T]: T[K] };",
+      "options": [
+        "A) Removes all properties from T",
+        "B) Makes every property of T readonly",
+        "C) Makes T a string type",
+        "D) Adds new properties to T"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "question": "What does this mapped type produce?\n\ntype Partial<T> = { [K in keyof T]?: T[K] };",
+      "options": [
+        "A) Removes all properties from T",
+        "B) Makes every property of T optional",
+        "C) Makes every property required",
+        "D) Converts T to a union type"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 12,
+      "question": "What is a conditional type in TypeScript?",
+      "options": [
+        "A) A type that changes at runtime",
+        "B) A type that selects one of two types based on a condition: T extends U ? X : Y",
+        "C) A type for if/else statements",
+        "D) A type that conditionally compiles code"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 13,
+      "question": "What does this conditional type resolve to?\n\ntype IsString<T> = T extends string ? 'yes' : 'no';\ntype A = IsString<'hello'>;",
+      "options": [
+        "A) 'no'",
+        "B) 'yes'",
+        "C) boolean",
+        "D) string"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 14,
+      "question": "What does this conditional type resolve to?\n\ntype IsString<T> = T extends string ? 'yes' : 'no';\ntype B = IsString<42>;",
+      "options": [
+        "A) 'yes'",
+        "B) 'no'",
+        "C) number",
+        "D) never"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 15,
+      "question": "What is a template literal type?",
+      "options": [
+        "A) A template for creating string variables",
+        "B) A type that uses template literal syntax to create string pattern types",
+        "C) A type for HTML templates",
+        "D) A literal string value"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 16,
+      "question": "What does this template literal type produce?\n\ntype Greeting = `Hello, ${string}`;",
+      "options": [
+        "A) The exact string 'Hello, ${string}'",
+        "B) A type matching any string that starts with 'Hello, '",
+        "C) A function type",
+        "D) An error"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 17,
+      "question": "What does this template literal type produce?\n\ntype Color = 'red' | 'blue';\ntype Size = 'small' | 'large';\ntype Combo = `${Size}-${Color}`;",
+      "options": [
+        "A) 'small' | 'large' | 'red' | 'blue'",
+        "B) 'small-red' | 'small-blue' | 'large-red' | 'large-blue'",
+        "C) 'Size-Color'",
+        "D) string"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 18,
+      "question": "What does the 'infer' keyword do in conditional types?",
+      "options": [
+        "A) Infers the type of a variable",
+        "B) Introduces a type variable to be inferred from the extends clause",
+        "C) Makes TypeScript infer all types automatically",
+        "D) Removes type inference"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 19,
+      "question": "What does this type resolve to?\n\ntype ReturnType<T> = T extends (...args: any[]) => infer R ? R : never;\ntype A = ReturnType<() => number>;",
+      "options": [
+        "A) never",
+        "B) number",
+        "C) () => number",
+        "D) any"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 20,
+      "question": "What does the '-' modifier do in a mapped type?\n\ntype Required<T> = { [K in keyof T]-?: T[K] };",
+      "options": [
+        "A) Subtracts properties from the type",
+        "B) Removes the optional (?) modifier, making all properties required",
+        "C) Makes properties negative numbers",
+        "D) Deletes readonly modifiers"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 21,
+      "question": "What does Record<K, V> produce?",
+      "options": [
+        "A) An array of key-value pairs",
+        "B) An object type with keys of type K and values of type V",
+        "C) A database record type",
+        "D) A tuple type"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 22,
+      "question": "What does this resolve to?\n\ntype Pick<T, K extends keyof T> = { [P in K]: T[P] };\ntype User = { name: string; age: number; email: string };\ntype NameOnly = Pick<User, 'name'>;",
+      "options": [
+        "A) { name: string; age: number; email: string }",
+        "B) { name: string }",
+        "C) string",
+        "D) 'name'"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 23,
+      "question": "Why might you use the Singleton pattern for a database connection?",
+      "options": [
+        "A) To make the connection faster",
+        "B) To ensure only one connection instance exists, avoiding resource waste",
+        "C) Databases require singletons",
+        "D) To prevent SQL injection"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 24,
+      "question": "What does Exclude<T, U> do?",
+      "options": [
+        "A) Removes properties from an object",
+        "B) Removes from union T any members that are assignable to U",
+        "C) Excludes files from compilation",
+        "D) Excludes a module from imports"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 25,
+      "question": "What does this resolve to?\n\ntype A = Exclude<'a' | 'b' | 'c', 'a'>;",
+      "options": [
+        "A) 'a'",
+        "B) 'b' | 'c'",
+        "C) 'a' | 'b' | 'c'",
+        "D) never"
+      ],
+      "answer": "B"
+    }
+  ]
+}

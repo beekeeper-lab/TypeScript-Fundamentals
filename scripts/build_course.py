@@ -23,6 +23,7 @@ SOURCE_DIR = PROJECT_ROOT / "source"
 IMAGES_DIR = PROJECT_ROOT / "images"
 AUDIO_DIR = PROJECT_ROOT / "audio"
 HTML_DIR = PROJECT_ROOT / "html"
+QUIZ_DIR = PROJECT_ROOT / "Quiz"
 
 # Module ordering and metadata
 MODULES = [
@@ -277,6 +278,137 @@ def convert_markdown_to_html(source_path: Path) -> tuple[str, str]:
     return title, html_body, toc
 
 
+def generate_grouped_toc(html_body: str) -> str:
+    """Generate a TOC grouped by page (H2 boundaries) instead of a flat list."""
+    # Extract all H2 and H3 headings with their IDs
+    headings = re.findall(r'<(h[23])[^>]*id="([^"]*)"[^>]*>(.*?)</\1>', html_body)
+
+    if not headings:
+        return ""
+
+    groups: list[dict] = []  # each: {"id": str, "title": str, "children": [{"id", "title"}]}
+    page_num = 0
+
+    for tag, hid, title in headings:
+        # Strip any nested HTML tags from title text
+        clean_title = re.sub(r'<[^>]+>', '', title).strip()
+        if tag == "h2":
+            page_num += 1
+            groups.append({"id": hid, "title": clean_title, "page": page_num, "children": []})
+        elif tag == "h3" and groups:
+            groups[-1]["children"].append({"id": hid, "title": clean_title})
+
+    lines = ['<ul class="toc-list">']
+    for g in groups:
+        lines.append(f'  <li class="toc-page-group" data-toc-page="{g["page"]}">')
+        lines.append(f'    <a href="#{g["id"]}" class="toc-h2-link">{g["title"]}</a>')
+        if g["children"]:
+            lines.append('    <ul class="toc-subsections">')
+            for c in g["children"]:
+                lines.append(f'      <li><a href="#{c["id"]}" class="toc-h3-link">{c["title"]}</a></li>')
+            lines.append('    </ul>')
+        lines.append('  </li>')
+    lines.append('</ul>')
+    return "\n".join(lines)
+
+
+def generate_quiz_html(module_num: int, module_slug: str) -> str:
+    """Generate quiz HTML from a Day_XX quiz JSON file. Returns empty string if no quiz."""
+    quiz_dir = QUIZ_DIR / f"Day_{module_num + 1:02d}_Quiz_File"
+    quiz_file = quiz_dir / f"day_{module_num + 1:02d}_quiz.json"
+    if not quiz_file.exists():
+        return ""
+
+    data = json.loads(quiz_file.read_text())
+    title = data.get("quiz_title", f"Module {module_num} Quiz")
+    passing = data.get("passing_score", 20)
+    total = data.get("total_questions", 25)
+    questions = data.get("questions", [])
+    if not questions:
+        return ""
+
+    # Build question HTML
+    q_html_parts = []
+    for q in questions:
+        qid = q["id"]
+        opts = ""
+        for letter, opt_text in zip("ABCD", q["options"]):
+            opts += (
+                f'<label><input type="radio" name="q{qid}" value="{letter}"> '
+                f'{opt_text}</label>\n'
+            )
+        q_html_parts.append(
+            f'<div class="quiz-question" data-answer="{q["answer"]}">\n'
+            f'  <div class="quiz-question-number">Question {qid} of {total}</div>\n'
+            f'  <div class="quiz-question-text">{q["question"]}</div>\n'
+            f'  <div class="quiz-options">\n{opts}  </div>\n'
+            f'  <div class="quiz-feedback"></div>\n'
+            f'</div>'
+        )
+
+    questions_html = "\n".join(q_html_parts)
+
+    return (
+        f'<h2 id="quiz">Knowledge Check: {title}</h2>\n'
+        f'<script type="application/json" id="quizData">'
+        f'{{"moduleSlug":"{module_slug}","passingScore":{passing},"totalQuestions":{total}}}'
+        f'</script>\n'
+        f'<div class="quiz-container" id="quizForm">\n'
+        f'{questions_html}\n'
+        f'<button class="quiz-submit-btn" id="quizSubmitBtn">Submit Answers</button>\n'
+        f'<div class="quiz-results" id="quizResults">\n'
+        f'  <div class="quiz-score" id="quizScore"></div>\n'
+        f'  <div class="quiz-label" id="quizLabel"></div>\n'
+        f'  <div class="quiz-detail" id="quizDetail"></div>\n'
+        f'  <button class="quiz-retry-btn" id="quizRetryBtn">Try Again</button>\n'
+        f'</div>\n'
+        f'</div>\n'
+    )
+
+
+MARKER_EMOJI_RE = re.compile(r'\U0001F3F7\uFE0F|\U0001F3AF|\U0001F399\uFE0F|\U0001F504|\U0001F4A1')
+
+
+def split_merged_blockquotes(html_content: str) -> str:
+    """Split merged blockquotes that contain multiple emoji-marker paragraphs.
+
+    Python-Markdown merges adjacent > blockquotes into one <blockquote> with
+    multiple <p> children.  The emoji processors expect each marker in its own
+    <blockquote>, so we split them apart here.
+    """
+
+    def _split_one(match: re.Match) -> str:
+        inner = match.group(1)
+        # Split on paragraph boundaries
+        paragraphs = re.split(r'</p>\s*<p>', inner)
+        if len(paragraphs) <= 1:
+            return match.group(0)
+
+        # Check whether any paragraph contains a marker emoji
+        has_marker = any(MARKER_EMOJI_RE.search(p) for p in paragraphs)
+        if not has_marker:
+            return match.group(0)
+
+        # Rebuild: one <blockquote> per paragraph
+        parts = []
+        for p in paragraphs:
+            p = p.strip()
+            # Ensure wrapped in <p> tags
+            if not p.startswith('<p>'):
+                p = '<p>' + p
+            if not p.endswith('</p>'):
+                p = p + '</p>'
+            parts.append(f'<blockquote>\n{p}\n</blockquote>')
+        return '\n'.join(parts)
+
+    return re.sub(
+        r'<blockquote>\s*(.*?)\s*</blockquote>',
+        _split_one,
+        html_content,
+        flags=re.DOTALL,
+    )
+
+
 def split_into_pages(html_body: str) -> list[str]:
     """Split HTML body into pages at each <h2> boundary."""
     parts = re.split(r'(?=<h2[ >])', html_body)
@@ -305,6 +437,12 @@ def build_module_html(
     title, body, toc = convert_markdown_to_html(source_path)
     module_stem = source_path.stem
 
+    # Generate grouped TOC from raw HTML (before special block processing mangles headings)
+    grouped_toc = generate_grouped_toc(body)
+
+    # Split merged blockquotes so each emoji marker gets its own <blockquote>
+    body = split_merged_blockquotes(body)
+
     # Process special blocks
     body = process_tier_badges(body)
     body = process_cycle_anchor_blocks(body)
@@ -317,6 +455,14 @@ def build_module_html(
     # Embed images
     if embed_media:
         body = embed_images(body)
+
+    # Append quiz if available
+    module_num_match = re.search(r'module-(\d+)', module_stem)
+    if module_num_match:
+        module_num = int(module_num_match.group(1))
+        quiz_html = generate_quiz_html(module_num, module_stem)
+        if quiz_html:
+            body += quiz_html
 
     # Split into pages
     pages = split_into_pages(body)
@@ -338,7 +484,7 @@ def build_module_html(
 
     return (template
         .replace("{{TITLE}}", title)
-        .replace("{{TOC}}", toc)
+        .replace("{{TOC}}", grouped_toc)
         .replace("{{BODY}}", paginated_body)
         .replace("{{PREV_LINK}}", prev_link)
         .replace("{{NEXT_LINK}}", next_link)
@@ -348,6 +494,7 @@ def build_module_html(
 def _build_card(mod: dict, prefix: str = "html/") -> str:
     """Build a single module card with embedded hero thumbnail."""
     html_file = prefix + mod["file"].replace(".md", ".html")
+    slug = mod["file"].replace(".md", "")
     hero_path = IMAGES_DIR / mod.get("hero", "")
     thumb = image_to_base64(hero_path) if hero_path.exists() else ""
     thumb_html = f'<img class="card-thumb" src="{thumb}" alt="">' if thumb else ""
@@ -355,12 +502,14 @@ def _build_card(mod: dict, prefix: str = "html/") -> str:
     tier_css = mod.get("tier_css", "")
     tier_html = f'<span class="card-tier {tier_css}">{tier}</span>' if tier else ""
     return f'''
-            <a href="{html_file}" class="module-card">
+            <a href="{html_file}" class="module-card" data-module-slug="{slug}">
                 {thumb_html}
                 <div class="card-text">
                     <div class="module-number">{mod["short"]} {tier_html}</div>
                     <div class="module-title">{mod["title"]}</div>
+                    <div class="quiz-score-line" data-quiz-score></div>
                 </div>
+                <span class="quiz-badge not-taken" data-quiz-badge>Quiz</span>
                 <div class="module-progress"></div>
             </a>'''
 
@@ -559,6 +708,29 @@ strong {{ font-weight: 600; }}
     flex-shrink: 0;
 }}
 
+.quiz-badge {{
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.15rem 0.5rem;
+    border-radius: 100px;
+    flex-shrink: 0;
+    white-space: nowrap;
+}}
+.quiz-badge.not-taken {{ background: #e5e7eb; color: #6b7280; border: 1px solid #d1d5db; }}
+.quiz-badge.passed {{ background: #dcfce7; color: #166534; border: 1px solid #86efac; }}
+.quiz-badge.failed {{ background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }}
+[data-theme="dark"] .quiz-badge.not-taken {{ background: #374151; color: #9ca3af; border-color: #4b5563; }}
+[data-theme="dark"] .quiz-badge.passed {{ background: #052e16; color: #86efac; border-color: #166534; }}
+[data-theme="dark"] .quiz-badge.failed {{ background: #450a0a; color: #fca5a5; border-color: #991b1b; }}
+
+.quiz-score-line {{
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 0.1rem;
+}}
+
 .outcomes {{
     padding-left: 1.75rem;
 }}
@@ -683,6 +855,28 @@ function toggleTheme() {{
         if (card) {{
             const prog = card.querySelector('.module-progress');
             if (prog) prog.textContent = '✓';
+        }}
+    }});
+
+    // Update quiz badges from stored results
+    const quizResults = JSON.parse(localStorage.getItem('tsfund-quiz-results') || '{{}}');
+    document.querySelectorAll('.module-card[data-module-slug]').forEach(card => {{
+        const slug = card.getAttribute('data-module-slug');
+        const badge = card.querySelector('[data-quiz-badge]');
+        const scoreLine = card.querySelector('[data-quiz-score]');
+        const result = quizResults[slug];
+        if (badge && result) {{
+            badge.classList.remove('not-taken');
+            if (result.passed) {{
+                badge.classList.add('passed');
+                badge.textContent = 'Passed';
+            }} else {{
+                badge.classList.add('failed');
+                badge.textContent = 'Retry';
+            }}
+            if (scoreLine) {{
+                scoreLine.textContent = `${{result.score}}/${{result.total}}`;
+            }}
         }}
     }});
 }})();

@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 14: Error Handling",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What does the 'try' block do in a try/catch statement?",
+      "options": [
+        "A) Catches errors",
+        "B) Contains code that might throw an exception",
+        "C) Runs cleanup logic",
+        "D) Retries failed operations"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "question": "What type does the 'catch' parameter have by default in TypeScript?",
+      "options": [
+        "A) Error",
+        "B) string",
+        "C) unknown",
+        "D) any"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 3,
+      "question": "When does the 'finally' block execute?",
+      "options": [
+        "A) Only when an error occurs",
+        "B) Only when no error occurs",
+        "C) Always, regardless of whether an error occurred",
+        "D) Only when explicitly called"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 4,
+      "question": "What does this code output?\n\ntry {\n  throw new Error('oops');\n  console.log('after throw');\n} catch (e) {\n  console.log('caught');\n} finally {\n  console.log('done');\n}",
+      "options": [
+        "A) 'after throw', 'caught', 'done'",
+        "B) 'caught', 'done'",
+        "C) 'caught'",
+        "D) 'oops', 'done'"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "question": "How do you create a custom error class in TypeScript?",
+      "options": [
+        "A) class MyError implements Error { }",
+        "B) class MyError extends Error { constructor(msg: string) { super(msg); this.name = 'MyError'; } }",
+        "C) type MyError = Error & { code: number }",
+        "D) function MyError(msg: string) { return new Error(msg); }"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 6,
+      "question": "Why should you set this.name in a custom error class?",
+      "options": [
+        "A) It's required by TypeScript",
+        "B) So the error can be serialized to JSON",
+        "C) So the error type is identifiable in stack traces and instanceof checks",
+        "D) To prevent the error from being caught"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 7,
+      "question": "What is the Result type pattern?",
+      "options": [
+        "A) A try/catch wrapper",
+        "B) A discriminated union representing either a successful value (Ok) or an error (Err), avoiding exceptions for control flow",
+        "C) A Promise that always resolves",
+        "D) A type guard for error checking"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 8,
+      "question": "Given:\ntype Result<T, E> = { ok: true; value: T } | { ok: false; error: E };\n\nHow do you create a success result for the number 42?",
+      "options": [
+        "A) Result.ok(42)",
+        "B) { ok: true, value: 42 }",
+        "C) new Result(42)",
+        "D) Result<42>"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 9,
+      "question": "What does this code output?\n\ntype Result<T, E> = { ok: true; value: T } | { ok: false; error: E };\n\nfunction divide(a: number, b: number): Result<number, string> {\n  if (b === 0) return { ok: false, error: 'Division by zero' };\n  return { ok: true, value: a / b };\n}\n\nconst r = divide(10, 0);\nconsole.log(r.ok ? r.value : r.error);",
+      "options": [
+        "A) Infinity",
+        "B) 0",
+        "C) 'Division by zero'",
+        "D) Compile error"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 10,
+      "question": "What is an advantage of the Result pattern over try/catch?",
+      "options": [
+        "A) It's faster at runtime",
+        "B) Errors are part of the type signature, forcing callers to handle both cases",
+        "C) It automatically retries on failure",
+        "D) It can catch async errors"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "question": "What does a mapResult function typically do?",
+      "options": [
+        "A) Converts errors to strings",
+        "B) Transforms the success value of a Result while passing through errors unchanged",
+        "C) Maps an array of Results to an array of values",
+        "D) Creates a new Result type"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 12,
+      "question": "What does this mapResult output?\n\nfunction mapResult<T, U, E>(r: Result<T, E>, fn: (v: T) => U): Result<U, E> {\n  if (r.ok) return { ok: true, value: fn(r.value) };\n  return r;\n}\n\nconst r: Result<number, string> = { ok: true, value: 5 };\nconst mapped = mapResult(r, x => x * 2);\nconsole.log(mapped);",
+      "options": [
+        "A) { ok: true, value: 5 }",
+        "B) { ok: true, value: 10 }",
+        "C) { ok: false, error: 'error' }",
+        "D) 10"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 13,
+      "question": "What does this code output?\n\ntry {\n  try {\n    throw new Error('inner');\n  } finally {\n    console.log('inner finally');\n  }\n} catch (e: unknown) {\n  console.log((e as Error).message);\n}",
+      "options": [
+        "A) 'inner'",
+        "B) 'inner finally'",
+        "C) 'inner finally' then 'inner'",
+        "D) Unhandled error"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 14,
+      "question": "Why is it important to check if a caught value is an Error instance?",
+      "options": [
+        "A) Because only Error objects can be logged",
+        "B) Because anything can be thrown in JavaScript, not just Error objects",
+        "C) Because TypeScript requires it for compilation",
+        "D) Because non-Error throws crash the program"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 15,
+      "question": "What does this code output?\n\ntry {\n  throw 'just a string';\n} catch (e) {\n  if (e instanceof Error) {\n    console.log(e.message);\n  } else {\n    console.log('Not an Error:', e);\n  }\n}",
+      "options": [
+        "A) 'just a string'",
+        "B) 'Not an Error: just a string'",
+        "C) undefined",
+        "D) Compile error"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 16,
+      "question": "How do you handle errors in an async function?",
+      "options": [
+        "A) Only with .catch()",
+        "B) Only with try/catch",
+        "C) With try/catch inside the async function or .catch() on the returned Promise",
+        "D) Async functions cannot throw errors"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 17,
+      "question": "What happens if an async function throws and there is no catch handler?",
+      "options": [
+        "A) The error is silently ignored",
+        "B) An unhandled promise rejection occurs",
+        "C) The program crashes immediately",
+        "D) The error is caught by the global scope"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 18,
+      "question": "What is the purpose of re-throwing an error?",
+      "options": [
+        "A) To convert it to a different error type",
+        "B) To log it and let it propagate to a higher-level handler",
+        "C) To suppress the error",
+        "D) To retry the operation"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 19,
+      "question": "What does this code output?\n\nclass NotFoundError extends Error {\n  constructor(public resource: string) {\n    super(`${resource} not found`);\n    this.name = 'NotFoundError';\n  }\n}\n\ntry {\n  throw new NotFoundError('User');\n} catch (e) {\n  if (e instanceof NotFoundError) {\n    console.log(e.resource);\n  }\n}",
+      "options": [
+        "A) 'User not found'",
+        "B) 'User'",
+        "C) 'NotFoundError'",
+        "D) undefined"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 20,
+      "question": "What is a 'wrapping' error pattern?",
+      "options": [
+        "A) Catching an error and throwing a new error that includes the original as a cause",
+        "B) Wrapping code in try/catch",
+        "C) Converting errors to strings",
+        "D) Using finally to wrap up operations"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 21,
+      "question": "What does the Error 'cause' property (ES2022) allow you to do?",
+      "options": [
+        "A) Automatically retry the operation",
+        "B) Chain errors by attaching the original error as the cause of a new error",
+        "C) Prevent the error from propagating",
+        "D) Log errors to a file"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 22,
+      "question": "What is wrong with this error handling?\n\ntry {\n  riskyOperation();\n} catch (e) {\n  // do nothing\n}",
+      "options": [
+        "A) The syntax is wrong",
+        "B) Swallowing errors silently makes debugging impossible",
+        "C) catch must always re-throw",
+        "D) You must specify the error type"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 23,
+      "question": "When using the Result pattern, what should you return for an async operation?",
+      "options": [
+        "A) Result<Promise<T>, E>",
+        "B) Promise<Result<T, E>>",
+        "C) AsyncResult<T, E>",
+        "D) Result<T, E> | Promise<T>"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 24,
+      "question": "What does this output?\n\nfunction safeParse(json: string): Result<unknown, Error> {\n  try {\n    return { ok: true, value: JSON.parse(json) };\n  } catch (e) {\n    return { ok: false, error: e instanceof Error ? e : new Error(String(e)) };\n  }\n}\n\nconst r = safeParse('{invalid}');\nconsole.log(r.ok);",
+      "options": [
+        "A) true",
+        "B) false",
+        "C) undefined",
+        "D) Throws an error"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 25,
+      "question": "Why is 'finally' useful for resource cleanup?",
+      "options": [
+        "A) It runs faster than catch",
+        "B) It executes whether or not an error occurred, ensuring cleanup always happens",
+        "C) It prevents errors from propagating",
+        "D) It automatically closes file handles"
+      ],
+      "answer": "B"
+    }
+  ]
+}

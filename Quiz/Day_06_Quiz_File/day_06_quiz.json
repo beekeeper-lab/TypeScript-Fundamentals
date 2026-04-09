@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 6: Type Aliases and Unions",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is a type alias in TypeScript?",
+      "options": [
+        "A) A way to create a new class",
+        "B) A name assigned to any type, making it reusable",
+        "C) A variable that stores a type at runtime",
+        "D) An alternative to using interfaces"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "question": "Which keyword is used to create a type alias?",
+      "options": [
+        "A) interface",
+        "B) alias",
+        "C) type",
+        "D) typedef"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 3,
+      "question": "What is a union type?",
+      "options": [
+        "A) A type that combines all properties of two types",
+        "B) A type that can be one of several specified types",
+        "C) A type that merges two interfaces",
+        "D) A type for joining arrays"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 4,
+      "question": "What does this type alias represent?\n\n```ts\ntype Direction = 'north' | 'south' | 'east' | 'west';\n```",
+      "options": [
+        "A) A string type that can hold any string",
+        "B) A union of literal string types restricted to exactly four values",
+        "C) An enum of four values",
+        "D) An array of four strings"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "question": "What is a literal type in TypeScript?",
+      "options": [
+        "A) A type that represents any value of a primitive type",
+        "B) A type that represents one specific value, like 'hello' or 42",
+        "C) A type that is always a string",
+        "D) A type that cannot change at compile time"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 6,
+      "question": "What error does this code produce?\n\n```ts\ntype Status = 'active' | 'inactive';\nlet s: Status = 'pending';\n```",
+      "options": [
+        "A) No error",
+        "B) Runtime error",
+        "C) Compile error: Type '\"pending\"' is not assignable to type 'Status'",
+        "D) Warning only"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 7,
+      "question": "What is an intersection type?",
+      "options": [
+        "A) A type that can be one of several types",
+        "B) A type that combines multiple types into one, requiring all properties",
+        "C) The overlap between two union types",
+        "D) A type that removes duplicate properties"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 8,
+      "question": "Which operator creates an intersection type?",
+      "options": [
+        "A) |",
+        "B) &",
+        "C) +",
+        "D) &&"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 9,
+      "question": "What is the resulting type of this intersection?\n\n```ts\ntype A = { name: string };\ntype B = { age: number };\ntype C = A & B;\n```",
+      "options": [
+        "A) { name: string } | { age: number }",
+        "B) { name: string; age: number }",
+        "C) { name: string }",
+        "D) never"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 10,
+      "question": "What is a discriminated union?",
+      "options": [
+        "A) A union where each member has a common literal property used to distinguish between them",
+        "B) A union that excludes certain types",
+        "C) A union that automatically narrows types",
+        "D) A union of only primitive types"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 11,
+      "question": "Which property serves as the discriminant in this union?\n\n```ts\ntype Circle = { kind: 'circle'; radius: number };\ntype Square = { kind: 'square'; side: number };\ntype Shape = Circle | Square;\n```",
+      "options": [
+        "A) radius",
+        "B) side",
+        "C) kind",
+        "D) Shape"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 12,
+      "question": "How does TypeScript narrow the type inside this switch?\n\n```ts\nfunction area(shape: Shape) {\n  switch (shape.kind) {\n    case 'circle':\n      return Math.PI * shape.radius ** 2;\n    case 'square':\n      return shape.side ** 2;\n  }\n}\n```",
+      "options": [
+        "A) It doesn't; you need explicit type assertions",
+        "B) TypeScript uses the discriminant property to narrow the type in each case",
+        "C) TypeScript checks at runtime which type it is",
+        "D) TypeScript randomly picks a type"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 13,
+      "question": "What is the result of `string & number` in TypeScript?",
+      "options": [
+        "A) string",
+        "B) number",
+        "C) string | number",
+        "D) never (no value can be both a string and a number)"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": 14,
+      "question": "Can a type alias be used to name a primitive type?",
+      "options": [
+        "A) No, type aliases only work with objects",
+        "B) Yes, e.g., type ID = string;",
+        "C) Only with the 'primitive' keyword",
+        "D) Only for union types"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 15,
+      "question": "What can you do with a union type value without narrowing?\n\n```ts\nfunction process(val: string | number) {\n  // What operations are safe here?\n}\n```",
+      "options": [
+        "A) Call any string method on it",
+        "B) Call any number method on it",
+        "C) Only operations that are valid for BOTH string and number",
+        "D) No operations at all"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 16,
+      "question": "What does this type alias describe?\n\n```ts\ntype Callback = (data: string) => void;\n```",
+      "options": [
+        "A) An object with a callback property",
+        "B) A function type that takes a string and returns nothing meaningful",
+        "C) A class with a method called data",
+        "D) A string that represents a function name"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 17,
+      "question": "Which of the following is a valid way to narrow a union type?",
+      "options": [
+        "A) Using typeof checks",
+        "B) Using a discriminant property in a switch",
+        "C) Using the `in` operator to check for a property",
+        "D) All of the above"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": 18,
+      "question": "What does this code produce?\n\n```ts\ntype Result = { success: true; data: string } | { success: false; error: string };\n\nfunction handle(r: Result) {\n  if (r.success) {\n    console.log(r.data);\n  } else {\n    console.log(r.error);\n  }\n}\nhandle({ success: true, data: 'OK' });\n```",
+      "options": [
+        "A) Compile error",
+        "B) 'OK'",
+        "C) undefined",
+        "D) 'error'"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 19,
+      "question": "Can type aliases be recursive?",
+      "options": [
+        "A) No, TypeScript does not allow recursive types",
+        "B) Yes, e.g., type Tree = { value: number; children: Tree[] };",
+        "C) Only with interfaces, not type aliases",
+        "D) Only for primitive types"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 20,
+      "question": "What is the type of `x` after this narrowing?\n\n```ts\nfunction example(x: string | number | boolean) {\n  if (typeof x === 'string') {\n    return;\n  }\n  if (typeof x === 'number') {\n    return;\n  }\n  // What is x here?\n}\n```",
+      "options": [
+        "A) string | number | boolean",
+        "B) string",
+        "C) number",
+        "D) boolean"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": 21,
+      "question": "What does this intersection produce?\n\n```ts\ntype Admin = { name: string; privileges: string[] };\ntype Employee = { name: string; startDate: Date };\ntype AdminEmployee = Admin & Employee;\n```\nWhat properties does AdminEmployee have?",
+      "options": [
+        "A) Only name",
+        "B) name, privileges, and startDate",
+        "C) Either privileges or startDate, but not both",
+        "D) Compile error due to duplicate name"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 22,
+      "question": "Which of the following is NOT a valid type alias?",
+      "options": [
+        "A) type ID = string | number;",
+        "B) type Pair = [string, number];",
+        "C) type Greet = function(name: string): void;",
+        "D) type Config = { debug: boolean; verbose: boolean };"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 23,
+      "question": "What happens when two intersection types have conflicting property types?\n\n```ts\ntype A = { x: string };\ntype B = { x: number };\ntype C = A & B;\n```\nWhat is the type of `x` in C?",
+      "options": [
+        "A) string",
+        "B) number",
+        "C) string | number",
+        "D) never (string & number is impossible)"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": 24,
+      "question": "What is the advantage of using literal unions over enums?",
+      "options": [
+        "A) Literal unions generate runtime code",
+        "B) Literal unions are simpler, require no extra runtime code, and work well with type narrowing",
+        "C) Enums are deprecated in TypeScript",
+        "D) There is no advantage; enums are always better"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 25,
+      "question": "What does the `in` operator check in type narrowing?\n\n```ts\ntype Cat = { meow: () => void };\ntype Dog = { bark: () => void };\n\nfunction speak(pet: Cat | Dog) {\n  if ('meow' in pet) {\n    pet.meow();\n  }\n}\n```",
+      "options": [
+        "A) Whether the value is an instance of a class",
+        "B) Whether a property exists on the object, narrowing the type accordingly",
+        "C) Whether the type is defined in the current scope",
+        "D) Whether the pet is of type Cat at compile time only"
+      ],
+      "answer": "B"
+    }
+  ]
+}

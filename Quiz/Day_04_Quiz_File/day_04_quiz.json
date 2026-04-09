@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 4: Functions and Type Signatures",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "How do you annotate the return type of a function in TypeScript?",
+      "options": [
+        "A) function greet(): string { return 'hi'; }",
+        "B) function greet() -> string { return 'hi'; }",
+        "C) function greet() => string { return 'hi'; }",
+        "D) function greet() string { return 'hi'; }"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 2,
+      "question": "What does TypeScript infer as the return type of this function?\n\n```ts\nfunction add(a: number, b: number) {\n  return a + b;\n}\n```",
+      "options": [
+        "A) any",
+        "B) void",
+        "C) number",
+        "D) string"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 3,
+      "question": "How do you declare an optional parameter in TypeScript?",
+      "options": [
+        "A) function greet(name: string, greeting: string?) {}",
+        "B) function greet(name: string, greeting?: string) {}",
+        "C) function greet(name: string, optional greeting: string) {}",
+        "D) function greet(name: string, greeting: string = optional) {}"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 4,
+      "question": "What is a default parameter?\n\n```ts\nfunction greet(name: string = 'World') {\n  return `Hello, ${name}!`;\n}\n```",
+      "options": [
+        "A) A parameter that must always be provided",
+        "B) A parameter that uses a fallback value when no argument is passed",
+        "C) A parameter with the type 'default'",
+        "D) A parameter that is always undefined"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "question": "What is the correct syntax for a rest parameter?",
+      "options": [
+        "A) function sum(args: number...) {}",
+        "B) function sum(*args: number[]) {}",
+        "C) function sum(...args: number[]) {}",
+        "D) function sum(rest args: number[]) {}"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 6,
+      "question": "What is the type of this arrow function?\n\n```ts\nconst double = (x: number): number => x * 2;\n```",
+      "options": [
+        "A) (x: number) => number",
+        "B) number => number",
+        "C) Function<number, number>",
+        "D) (number) -> number"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 7,
+      "question": "What is a function type expression in TypeScript?",
+      "options": [
+        "A) A type that describes the shape of a function: its parameters and return type",
+        "B) A way to call a function dynamically",
+        "C) A special class for creating functions",
+        "D) An expression that evaluates to a function name"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 8,
+      "question": "Which of the following correctly types a callback parameter?",
+      "options": [
+        "A) function process(cb: Function) {}",
+        "B) function process(cb: (value: string) => void) {}",
+        "C) function process(cb: callback<string>) {}",
+        "D) function process(cb: string -> void) {}"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 9,
+      "question": "What does this code output?\n\n```ts\nfunction greet(name?: string): string {\n  return `Hello, ${name ?? 'stranger'}!`;\n}\nconsole.log(greet());\n```",
+      "options": [
+        "A) Hello, undefined!",
+        "B) Hello, stranger!",
+        "C) Hello, !",
+        "D) Compile error"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 10,
+      "question": "What is a higher-order function?",
+      "options": [
+        "A) A function declared at the top of a file",
+        "B) A function that takes another function as an argument or returns a function",
+        "C) A function with more than 3 parameters",
+        "D) A function inside a class"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "question": "What error does this produce?\n\n```ts\nfunction add(a: number, b: number): number {\n  return a + b;\n}\nadd(1, 2, 3);\n```",
+      "options": [
+        "A) No error, the third argument is ignored",
+        "B) Runtime error",
+        "C) Compile error: Expected 2 arguments, but got 3",
+        "D) Returns NaN"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 12,
+      "question": "Where must optional parameters appear in a function signature?",
+      "options": [
+        "A) Anywhere in the parameter list",
+        "B) Before required parameters",
+        "C) After all required parameters",
+        "D) Only as the first parameter"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 13,
+      "question": "What does `void` mean as a return type?",
+      "options": [
+        "A) The function returns null",
+        "B) The function returns undefined explicitly",
+        "C) The function does not return a meaningful value",
+        "D) The function never terminates"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 14,
+      "question": "What is the type of `fn` in this code?\n\n```ts\ntype MathOp = (a: number, b: number) => number;\nconst fn: MathOp = (a, b) => a * b;\n```",
+      "options": [
+        "A) (a: any, b: any) => any",
+        "B) (a: number, b: number) => number",
+        "C) Function",
+        "D) MathOp is not a valid type"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 15,
+      "question": "What does this function return?\n\n```ts\nfunction first<T>(arr: T[]): T | undefined {\n  return arr[0];\n}\nconsole.log(first([]));\n```",
+      "options": [
+        "A) null",
+        "B) 0",
+        "C) undefined",
+        "D) Compile error"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 16,
+      "question": "Can a function with a default parameter be called without that argument?",
+      "options": [
+        "A) No, all parameters must be provided",
+        "B) Yes, the default value is used when the argument is omitted",
+        "C) Yes, but the parameter becomes undefined",
+        "D) Only if the parameter is also marked optional with ?"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 17,
+      "question": "What is the difference between these two?\n\n```ts\ntype A = (x: string) => void;\ntype B = { (x: string): void };\n```",
+      "options": [
+        "A) A is an arrow function, B is a regular function",
+        "B) They are equivalent — both describe a callable that takes a string and returns void",
+        "C) B is invalid syntax",
+        "D) A describes a type, B describes an interface"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 18,
+      "question": "What does this rest parameter collect?\n\n```ts\nfunction log(message: string, ...tags: string[]) {\n  console.log(message, tags);\n}\nlog('hello', 'info', 'debug');\n```",
+      "options": [
+        "A) tags = ['hello', 'info', 'debug']",
+        "B) tags = ['info', 'debug']",
+        "C) tags = 'info'",
+        "D) tags = undefined"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 19,
+      "question": "What does this code output?\n\n```ts\nconst multiply = (a: number) => (b: number) => a * b;\nconst double = multiply(2);\nconsole.log(double(5));\n```",
+      "options": [
+        "A) 10",
+        "B) 7",
+        "C) NaN",
+        "D) Compile error"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 20,
+      "question": "Which of the following will cause a TypeScript error?",
+      "options": [
+        "A) function f(a: number, b: number = 5) {}",
+        "B) function f(a: number, b?: number) {}",
+        "C) function f(a?: number, b: number) {}",
+        "D) function f(...args: number[]) {}"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 21,
+      "question": "How do you type a function that accepts any number of arguments of any type?",
+      "options": [
+        "A) (...args: any[]) => any",
+        "B) (args: any) => any",
+        "C) (...args: unknown) => unknown",
+        "D) (any) => any"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 22,
+      "question": "What does this code output?\n\n```ts\nfunction identity(x: number): number;\nfunction identity(x: string): string;\nfunction identity(x: any): any {\n  return x;\n}\nconsole.log(identity('hello'));\n```",
+      "options": [
+        "A) Compile error",
+        "B) undefined",
+        "C) 'hello'",
+        "D) any"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 23,
+      "question": "What is function overloading in TypeScript?",
+      "options": [
+        "A) Defining multiple functions with the same name but in different files",
+        "B) Providing multiple type signatures for a single function implementation",
+        "C) Calling a function more times than expected",
+        "D) Creating functions inside other functions"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 24,
+      "question": "What type does TypeScript infer for the parameter `x` in this callback?\n\n```ts\nconst nums = [1, 2, 3];\nnums.map(x => x * 2);\n```",
+      "options": [
+        "A) any",
+        "B) unknown",
+        "C) number",
+        "D) string"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 25,
+      "question": "What is the return type of a function that never returns?\n\n```ts\nfunction throwError(msg: string): ??? {\n  throw new Error(msg);\n}\n```",
+      "options": [
+        "A) void",
+        "B) undefined",
+        "C) never",
+        "D) null"
+      ],
+      "answer": "C"
+    }
+  ]
+}

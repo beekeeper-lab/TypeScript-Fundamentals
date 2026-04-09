@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 17: tsconfig and Build Configuration",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the purpose of tsconfig.json?",
+      "options": [
+        "A) To list all TypeScript files in a project",
+        "B) To configure the TypeScript compiler options and project settings",
+        "C) To define npm scripts",
+        "D) To store environment variables"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "question": "How do you generate a tsconfig.json file?",
+      "options": [
+        "A) npm init tsconfig",
+        "B) tsc --init",
+        "C) npx create-tsconfig",
+        "D) typescript --config"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "question": "What does the 'target' compiler option specify?",
+      "options": [
+        "A) The target operating system",
+        "B) The ECMAScript version the output JavaScript should conform to",
+        "C) The target browser",
+        "D) The TypeScript version to use"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 4,
+      "question": "If you set \"target\": \"ES2020\", what happens?",
+      "options": [
+        "A) TypeScript only accepts ES2020 syntax",
+        "B) The compiled JavaScript uses ES2020 features (no downleveling for those features)",
+        "C) Only ES2020 browsers can run the code",
+        "D) TypeScript uses ES2020 type checking"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "question": "What does the 'module' compiler option control?",
+      "options": [
+        "A) Which npm modules are available",
+        "B) The module system used in the generated JavaScript output (CommonJS, ESNext, etc.)",
+        "C) Whether modules can be imported",
+        "D) The module resolution algorithm only"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 6,
+      "question": "What does \"strict\": true enable?",
+      "options": [
+        "A) Only strictNullChecks",
+        "B) A family of strict type-checking flags including strictNullChecks, noImplicitAny, and others",
+        "C) Strict JavaScript parsing mode",
+        "D) Strict file naming conventions"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 7,
+      "question": "Which flag does 'strict: true' NOT include?",
+      "options": [
+        "A) strictNullChecks",
+        "B) noImplicitAny",
+        "C) noUnusedLocals",
+        "D) strictFunctionTypes"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 8,
+      "question": "What does 'strictNullChecks' do when enabled?",
+      "options": [
+        "A) Prevents using null anywhere",
+        "B) Makes null and undefined their own types that must be explicitly handled",
+        "C) Automatically converts null to undefined",
+        "D) Removes null from all types"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 9,
+      "question": "What does 'noImplicitAny' do?",
+      "options": [
+        "A) Bans the use of 'any' type entirely",
+        "B) Reports an error when TypeScript would infer the 'any' type for a parameter or variable",
+        "C) Converts all 'any' to 'unknown'",
+        "D) Makes 'any' behave like 'unknown'"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 10,
+      "question": "What does the 'outDir' option specify?",
+      "options": [
+        "A) The directory where source files are located",
+        "B) The directory where compiled JavaScript files are placed",
+        "C) The output format for files",
+        "D) The directory for node_modules"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "question": "What does the 'rootDir' option specify?",
+      "options": [
+        "A) The project root directory",
+        "B) The root folder of input source files, used to control the output directory structure",
+        "C) The npm root directory",
+        "D) The root of the file system"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 12,
+      "question": "What are declaration files (.d.ts)?",
+      "options": [
+        "A) Compiled JavaScript files",
+        "B) Files containing only type information, no implementation",
+        "C) Configuration files for TypeScript",
+        "D) Test specification files"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 13,
+      "question": "What does \"declaration\": true do in tsconfig.json?",
+      "options": [
+        "A) Declares the project as a TypeScript project",
+        "B) Generates .d.ts declaration files alongside the compiled JavaScript",
+        "C) Enables type declarations in code",
+        "D) Creates a declarations folder"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 14,
+      "question": "What does \"sourceMap\": true do?",
+      "options": [
+        "A) Creates a map of all source files",
+        "B) Generates .map files that link compiled JS back to the original TS for debugging",
+        "C) Maps imports to file paths",
+        "D) Creates a visual diagram of the project"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 15,
+      "question": "Why are source maps useful?",
+      "options": [
+        "A) They make code run faster",
+        "B) They allow debuggers to show TypeScript source instead of compiled JavaScript",
+        "C) They reduce file size",
+        "D) They enable hot module reloading"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 16,
+      "question": "What does the 'include' array in tsconfig.json do?",
+      "options": [
+        "A) Lists npm packages to include",
+        "B) Specifies glob patterns for files to include in compilation",
+        "C) Includes external configuration files",
+        "D) Adds polyfills to the build"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 17,
+      "question": "What does the 'exclude' array in tsconfig.json do?",
+      "options": [
+        "A) Excludes types from the type system",
+        "B) Specifies glob patterns for files to exclude from compilation",
+        "C) Removes packages from node_modules",
+        "D) Hides files from VS Code"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 18,
+      "question": "What is commonly excluded in tsconfig.json?",
+      "options": [
+        "A) src/ directory",
+        "B) node_modules, dist, and test files (depending on config)",
+        "C) package.json",
+        "D) All .ts files"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 19,
+      "question": "What does \"esModuleInterop\": true do?",
+      "options": [
+        "A) Enables ES module syntax in the output",
+        "B) Adds interoperability helpers for importing CommonJS modules with default import syntax",
+        "C) Converts all modules to ES modules",
+        "D) Disables CommonJS support"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 20,
+      "question": "What does \"resolveJsonModule\": true allow?",
+      "options": [
+        "A) Parsing JSON at compile time",
+        "B) Importing .json files directly in TypeScript with type safety",
+        "C) Converting TypeScript to JSON",
+        "D) Using JSON as configuration"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 21,
+      "question": "What does \"skipLibCheck\": true do?",
+      "options": [
+        "A) Skips checking your own library code",
+        "B) Skips type checking of declaration files (.d.ts), improving build speed",
+        "C) Skips installing library dependencies",
+        "D) Ignores type errors in your code"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 22,
+      "question": "What is the 'lib' compiler option used for?",
+      "options": [
+        "A) Specifying external libraries to install",
+        "B) Specifying which built-in type declaration files (e.g., DOM, ES2020) to include",
+        "C) Setting the library output folder",
+        "D) Choosing the standard library implementation"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 23,
+      "question": "What does \"moduleResolution\": \"node\" mean?",
+      "options": [
+        "A) Only Node.js modules are allowed",
+        "B) TypeScript uses Node.js-style module resolution (checking node_modules, index files, etc.)",
+        "C) Modules resolve to node binaries",
+        "D) Enables Node.js built-in modules only"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 24,
+      "question": "What does \"noEmit\": true do?",
+      "options": [
+        "A) Prevents TypeScript from emitting errors",
+        "B) Runs type checking only without generating output files",
+        "C) Disables console output",
+        "D) Prevents importing external modules"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 25,
+      "question": "What does the 'extends' field in tsconfig.json do?",
+      "options": [
+        "A) Extends the TypeScript language with new features",
+        "B) Inherits compiler options from another tsconfig file",
+        "C) Extends the project's file system scope",
+        "D) Adds additional type definitions"
+      ],
+      "answer": "B"
+    }
+  ]
+}

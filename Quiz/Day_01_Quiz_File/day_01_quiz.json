@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 1: What Is TypeScript",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is TypeScript best described as?",
+      "options": [
+        "A) A completely separate language from JavaScript",
+        "B) A typed superset of JavaScript that compiles to plain JavaScript",
+        "C) A runtime environment for JavaScript",
+        "D) A JavaScript testing framework"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "question": "What does the `tsc` command do?",
+      "options": [
+        "A) Runs TypeScript code directly in the browser",
+        "B) Installs TypeScript packages from npm",
+        "C) Compiles TypeScript files into JavaScript files",
+        "D) Starts a TypeScript development server"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 3,
+      "question": "Which file extension is used for TypeScript source files?",
+      "options": [
+        "A) .js",
+        "B) .jsx",
+        "C) .ts",
+        "D) .typ"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 4,
+      "question": "What happens to TypeScript type annotations after compilation?",
+      "options": [
+        "A) They are preserved in the output JavaScript",
+        "B) They are converted to runtime type checks",
+        "C) They are completely removed from the output",
+        "D) They are stored in a separate metadata file"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 5,
+      "question": "What is the purpose of tsconfig.json?",
+      "options": [
+        "A) To list all TypeScript files in the project",
+        "B) To configure compiler options and project settings for TypeScript",
+        "C) To define npm dependencies for the project",
+        "D) To store environment variables for TypeScript"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 6,
+      "question": "Which command installs TypeScript globally using npm?",
+      "options": [
+        "A) npm install typescript",
+        "B) npm install -g typescript",
+        "C) npm install -g tsc",
+        "D) npm install ts-compiler"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 7,
+      "question": "What does ts-node allow you to do?",
+      "options": [
+        "A) Compile TypeScript to WebAssembly",
+        "B) Run TypeScript files directly without a separate compilation step",
+        "C) Debug TypeScript in the browser",
+        "D) Convert JavaScript files to TypeScript"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 8,
+      "question": "When does TypeScript perform type checking?",
+      "options": [
+        "A) At runtime in the browser",
+        "B) At compile time, before the code runs",
+        "C) Both at compile time and runtime",
+        "D) Only when explicitly requested with a flag"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 9,
+      "question": "Which of the following is valid TypeScript but NOT valid JavaScript?",
+      "options": [
+        "A) const x = 5;",
+        "B) let name: string = 'Alice';",
+        "C) console.log('hello');",
+        "D) function greet() { return 'hi'; }"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 10,
+      "question": "What does the `strict` option in tsconfig.json do?",
+      "options": [
+        "A) Prevents the use of any third-party libraries",
+        "B) Enables a set of strict type-checking options for stronger safety guarantees",
+        "C) Forces all variables to be declared with const",
+        "D) Disables all JavaScript interoperability"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "question": "What is the output file extension when TypeScript compiles a .ts file?",
+      "options": [
+        "A) .ts",
+        "B) .tsx",
+        "C) .js",
+        "D) .mjs"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 12,
+      "question": "Which tsconfig.json option specifies where compiled JavaScript files are placed?",
+      "options": [
+        "A) \"rootDir\"",
+        "B) \"outDir\"",
+        "C) \"baseUrl\"",
+        "D) \"sourceRoot\""
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 13,
+      "question": "What will happen if you try to run a .ts file directly with `node myfile.ts`?",
+      "options": [
+        "A) It will run successfully because Node.js supports TypeScript natively",
+        "B) It will likely fail due to syntax errors from type annotations",
+        "C) It will automatically compile and then run",
+        "D) It will run but ignore all type annotations"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 14,
+      "question": "Which of these is a benefit of using TypeScript over plain JavaScript?",
+      "options": [
+        "A) Faster runtime execution speed",
+        "B) Smaller bundle sizes",
+        "C) Catching type-related bugs before the code runs",
+        "D) Built-in database connectivity"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 15,
+      "question": "What does the `target` option in tsconfig.json control?",
+      "options": [
+        "A) Which browser the code will run in",
+        "B) The ECMAScript version the output JavaScript should conform to",
+        "C) The minimum Node.js version required",
+        "D) The TypeScript version to use for compilation"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 16,
+      "question": "Is every valid JavaScript program also valid TypeScript?",
+      "options": [
+        "A) Yes, because TypeScript is a superset of JavaScript",
+        "B) No, JavaScript syntax is completely different",
+        "C) Only if the JavaScript uses ES6+ syntax",
+        "D) Only if you add type annotations to the JavaScript"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 17,
+      "question": "What does `tsc --init` do?",
+      "options": [
+        "A) Initializes a new npm project",
+        "B) Creates a default tsconfig.json file in the current directory",
+        "C) Installs TypeScript dependencies",
+        "D) Compiles all TypeScript files in the current directory"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 18,
+      "question": "Which of the following TypeScript errors is caught at compile time?",
+      "options": [
+        "A) Division by zero",
+        "B) Assigning a string to a variable declared as number",
+        "C) An infinite loop",
+        "D) A network request timeout"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 19,
+      "question": "What is the role of type inference in TypeScript?",
+      "options": [
+        "A) It converts types to strings at runtime",
+        "B) It automatically determines the type of a value without an explicit annotation",
+        "C) It forces every variable to have a type annotation",
+        "D) It generates documentation from types"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 20,
+      "question": "Which tsconfig.json option specifies the root directory of source files?",
+      "options": [
+        "A) \"outDir\"",
+        "B) \"include\"",
+        "C) \"rootDir\"",
+        "D) \"sourceMap\""
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 21,
+      "question": "What does enabling `sourceMap` in tsconfig.json provide?",
+      "options": [
+        "A) A list of all source files in the project",
+        "B) Mapping files that link compiled JS back to original TS for debugging",
+        "C) A visual map of the project structure",
+        "D) Faster compilation speed"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 22,
+      "question": "Which command compiles a specific TypeScript file?",
+      "options": [
+        "A) tsc compile myfile.ts",
+        "B) tsc myfile.ts",
+        "C) typescript myfile.ts",
+        "D) node --tsc myfile.ts"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 23,
+      "question": "What does `tsc --watch` do?",
+      "options": [
+        "A) Watches for security vulnerabilities in the code",
+        "B) Compiles once and exits",
+        "C) Monitors files for changes and recompiles automatically",
+        "D) Opens a visual dashboard for TypeScript errors"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 24,
+      "question": "Which of the following is NOT a feature of TypeScript?",
+      "options": [
+        "A) Static type checking",
+        "B) Interfaces and type aliases",
+        "C) Runtime type enforcement in production",
+        "D) Generics"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 25,
+      "question": "If TypeScript finds a type error during compilation, what happens by default?",
+      "options": [
+        "A) The JavaScript output is still generated, but a warning is shown",
+        "B) Compilation is completely halted and no output is produced",
+        "C) The type error is silently ignored",
+        "D) The error is logged to a separate error file"
+      ],
+      "answer": "A"
+    }
+  ]
+}

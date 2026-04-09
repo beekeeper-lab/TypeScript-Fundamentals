@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 9: Generics",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What are generics in TypeScript?",
+      "options": [
+        "A) A way to make all types optional",
+        "B) A way to create reusable components that work with a variety of types rather than a single one",
+        "C) A shorthand for union types",
+        "D) A way to convert types at runtime"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "question": "What does `T` represent in `function identity<T>(arg: T): T`?",
+      "options": [
+        "A) The string 'T'",
+        "B) A type parameter that is determined when the function is called",
+        "C) The type 'any'",
+        "D) A class named T"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "question": "What does this function return?\n\n```ts\nfunction identity<T>(arg: T): T {\n  return arg;\n}\nconst result = identity<string>('hello');\n```",
+      "options": [
+        "A) undefined",
+        "B) 'hello' with type string",
+        "C) 'hello' with type any",
+        "D) Compile error"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 4,
+      "question": "Can TypeScript infer generic type arguments?",
+      "options": [
+        "A) No, you must always specify them explicitly",
+        "B) Yes, TypeScript can often infer the type from the arguments passed",
+        "C) Only for primitive types",
+        "D) Only when using arrow functions"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "question": "What is a generic constraint?\n\n```ts\nfunction getLength<T extends { length: number }>(arg: T): number {\n  return arg.length;\n}\n```",
+      "options": [
+        "A) A way to limit T to types that have a specific shape or property",
+        "B) A way to make T optional",
+        "C) A way to set T to a default type",
+        "D) A way to make the function accept only strings"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 6,
+      "question": "Which of the following calls will cause a compile error?\n\n```ts\nfunction getLength<T extends { length: number }>(arg: T): number {\n  return arg.length;\n}\n```",
+      "options": [
+        "A) getLength('hello')",
+        "B) getLength([1, 2, 3])",
+        "C) getLength(42)",
+        "D) getLength({ length: 10, name: 'test' })"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 7,
+      "question": "What does `keyof` do in TypeScript?",
+      "options": [
+        "A) Creates a new key on an object",
+        "B) Produces a union type of all property names (keys) of a given type",
+        "C) Checks if a key exists at runtime",
+        "D) Converts an object to an array of keys"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 8,
+      "question": "What is the type of `K` in this function?\n\n```ts\nfunction getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {\n  return obj[key];\n}\n```",
+      "options": [
+        "A) any string",
+        "B) A union of the property names of T",
+        "C) The type of the values in T",
+        "D) number"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 9,
+      "question": "What does this code output?\n\n```ts\nfunction getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {\n  return obj[key];\n}\nconst person = { name: 'Alice', age: 30 };\nconsole.log(getProperty(person, 'name'));\n```",
+      "options": [
+        "A) 30",
+        "B) 'Alice'",
+        "C) undefined",
+        "D) Compile error"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 10,
+      "question": "What is a generic interface?\n\n```ts\ninterface Box<T> {\n  value: T;\n}\n```",
+      "options": [
+        "A) An interface that only works with strings",
+        "B) An interface with a type parameter that can be specified when used",
+        "C) An interface that generates code at runtime",
+        "D) An interface that extends all other interfaces"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "question": "What is the type of `box.value`?\n\n```ts\ninterface Box<T> { value: T; }\nconst box: Box<number> = { value: 42 };\n```",
+      "options": [
+        "A) any",
+        "B) number",
+        "C) string",
+        "D) Box<number>"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 12,
+      "question": "What is a generic class?\n\n```ts\nclass Stack<T> {\n  private items: T[] = [];\n  push(item: T): void { this.items.push(item); }\n  pop(): T | undefined { return this.items.pop(); }\n}\n```",
+      "options": [
+        "A) A class that only works with one type",
+        "B) A class with type parameters that can be specified when instantiated",
+        "C) A class that generates multiple classes at runtime",
+        "D) An abstract class"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 13,
+      "question": "What type does TypeScript infer for the popped value?\n\n```ts\nconst stack = new Stack<string>();\nstack.push('hello');\nconst val = stack.pop();\n```",
+      "options": [
+        "A) any",
+        "B) string",
+        "C) string | undefined",
+        "D) unknown"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 14,
+      "question": "What is a default generic type?\n\n```ts\ninterface Response<T = string> {\n  data: T;\n}\n```",
+      "options": [
+        "A) A type that is always used regardless of what you pass",
+        "B) A fallback type used when no type argument is explicitly provided",
+        "C) A type that overrides any provided type argument",
+        "D) A type that is only used for error cases"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 15,
+      "question": "What is the type of `data` in `const r: Response = { data: 'ok' };` given `interface Response<T = string> { data: T; }`?",
+      "options": [
+        "A) any",
+        "B) unknown",
+        "C) string",
+        "D) 'ok'"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 16,
+      "question": "What error does this produce?\n\n```ts\nfunction first<T>(arr: T[]): T {\n  return arr[0];\n}\nconst val: string = first([1, 2, 3]);\n```",
+      "options": [
+        "A) No error",
+        "B) Compile error: Type 'number' is not assignable to type 'string'",
+        "C) Runtime error",
+        "D) Returns undefined"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 17,
+      "question": "Can you have multiple type parameters in a generic?\n\n```ts\nfunction pair<A, B>(a: A, b: B): [A, B] {\n  return [a, b];\n}\n```",
+      "options": [
+        "A) No, generics only support one type parameter",
+        "B) Yes, you can have any number of type parameters",
+        "C) Only up to two",
+        "D) Only in interfaces, not functions"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 18,
+      "question": "What does this constraint mean: `<T extends string | number>`?",
+      "options": [
+        "A) T must be exactly string or number",
+        "B) T must be a subtype of string or a subtype of number",
+        "C) T is always a string",
+        "D) T cannot be a string or number"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 19,
+      "question": "What does this generic function return?\n\n```ts\nfunction wrap<T>(value: T): { wrapped: T } {\n  return { wrapped: value };\n}\nconst result = wrap(true);\n```\nWhat is the type of `result`?",
+      "options": [
+        "A) { wrapped: any }",
+        "B) { wrapped: boolean }",
+        "C) { wrapped: true }",
+        "D) boolean"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 20,
+      "question": "Why use generics instead of `any`?",
+      "options": [
+        "A) Generics are faster at runtime",
+        "B) Generics preserve type information and provide type safety; `any` discards it",
+        "C) `any` is deprecated in TypeScript",
+        "D) There is no advantage; they are equivalent"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 21,
+      "question": "What does `T[K]` mean in TypeScript (indexed access type)?",
+      "options": [
+        "A) The Kth element of array T",
+        "B) The type of the property K on type T",
+        "C) A new type combining T and K",
+        "D) An index signature"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 22,
+      "question": "What is the inferred type of `result`?\n\n```ts\nfunction merge<A, B>(a: A, b: B): A & B {\n  return { ...a, ...b } as A & B;\n}\nconst result = merge({ x: 1 }, { y: 'two' });\n```",
+      "options": [
+        "A) { x: number }",
+        "B) { y: string }",
+        "C) { x: number; y: string }",
+        "D) any"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 23,
+      "question": "What does this generic constraint enforce?\n\n```ts\nfunction pluck<T, K extends keyof T>(obj: T, keys: K[]): T[K][] {\n  return keys.map(key => obj[key]);\n}\n```",
+      "options": [
+        "A) K can be any string",
+        "B) K must be one of the actual property names of T",
+        "C) K must be a number",
+        "D) T must be an array"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 24,
+      "question": "What does this code output?\n\n```ts\nfunction pluck<T, K extends keyof T>(obj: T, keys: K[]): T[K][] {\n  return keys.map(key => obj[key]);\n}\nconst person = { name: 'Alice', age: 30, city: 'NYC' };\nconsole.log(pluck(person, ['name', 'city']));\n```",
+      "options": [
+        "A) ['Alice', 30]",
+        "B) ['Alice', 'NYC']",
+        "C) [{ name: 'Alice' }, { city: 'NYC' }]",
+        "D) Compile error"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 25,
+      "question": "Can a generic class have constrained type parameters?\n\n```ts\nclass Sortable<T extends { compareTo(other: T): number }> {\n  constructor(private items: T[]) {}\n}\n```",
+      "options": [
+        "A) No, constraints are only for functions",
+        "B) Yes, class type parameters can have constraints using extends",
+        "C) Only abstract classes can have constrained generics",
+        "D) Constraints are not supported in TypeScript"
+      ],
+      "answer": "B"
+    }
+  ]
+}

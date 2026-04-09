@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 20: Capstone Project",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the recommended project structure for a TypeScript application?",
+      "options": [
+        "A) All files in the root directory",
+        "B) Source code in src/, compiled output in dist/, tests alongside or in a tests/ folder",
+        "C) One giant file with all code",
+        "D) Separate folders for each function"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "question": "Why should you separate source code (src/) from build output (dist/)?",
+      "options": [
+        "A) It's required by TypeScript",
+        "B) To keep generated files out of version control and clearly distinguish source from output",
+        "C) For faster compilation",
+        "D) It doesn't matter"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "question": "Which files should typically be in .gitignore for a TypeScript project?",
+      "options": [
+        "A) src/ and tsconfig.json",
+        "B) node_modules/, dist/, and coverage/",
+        "C) package.json and package-lock.json",
+        "D) All .ts files"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 4,
+      "question": "What is the purpose of an entry point file (e.g., src/index.ts)?",
+      "options": [
+        "A) To store configuration",
+        "B) To serve as the main starting point of the application, orchestrating imports and execution",
+        "C) To export all types",
+        "D) To define test cases"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "question": "When building a CLI tool in TypeScript, what does 'process.argv' contain?",
+      "options": [
+        "A) Environment variables",
+        "B) An array of command-line arguments passed to the Node.js process",
+        "C) The process ID",
+        "D) File system paths"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 6,
+      "question": "What are the first two elements of process.argv?",
+      "options": [
+        "A) The script name and first argument",
+        "B) The path to node executable and the path to the script file",
+        "C) The username and working directory",
+        "D) The command name and version"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 7,
+      "question": "Why is it important to define types/interfaces for your data models?",
+      "options": [
+        "A) It makes the code longer",
+        "B) It provides compile-time safety, documentation, and editor autocompletion",
+        "C) TypeScript requires it for all variables",
+        "D) It improves runtime performance"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 8,
+      "question": "How should modules be organized in a capstone project?",
+      "options": [
+        "A) Everything in one file",
+        "B) Group related functionality into separate modules with clear responsibilities",
+        "C) One function per file, no grouping",
+        "D) Alphabetically by function name"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 9,
+      "question": "What is the benefit of using barrel files (index.ts) in a project?",
+      "options": [
+        "A) They make the project compile faster",
+        "B) They simplify imports by providing a single entry point for each module directory",
+        "C) They are required for TypeScript to work",
+        "D) They prevent circular dependencies"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 10,
+      "question": "Which tsconfig.json setting is recommended for a new TypeScript project?",
+      "options": [
+        "A) \"strict\": false for easier development",
+        "B) \"strict\": true to catch potential bugs early",
+        "C) No tsconfig.json needed",
+        "D) \"strict\": \"sometimes\""
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "question": "What is a good set of npm scripts for a TypeScript project?",
+      "options": [
+        "A) Only \"start\"",
+        "B) \"build\" (tsc), \"start\" (node dist/index.js), \"test\" (vitest), \"dev\" (ts-node or watch mode)",
+        "C) Only \"build\" and \"test\"",
+        "D) No scripts needed, run commands manually"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 12,
+      "question": "What does the \"build\" script typically do in a TypeScript project?",
+      "options": [
+        "A) Runs the application",
+        "B) Compiles TypeScript to JavaScript using tsc",
+        "C) Installs dependencies",
+        "D) Runs tests"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 13,
+      "question": "Why should you write tests for your capstone project?",
+      "options": [
+        "A) Tests are optional and add no value",
+        "B) Tests verify correctness, catch regressions, and document expected behavior",
+        "C) Tests are only for production code",
+        "D) Tests make the code run faster"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 14,
+      "question": "What testing strategy combines unit tests, integration tests, and edge case tests?",
+      "options": [
+        "A) Random testing",
+        "B) A comprehensive testing strategy that validates individual functions, module interactions, and boundary conditions",
+        "C) Only testing the main function",
+        "D) Manual testing only"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 15,
+      "question": "When combining types and modules, where should shared types be defined?",
+      "options": [
+        "A) In every file that uses them",
+        "B) In a dedicated types file or types/ directory, exported for use across modules",
+        "C) Only in the entry point",
+        "D) In package.json"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 16,
+      "question": "What is the purpose of the Result type pattern in a capstone project?",
+      "options": [
+        "A) To return multiple values",
+        "B) To handle errors as values in the type system instead of relying on try/catch for control flow",
+        "C) To wrap all functions in Promises",
+        "D) To create database result sets"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 17,
+      "question": "How should you handle external data (e.g., file input, API responses) in a TypeScript project?",
+      "options": [
+        "A) Trust the data and use type assertions",
+        "B) Validate with type guards or schema validation before using the data",
+        "C) Ignore type checking for external data",
+        "D) Only accept string data"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 18,
+      "question": "What does 'separation of concerns' mean in project architecture?",
+      "options": [
+        "A) Keeping source code and tests in different repositories",
+        "B) Organizing code so each module has a single, well-defined responsibility",
+        "C) Separating frontend and backend code",
+        "D) Using separate terminals for different tasks"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 19,
+      "question": "What is the benefit of using async/await with proper error handling in a capstone project?",
+      "options": [
+        "A) It makes the code synchronous",
+        "B) It provides readable asynchronous code with clear error handling paths",
+        "C) It eliminates all errors",
+        "D) It is faster than callbacks"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 20,
+      "question": "What should you consider when choosing between 'interface' and 'type' for your data models?",
+      "options": [
+        "A) Always use type, interfaces are deprecated",
+        "B) Interfaces for object shapes that may be extended; types for unions, intersections, and complex compositions",
+        "C) Always use interface, types are slower",
+        "D) It makes no difference at all"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 21,
+      "question": "Why is it important to have a clean 'npm run build' before deploying?",
+      "options": [
+        "A) To update package.json",
+        "B) To verify the project compiles without errors and produces correct output",
+        "C) To install new dependencies",
+        "D) To format the code"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 22,
+      "question": "What role does tsconfig.json's 'include' and 'exclude' play in a capstone project?",
+      "options": [
+        "A) They control which npm packages are installed",
+        "B) They control which files are compiled, ensuring test files or config aren't bundled into dist/",
+        "C) They have no practical effect",
+        "D) They control IDE features"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 23,
+      "question": "What is a common pattern for organizing CLI command handling?",
+      "options": [
+        "A) One giant switch statement in index.ts",
+        "B) A commands module with separate handler functions for each command, dispatched from main",
+        "C) Separate processes for each command",
+        "D) Using eval() to parse commands"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 24,
+      "question": "When should you use generics in your capstone project?",
+      "options": [
+        "A) Never, they're too complex",
+        "B) When you have reusable logic that works with multiple types (e.g., Result<T,E>, utility functions)",
+        "C) Only for array operations",
+        "D) Only in test files"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 25,
+      "question": "What is the final checklist before considering a TypeScript capstone project complete?",
+      "options": [
+        "A) Just make sure it compiles",
+        "B) Code compiles (tsc), tests pass, strict mode enabled, proper project structure, error handling in place",
+        "C) Only check that it runs without crashing",
+        "D) Ensure all files are in one directory"
+      ],
+      "answer": "B"
+    }
+  ]
+}

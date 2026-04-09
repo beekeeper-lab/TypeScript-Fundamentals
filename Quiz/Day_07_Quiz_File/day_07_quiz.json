@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 7: Interfaces",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is an interface in TypeScript?",
+      "options": [
+        "A) A runtime object that validates data",
+        "B) A contract that defines the shape of an object at the type level",
+        "C) A class that cannot be instantiated",
+        "D) A function type declaration"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "question": "Which keyword is used to define an interface?",
+      "options": [
+        "A) type",
+        "B) class",
+        "C) interface",
+        "D) struct"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 3,
+      "question": "What does `readonly` do on an interface property?",
+      "options": [
+        "A) Makes the property optional",
+        "B) Prevents the property from being reassigned after initialization",
+        "C) Makes the property private",
+        "D) Ensures the property is always defined"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 4,
+      "question": "How do you mark a property as optional in an interface?",
+      "options": [
+        "A) name: string | undefined",
+        "B) optional name: string",
+        "C) name?: string",
+        "D) name: string = undefined"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 5,
+      "question": "What does `extends` do with interfaces?\n\n```ts\ninterface Animal { name: string; }\ninterface Dog extends Animal { breed: string; }\n```",
+      "options": [
+        "A) Creates a copy of the Animal interface",
+        "B) Dog inherits all properties from Animal and adds its own",
+        "C) Replaces Animal with Dog",
+        "D) Creates a union of Animal and Dog"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 6,
+      "question": "Can an interface extend multiple interfaces?",
+      "options": [
+        "A) No, only single inheritance is allowed",
+        "B) Yes, using: interface C extends A, B { }",
+        "C) Only with the 'implements' keyword",
+        "D) Only if the interfaces have no overlapping properties"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 7,
+      "question": "What is an index signature in an interface?\n\n```ts\ninterface StringMap {\n  [key: string]: number;\n}\n```",
+      "options": [
+        "A) A way to define a fixed set of keys",
+        "B) A way to describe objects with dynamic keys where all values share a type",
+        "C) A way to access array indices",
+        "D) A syntax for defining computed properties"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 8,
+      "question": "What is a method signature in an interface?",
+      "options": [
+        "A) A function implementation inside the interface",
+        "B) A declaration of a method's name, parameters, and return type without implementation",
+        "C) A static method defined on the interface",
+        "D) A constructor signature"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 9,
+      "question": "What happens when two interfaces with the same name are declared in the same scope?",
+      "options": [
+        "A) A compile error occurs",
+        "B) The second declaration replaces the first",
+        "C) They are automatically merged (declaration merging)",
+        "D) Only the first one is used"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 10,
+      "question": "Which of the following is a key difference between `interface` and `type`?",
+      "options": [
+        "A) Types can represent unions and intersections; interfaces cannot represent unions",
+        "B) Interfaces cannot have optional properties",
+        "C) Types support declaration merging; interfaces do not",
+        "D) There are no differences at all"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 11,
+      "question": "What error does this produce?\n\n```ts\ninterface User {\n  readonly id: number;\n  name: string;\n}\nconst user: User = { id: 1, name: 'Alice' };\nuser.id = 2;\n```",
+      "options": [
+        "A) No error",
+        "B) Runtime error",
+        "C) Compile error: Cannot assign to 'id' because it is a read-only property",
+        "D) Warning only"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 12,
+      "question": "Which is valid: defining a function type with an interface or a type alias?",
+      "options": [
+        "A) Only type aliases can define function types",
+        "B) Only interfaces can define function types",
+        "C) Both can define function types",
+        "D) Neither can define function types"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 13,
+      "question": "What does this interface describe?\n\n```ts\ninterface Printable {\n  print(): void;\n}\n```",
+      "options": [
+        "A) An object that must have a print method that returns nothing meaningful",
+        "B) A class called Printable",
+        "C) A function named print",
+        "D) An abstract class with a print method"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 14,
+      "question": "What does this code demonstrate?\n\n```ts\ninterface Config {\n  debug: boolean;\n}\ninterface Config {\n  verbose: boolean;\n}\nconst cfg: Config = { debug: true, verbose: false };\n```",
+      "options": [
+        "A) A compile error because Config is defined twice",
+        "B) Declaration merging: the two interfaces combine into one",
+        "C) The second Config overwrites the first",
+        "D) Only debug is required"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 15,
+      "question": "When should you prefer `interface` over `type`?",
+      "options": [
+        "A) When defining union types",
+        "B) When defining object shapes, especially if they might be extended or merged",
+        "C) When working with primitives",
+        "D) When using intersection types"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 16,
+      "question": "What does this interface allow?\n\n```ts\ninterface NumberArray {\n  [index: number]: string;\n}\n```",
+      "options": [
+        "A) An object where numeric indices map to string values",
+        "B) An array of numbers",
+        "C) A string-indexed object",
+        "D) A map of numbers to numbers"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 17,
+      "question": "What is wrong with this code?\n\n```ts\ninterface Person {\n  name: string;\n  age: number;\n}\nconst p: Person = { name: 'Alice' };\n```",
+      "options": [
+        "A) Nothing, age is optional",
+        "B) Compile error: Property 'age' is missing",
+        "C) Runtime error",
+        "D) name should be optional"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 18,
+      "question": "Can an interface extend a type alias?",
+      "options": [
+        "A) No, interfaces can only extend other interfaces",
+        "B) Yes, an interface can extend a type alias if the type alias describes an object shape",
+        "C) Only with a special keyword",
+        "D) Only if the type alias is a union"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 19,
+      "question": "What does this code output?\n\n```ts\ninterface Greeter {\n  (name: string): string;\n}\nconst greet: Greeter = (name) => `Hello, ${name}`;\nconsole.log(greet('World'));\n```",
+      "options": [
+        "A) Compile error",
+        "B) 'Hello, World'",
+        "C) undefined",
+        "D) 'name'"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 20,
+      "question": "What is structural typing in TypeScript?",
+      "options": [
+        "A) Types are compatible based on their name",
+        "B) Types are compatible based on their structure (shape), not their declared name",
+        "C) Types must explicitly implement an interface",
+        "D) Types must be declared before use"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 21,
+      "question": "Does this code compile?\n\n```ts\ninterface HasName { name: string; }\nconst obj = { name: 'Alice', age: 30 };\nconst person: HasName = obj;\n```",
+      "options": [
+        "A) No, because obj has an extra property 'age'",
+        "B) Yes, because obj satisfies HasName (it has a name: string property)",
+        "C) Only with a type assertion",
+        "D) Only if HasName also defines age"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 22,
+      "question": "What happens with excess property checking on object literals?\n\n```ts\ninterface Point { x: number; y: number; }\nconst p: Point = { x: 1, y: 2, z: 3 };\n```",
+      "options": [
+        "A) No error; z is ignored",
+        "B) Compile error: Object literal may only specify known properties",
+        "C) Runtime error",
+        "D) z is added to the Point type"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 23,
+      "question": "Which of the following can a type alias do that an interface CANNOT?",
+      "options": [
+        "A) Define object shapes",
+        "B) Be extended",
+        "C) Represent a union type like string | number",
+        "D) Have optional properties"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 24,
+      "question": "What does this interface describe?\n\n```ts\ninterface Pair<T, U> {\n  first: T;\n  second: U;\n}\n```",
+      "options": [
+        "A) A fixed pair of strings",
+        "B) A generic interface that works with any two types T and U",
+        "C) A tuple type",
+        "D) An array of two elements"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 25,
+      "question": "Which feature do interfaces support that type aliases do NOT?",
+      "options": [
+        "A) Optional properties",
+        "B) Declaration merging (adding new members in a separate declaration)",
+        "C) Readonly properties",
+        "D) Generic parameters"
+      ],
+      "answer": "B"
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 18: Testing with Vitest",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is Vitest?",
+      "options": [
+        "A) A TypeScript compiler",
+        "B) A fast unit testing framework built on top of Vite",
+        "C) A visual testing tool for UI components",
+        "D) A code formatter"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "question": "What does the 'describe' function do in Vitest?",
+      "options": [
+        "A) Describes the project structure",
+        "B) Groups related test cases together into a test suite",
+        "C) Describes the expected output",
+        "D) Creates documentation for tests"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "question": "What does the 'it' (or 'test') function do?",
+      "options": [
+        "A) Iterates over test data",
+        "B) Defines a single test case",
+        "C) Initializes test fixtures",
+        "D) Imports test utilities"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 4,
+      "question": "What does this test check?\n\nit('adds numbers', () => {\n  expect(add(2, 3)).toBe(5);\n});",
+      "options": [
+        "A) That add returns a string '5'",
+        "B) That add(2, 3) returns exactly 5",
+        "C) That add is defined",
+        "D) That 2 + 3 is truthy"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "question": "What is the difference between .toBe() and .toEqual()?",
+      "options": [
+        "A) No difference",
+        "B) toBe uses strict reference equality (===), toEqual performs deep structural equality",
+        "C) toBe is for strings, toEqual is for numbers",
+        "D) toEqual is deprecated"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 6,
+      "question": "What does this test assert?\n\nexpect({ a: 1, b: 2 }).toEqual({ a: 1, b: 2 });",
+      "options": [
+        "A) That the objects are the same reference",
+        "B) That the objects have the same structure and values",
+        "C) That both objects are truthy",
+        "D) That the objects have the same keys"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 7,
+      "question": "Would this test pass?\n\nexpect({ a: 1 }).toBe({ a: 1 });",
+      "options": [
+        "A) Yes, they have the same content",
+        "B) No, toBe checks reference equality and these are different objects",
+        "C) Yes, toBe works like toEqual for objects",
+        "D) It would throw a syntax error"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 8,
+      "question": "What does vi.fn() create?",
+      "options": [
+        "A) A new Vitest test file",
+        "B) A mock function that tracks calls, arguments, and return values",
+        "C) A virtual file for testing",
+        "D) A fixture factory"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 9,
+      "question": "How do you check if a mock function was called with specific arguments?",
+      "options": [
+        "A) expect(mockFn).toBe(args)",
+        "B) expect(mockFn).toHaveBeenCalledWith(arg1, arg2)",
+        "C) expect(mockFn.args).toEqual([arg1, arg2])",
+        "D) mockFn.verify(arg1, arg2)"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 10,
+      "question": "What does vi.fn().mockReturnValue(42) do?",
+      "options": [
+        "A) Creates a function that throws 42",
+        "B) Creates a mock function that returns 42 when called",
+        "C) Sets the test timeout to 42ms",
+        "D) Asserts the function returns 42"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "question": "How do you test an async function in Vitest?",
+      "options": [
+        "A) Use it.async()",
+        "B) Make the test callback async and use await",
+        "C) Wrap the test in setTimeout",
+        "D) Async functions can't be tested"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 12,
+      "question": "What does this async test check?\n\nit('fetches data', async () => {\n  const data = await fetchUser(1);\n  expect(data.name).toBe('Alice');\n});",
+      "options": [
+        "A) That fetchUser is defined",
+        "B) That fetching user 1 returns an object with name 'Alice'",
+        "C) That the fetch completes in time",
+        "D) That the data is not null"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 13,
+      "question": "How do you test that an async function rejects?",
+      "options": [
+        "A) expect(fn()).toThrow()",
+        "B) await expect(fn()).rejects.toThrow('error message')",
+        "C) expect(await fn()).toBe(Error)",
+        "D) try { await fn() } catch { pass() }"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 14,
+      "question": "What does .toThrow() check?",
+      "options": [
+        "A) That a value is truthy",
+        "B) That a function throws an error when called",
+        "C) That a promise rejects",
+        "D) That a value is thrown away"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 15,
+      "question": "How do you correctly test that a synchronous function throws?\n\nfunction boom() { throw new Error('bang'); }",
+      "options": [
+        "A) expect(boom()).toThrow('bang')",
+        "B) expect(() => boom()).toThrow('bang')",
+        "C) expect(boom).toBe(Error)",
+        "D) expect(boom).toThrow.toBe('bang')"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 16,
+      "question": "What is the purpose of edge case testing?",
+      "options": [
+        "A) Testing the user interface edges",
+        "B) Testing boundary conditions and unusual inputs like empty strings, zero, null, etc.",
+        "C) Testing only the happy path",
+        "D) Testing in edge/chromium browsers"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 17,
+      "question": "What does code coverage measure?",
+      "options": [
+        "A) How many tests pass",
+        "B) What percentage of your source code is executed during tests",
+        "C) How fast tests run",
+        "D) How many bugs are found"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 18,
+      "question": "How do you run Vitest with code coverage?",
+      "options": [
+        "A) vitest --verbose",
+        "B) vitest --coverage",
+        "C) vitest --report",
+        "D) vitest --analyze"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 19,
+      "question": "What does .toContain() check?",
+      "options": [
+        "A) That an object contains a key",
+        "B) That an array includes an item or a string includes a substring",
+        "C) That a value is contained in memory",
+        "D) That a mock was called"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 20,
+      "question": "What does beforeEach() do in a test suite?",
+      "options": [
+        "A) Runs once before all tests in the file",
+        "B) Runs a setup function before each individual test in the describe block",
+        "C) Marks the previous test as complete",
+        "D) Sets up global configuration"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 21,
+      "question": "What is the difference between beforeEach and beforeAll?",
+      "options": [
+        "A) No difference",
+        "B) beforeEach runs before every test; beforeAll runs once before all tests in the suite",
+        "C) beforeAll runs before each test; beforeEach runs once",
+        "D) beforeAll is for async, beforeEach is for sync"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 22,
+      "question": "What does vi.spyOn(object, 'method') do?",
+      "options": [
+        "A) Deletes the method from the object",
+        "B) Creates a spy on an existing method, tracking calls while preserving original behavior",
+        "C) Creates a new method on the object",
+        "D) Converts the method to async"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 23,
+      "question": "What does .toHaveBeenCalledTimes(n) check?",
+      "options": [
+        "A) That a function took n milliseconds",
+        "B) That a mock/spy function was called exactly n times",
+        "C) That n tests have run",
+        "D) That a loop ran n times"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 24,
+      "question": "What does it.skip() do?",
+      "options": [
+        "A) Deletes the test",
+        "B) Skips the test so it doesn't run but remains in the suite",
+        "C) Runs the test in reverse",
+        "D) Marks the test as expected to fail"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 25,
+      "question": "What does .toBeTruthy() check?",
+      "options": [
+        "A) That the value is exactly true",
+        "B) That the value is truthy (not false, 0, '', null, undefined, or NaN)",
+        "C) That the value is a boolean",
+        "D) That the value exists in the DOM"
+      ],
+      "answer": "B"
+    }
+  ]
+}
