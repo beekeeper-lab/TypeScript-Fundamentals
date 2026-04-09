@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 13: Async/Await and Promises",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is a Promise in JavaScript/TypeScript?",
+      "options": [
+        "A) A synchronous value wrapper",
+        "B) An object representing the eventual completion or failure of an asynchronous operation",
+        "C) A callback function",
+        "D) A type of event listener"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "question": "What are the three states a Promise can be in?",
+      "options": [
+        "A) open, closed, error",
+        "B) pending, fulfilled, rejected",
+        "C) waiting, success, failure",
+        "D) init, done, failed"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "question": "What does this code output?\n\nconst p = new Promise<number>((resolve) => {\n  resolve(42);\n});\np.then(val => console.log(val));",
+      "options": [
+        "A) undefined",
+        "B) Promise { 42 }",
+        "C) 42",
+        "D) Error"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 4,
+      "question": "What does the 'async' keyword before a function do?",
+      "options": [
+        "A) Makes the function run in a separate thread",
+        "B) Makes the function return a Promise automatically",
+        "C) Makes the function execute immediately",
+        "D) Adds error handling to the function"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "question": "What does 'await' do inside an async function?",
+      "options": [
+        "A) Pauses the entire program",
+        "B) Pauses execution of the async function until the Promise settles",
+        "C) Cancels the Promise",
+        "D) Converts the Promise to a synchronous value globally"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 6,
+      "question": "What does this code output?\n\nasync function getValue(): Promise<string> {\n  return 'hello';\n}\ngetValue().then(v => console.log(v));",
+      "options": [
+        "A) Promise { 'hello' }",
+        "B) undefined",
+        "C) 'hello'",
+        "D) Error: not a Promise"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 7,
+      "question": "What does Promise.all() do?",
+      "options": [
+        "A) Runs promises one at a time in sequence",
+        "B) Waits for all promises to fulfill and returns an array of results; rejects if any reject",
+        "C) Returns the first resolved promise",
+        "D) Catches all errors from promises"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 8,
+      "question": "What does this code output?\n\nconst results = await Promise.all([\n  Promise.resolve(1),\n  Promise.resolve(2),\n  Promise.resolve(3)\n]);\nconsole.log(results);",
+      "options": [
+        "A) [1, 2, 3]",
+        "B) 1",
+        "C) [Promise, Promise, Promise]",
+        "D) 6"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 9,
+      "question": "What happens with Promise.all() if one of the promises rejects?",
+      "options": [
+        "A) It returns partial results",
+        "B) It waits for all to complete then reports errors",
+        "C) The entire Promise.all() rejects immediately with that error",
+        "D) It retries the failed promise"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 10,
+      "question": "What is the difference between Promise.all() and Promise.allSettled()?",
+      "options": [
+        "A) No difference",
+        "B) allSettled waits for all promises to settle (fulfill or reject) and never short-circuits",
+        "C) allSettled only handles rejections",
+        "D) all is faster than allSettled"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "question": "What does Promise.race() return?",
+      "options": [
+        "A) An array of all results",
+        "B) The result of the first promise to settle (fulfill or reject)",
+        "C) The fastest fulfilled promise only",
+        "D) A boolean indicating which promise won"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 12,
+      "question": "What does this output?\n\nasync function run() {\n  try {\n    const val = await Promise.reject('oops');\n    console.log(val);\n  } catch (e) {\n    console.log('caught:', e);\n  }\n}\nrun();",
+      "options": [
+        "A) undefined",
+        "B) 'oops'",
+        "C) 'caught: oops'",
+        "D) Unhandled promise rejection"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 13,
+      "question": "How do you handle errors in a .then() chain?",
+      "options": [
+        "A) Use try/catch around the chain",
+        "B) Add a .catch() at the end of the chain",
+        "C) Use .error() method",
+        "D) Errors can't be caught in chains"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 14,
+      "question": "What does .finally() do on a Promise?",
+      "options": [
+        "A) Executes only if the promise fulfills",
+        "B) Executes a callback regardless of whether the promise fulfilled or rejected",
+        "C) Converts the promise to a synchronous operation",
+        "D) Cancels the promise"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 15,
+      "question": "What is the return type of an async function that returns a number?",
+      "options": [
+        "A) number",
+        "B) Promise<number>",
+        "C) async number",
+        "D) Awaited<number>"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 16,
+      "question": "What does the following output?\n\nconsole.log('1');\nsetTimeout(() => console.log('2'), 0);\nPromise.resolve().then(() => console.log('3'));\nconsole.log('4');",
+      "options": [
+        "A) 1, 2, 3, 4",
+        "B) 1, 4, 3, 2",
+        "C) 1, 4, 2, 3",
+        "D) 1, 3, 4, 2"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 17,
+      "question": "What is a common retry pattern for async operations?",
+      "options": [
+        "A) Using setInterval to repeat the call",
+        "B) A loop that awaits the operation, catches errors, and retries up to a max number of attempts",
+        "C) Calling the function recursively without limits",
+        "D) Using Promise.race with multiple copies of the same call"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 18,
+      "question": "What does this code do?\n\nasync function retry<T>(fn: () => Promise<T>, attempts: number): Promise<T> {\n  for (let i = 0; i < attempts; i++) {\n    try { return await fn(); } catch (e) { if (i === attempts - 1) throw e; }\n  }\n  throw new Error('unreachable');\n}",
+      "options": [
+        "A) Calls fn once and throws on error",
+        "B) Calls fn up to 'attempts' times, returning on first success, throwing the last error if all fail",
+        "C) Calls fn infinitely until it succeeds",
+        "D) Runs fn in parallel 'attempts' times"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 19,
+      "question": "Can you use 'await' at the top level of a module in modern TypeScript?",
+      "options": [
+        "A) No, await must always be inside an async function",
+        "B) Yes, if the module target supports top-level await (e.g., ES2022+)",
+        "C) Only in .mts files",
+        "D) Only with a special compiler flag"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 20,
+      "question": "What is the output?\n\nasync function double(x: number): Promise<number> {\n  return x * 2;\n}\n\nasync function main() {\n  const a = double(5);\n  const b = double(10);\n  const results = await Promise.all([a, b]);\n  console.log(results);\n}\nmain();",
+      "options": [
+        "A) [5, 10]",
+        "B) [10, 20]",
+        "C) 30",
+        "D) [Promise, Promise]"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 21,
+      "question": "Why is 'await' inside a loop sometimes a performance problem?",
+      "options": [
+        "A) It causes memory leaks",
+        "B) Each iteration waits for the previous one, making operations sequential instead of concurrent",
+        "C) It blocks the event loop entirely",
+        "D) It creates too many Promises"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 22,
+      "question": "What does Promise.resolve(value) do?",
+      "options": [
+        "A) Creates a rejected promise with the given value",
+        "B) Creates an immediately fulfilled promise with the given value",
+        "C) Waits for a value to resolve",
+        "D) Converts a callback to a promise"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 23,
+      "question": "What type does Promise.allSettled() return?",
+      "options": [
+        "A) Promise<T[]>",
+        "B) Promise<PromiseSettledResult<T>[]>",
+        "C) Promise<(T | Error)[]>",
+        "D) Promise<{ fulfilled: T[]; rejected: Error[] }>"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 24,
+      "question": "What does this code output?\n\nasync function fetchData() {\n  throw new Error('network error');\n}\n\nfetchData().catch(e => console.log(e.message));",
+      "options": [
+        "A) undefined",
+        "B) Error object",
+        "C) 'network error'",
+        "D) Unhandled rejection"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 25,
+      "question": "What is the Awaited<T> utility type used for?",
+      "options": [
+        "A) Marking a type as async",
+        "B) Unwrapping the resolved type from a Promise<T> (recursively)",
+        "C) Creating a new Promise type",
+        "D) Converting sync types to async types"
+      ],
+      "answer": "B"
+    }
+  ]
+}

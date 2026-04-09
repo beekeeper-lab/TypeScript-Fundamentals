@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 5: Control Flow",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the purpose of the nullish coalescing operator (??) in TypeScript?",
+      "options": [
+        "A) It checks if a value is falsy (false, 0, '', null, undefined)",
+        "B) It returns the right-hand operand only when the left is null or undefined",
+        "C) It throws an error if the value is null",
+        "D) It converts null values to empty strings"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "question": "What does this code output?\n\n```ts\nconst val = 0 ?? 'default';\nconsole.log(val);\n```",
+      "options": [
+        "A) 'default'",
+        "B) 0",
+        "C) null",
+        "D) undefined"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "question": "What does this code output?\n\n```ts\nconst val = 0 || 'default';\nconsole.log(val);\n```",
+      "options": [
+        "A) 0",
+        "B) 'default'",
+        "C) false",
+        "D) null"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 4,
+      "question": "What does the optional chaining operator (?.) do?",
+      "options": [
+        "A) Makes a property required",
+        "B) Throws an error if the property doesn't exist",
+        "C) Safely accesses nested properties, returning undefined if any part of the chain is null/undefined",
+        "D) Assigns a default value to a property"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 5,
+      "question": "What does this code output?\n\n```ts\nconst user = { profile: { name: 'Alice' } };\nconsole.log(user?.profile?.name);\n```",
+      "options": [
+        "A) undefined",
+        "B) null",
+        "C) 'Alice'",
+        "D) Compile error"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 6,
+      "question": "What does this code output?\n\n```ts\nconst user = null;\nconsole.log(user?.profile?.name);\n```",
+      "options": [
+        "A) Throws a TypeError",
+        "B) null",
+        "C) undefined",
+        "D) ''"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 7,
+      "question": "What does `for...of` iterate over?",
+      "options": [
+        "A) The keys of an object",
+        "B) The indices of an array",
+        "C) The values of an iterable (arrays, strings, etc.)",
+        "D) The properties of a class"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 8,
+      "question": "What does `for...in` iterate over?",
+      "options": [
+        "A) The values of an array",
+        "B) The enumerable property keys (including inherited ones) of an object",
+        "C) Only numeric indices",
+        "D) The types of an object's properties"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 9,
+      "question": "What does this code output?\n\n```ts\nconst arr = [10, 20, 30];\nfor (const val of arr) {\n  console.log(val);\n}\n```",
+      "options": [
+        "A) 0, 1, 2",
+        "B) 10, 20, 30",
+        "C) '0', '1', '2'",
+        "D) undefined"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 10,
+      "question": "What does `Array.prototype.map` return?",
+      "options": [
+        "A) The original array, modified in place",
+        "B) A new array with the results of calling the provided function on every element",
+        "C) A single accumulated value",
+        "D) The first matching element"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "question": "What does this code output?\n\n```ts\nconst nums = [1, 2, 3, 4, 5];\nconst result = nums.filter(n => n > 3);\nconsole.log(result);\n```",
+      "options": [
+        "A) [1, 2, 3]",
+        "B) [4, 5]",
+        "C) [3, 4, 5]",
+        "D) true"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 12,
+      "question": "What does `reduce` do?",
+      "options": [
+        "A) Removes elements from an array",
+        "B) Reduces an array to a single value by applying a function cumulatively",
+        "C) Splits an array into smaller arrays",
+        "D) Sorts the array in ascending order"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 13,
+      "question": "What does this code output?\n\n```ts\nconst nums = [1, 2, 3, 4];\nconst sum = nums.reduce((acc, val) => acc + val, 0);\nconsole.log(sum);\n```",
+      "options": [
+        "A) [1, 2, 3, 4]",
+        "B) 0",
+        "C) 10",
+        "D) 4"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 14,
+      "question": "What does `find` return when no element matches?",
+      "options": [
+        "A) null",
+        "B) -1",
+        "C) undefined",
+        "D) An empty array"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 15,
+      "question": "What does `some` return?",
+      "options": [
+        "A) The first matching element",
+        "B) A new filtered array",
+        "C) true if at least one element passes the test, false otherwise",
+        "D) The count of matching elements"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 16,
+      "question": "What does `every` return?",
+      "options": [
+        "A) true only if ALL elements pass the test",
+        "B) true if any element passes the test",
+        "C) An array of boolean values",
+        "D) The last element that passes the test"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 17,
+      "question": "What does this code output?\n\n```ts\nconst nums = [1, 2, 3];\nconsole.log(nums.some(n => n > 5));\n```",
+      "options": [
+        "A) true",
+        "B) false",
+        "C) undefined",
+        "D) []"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 18,
+      "question": "What happens if no case matches in a switch statement and there is no default?",
+      "options": [
+        "A) A runtime error is thrown",
+        "B) The program crashes",
+        "C) Nothing happens; execution continues after the switch block",
+        "D) It loops back to the first case"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 19,
+      "question": "What does this ternary expression evaluate to?\n\n```ts\nconst age = 17;\nconst status = age >= 18 ? 'adult' : 'minor';\n```",
+      "options": [
+        "A) 'adult'",
+        "B) 'minor'",
+        "C) true",
+        "D) 17"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 20,
+      "question": "Why is `break` important in a switch statement?",
+      "options": [
+        "A) It is required syntax; the code won't compile without it",
+        "B) It prevents fall-through to subsequent cases",
+        "C) It exits the entire program",
+        "D) It resets the switch variable"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 21,
+      "question": "What does this code output?\n\n```ts\nconst nums = [1, 2, 3, 4];\nconst doubled = nums.map(n => n * 2);\nconsole.log(doubled);\n```",
+      "options": [
+        "A) [1, 2, 3, 4]",
+        "B) [2, 4, 6, 8]",
+        "C) 20",
+        "D) [1, 4, 9, 16]"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 22,
+      "question": "What does TypeScript narrow `value` to inside the if block?\n\n```ts\nfunction process(value: string | number) {\n  if (typeof value === 'string') {\n    // What is value's type here?\n  }\n}\n```",
+      "options": [
+        "A) string | number",
+        "B) string",
+        "C) number",
+        "D) any"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 23,
+      "question": "What does this code output?\n\n```ts\nconst arr = [10, 20, 30];\nconst found = arr.find(x => x > 15);\nconsole.log(found);\n```",
+      "options": [
+        "A) [20, 30]",
+        "B) 20",
+        "C) 30",
+        "D) true"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 24,
+      "question": "What is the key difference between `??` and `||`?",
+      "options": [
+        "A) They are identical in behavior",
+        "B) `??` only triggers on null/undefined; `||` triggers on any falsy value (0, '', false, null, undefined)",
+        "C) `||` only works with booleans; `??` works with all types",
+        "D) `??` is deprecated in favor of `||`"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 25,
+      "question": "What does this code output?\n\n```ts\nconst items = ['a', 'b', 'c'];\nconst result = items.every(item => typeof item === 'string');\nconsole.log(result);\n```",
+      "options": [
+        "A) false",
+        "B) true",
+        "C) 'string'",
+        "D) ['a', 'b', 'c']"
+      ],
+      "answer": "B"
+    }
+  ]
+}

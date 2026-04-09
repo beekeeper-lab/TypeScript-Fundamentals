@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 8: Classes",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which keyword creates a class in TypeScript?",
+      "options": [
+        "A) struct",
+        "B) type",
+        "C) class",
+        "D) object"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 2,
+      "question": "What is the default access modifier for class members in TypeScript?",
+      "options": [
+        "A) private",
+        "B) protected",
+        "C) public",
+        "D) internal"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 3,
+      "question": "What does the `private` modifier do?",
+      "options": [
+        "A) Makes the member accessible from anywhere",
+        "B) Makes the member accessible only within the class itself",
+        "C) Makes the member accessible in subclasses",
+        "D) Makes the member read-only"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 4,
+      "question": "What does the `protected` modifier do?",
+      "options": [
+        "A) Makes the member accessible only within the class itself",
+        "B) Makes the member accessible within the class and its subclasses",
+        "C) Makes the member accessible from anywhere",
+        "D) Prevents the member from being overridden"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "question": "What is a parameter property in TypeScript?\n\n```ts\nclass User {\n  constructor(public name: string, private age: number) {}\n}\n```",
+      "options": [
+        "A) A parameter that is converted to a regular function argument",
+        "B) A shorthand that declares and initializes a class property directly from a constructor parameter",
+        "C) A parameter that is optional",
+        "D) A parameter with a default value"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 6,
+      "question": "What does `extends` do in a class declaration?",
+      "options": [
+        "A) Implements an interface",
+        "B) Creates a subclass that inherits from a parent class",
+        "C) Creates a copy of the class",
+        "D) Adds static methods to the class"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 7,
+      "question": "What does `implements` do in a class declaration?",
+      "options": [
+        "A) Inherits methods and properties from another class",
+        "B) Ensures the class satisfies the contract defined by an interface",
+        "C) Creates an abstract class",
+        "D) Makes the class final"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 8,
+      "question": "What is an abstract class?",
+      "options": [
+        "A) A class with no properties",
+        "B) A class that cannot be instantiated directly and may contain abstract methods",
+        "C) A class that is automatically optimized by the compiler",
+        "D) A class with only static methods"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 9,
+      "question": "What error does this code produce?\n\n```ts\nabstract class Shape {\n  abstract area(): number;\n}\nconst s = new Shape();\n```",
+      "options": [
+        "A) No error",
+        "B) Compile error: Cannot create an instance of an abstract class",
+        "C) Runtime error",
+        "D) Warning only"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 10,
+      "question": "What must a subclass of an abstract class do?",
+      "options": [
+        "A) Nothing special",
+        "B) Implement all abstract methods defined in the abstract class",
+        "C) Only override the constructor",
+        "D) Declare itself as abstract too"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "question": "What does `super()` do in a constructor?",
+      "options": [
+        "A) Calls the current class's constructor again",
+        "B) Calls the parent class's constructor",
+        "C) Creates a super user",
+        "D) Resets all properties to their defaults"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 12,
+      "question": "What does this code output?\n\n```ts\nclass Animal {\n  constructor(public name: string) {}\n  speak(): string { return `${this.name} makes a sound`; }\n}\nclass Dog extends Animal {\n  speak(): string { return `${this.name} barks`; }\n}\nconst d = new Dog('Rex');\nconsole.log(d.speak());\n```",
+      "options": [
+        "A) 'Rex makes a sound'",
+        "B) 'Rex barks'",
+        "C) undefined",
+        "D) Compile error"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 13,
+      "question": "Can a class implement multiple interfaces?",
+      "options": [
+        "A) No, only one interface per class",
+        "B) Yes, using: class Foo implements A, B { }",
+        "C) Only with multiple 'implements' keywords",
+        "D) Only abstract classes can implement multiple interfaces"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 14,
+      "question": "What error does this code produce?\n\n```ts\nclass Person {\n  private secret: string = 'hidden';\n}\nconst p = new Person();\nconsole.log(p.secret);\n```",
+      "options": [
+        "A) No error, prints 'hidden'",
+        "B) Compile error: Property 'secret' is private and only accessible within class 'Person'",
+        "C) Runtime error",
+        "D) Prints undefined"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 15,
+      "question": "What is the difference between TypeScript's `private` and JavaScript's `#` private fields?",
+      "options": [
+        "A) They are identical",
+        "B) TypeScript's `private` is compile-time only; `#` fields are enforced at runtime",
+        "C) `#` fields are only for methods, not properties",
+        "D) TypeScript's `private` is enforced at runtime; `#` is compile-time only"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 16,
+      "question": "What does this code demonstrate?\n\n```ts\nclass Logger {\n  static instance: Logger;\n  private constructor() {}\n  static getInstance(): Logger {\n    if (!Logger.instance) {\n      Logger.instance = new Logger();\n    }\n    return Logger.instance;\n  }\n}\n```",
+      "options": [
+        "A) The factory pattern",
+        "B) The singleton pattern using a private constructor",
+        "C) The observer pattern",
+        "D) An abstract class"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 17,
+      "question": "What are getters and setters in TypeScript classes?",
+      "options": [
+        "A) Special methods that retrieve and store data from a database",
+        "B) Accessor methods that control how a property is read and written",
+        "C) Static methods for creating instances",
+        "D) Methods that validate constructor parameters"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 18,
+      "question": "What does this code output?\n\n```ts\nclass Counter {\n  private _count = 0;\n  get count(): number { return this._count; }\n  set count(val: number) { if (val >= 0) this._count = val; }\n}\nconst c = new Counter();\nc.count = -5;\nconsole.log(c.count);\n```",
+      "options": [
+        "A) -5",
+        "B) 0",
+        "C) undefined",
+        "D) Compile error"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 19,
+      "question": "What is a static method?",
+      "options": [
+        "A) A method that cannot be changed",
+        "B) A method that belongs to the class itself, not instances of the class",
+        "C) A method that is called automatically on creation",
+        "D) A method that is only available in abstract classes"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 20,
+      "question": "What does `readonly` do on a class property?",
+      "options": [
+        "A) Makes the property private",
+        "B) Makes the property assignable only in the constructor or at declaration",
+        "C) Makes the property static",
+        "D) Makes the property optional"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 21,
+      "question": "What error does this code produce?\n\n```ts\ninterface Serializable {\n  serialize(): string;\n}\nclass User implements Serializable {\n  constructor(public name: string) {}\n}\n```",
+      "options": [
+        "A) No error",
+        "B) Compile error: User does not implement serialize()",
+        "C) Runtime error",
+        "D) Warning about missing method"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 22,
+      "question": "Can a subclass access a `protected` member of its parent?",
+      "options": [
+        "A) No, protected members are not accessible in subclasses",
+        "B) Yes, protected members are accessible in the class and its subclasses",
+        "C) Only if the subclass is in the same file",
+        "D) Only through a getter method"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 23,
+      "question": "What does this code output?\n\n```ts\nclass Base {\n  greet() { return 'Hello from Base'; }\n}\nclass Child extends Base {\n  greet() { return `${super.greet()} and Child`; }\n}\nconsole.log(new Child().greet());\n```",
+      "options": [
+        "A) 'Hello from Base'",
+        "B) 'Hello from Base and Child'",
+        "C) 'and Child'",
+        "D) Compile error"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 24,
+      "question": "How many classes can a TypeScript class extend?",
+      "options": [
+        "A) Unlimited",
+        "B) Two",
+        "C) One (single inheritance only)",
+        "D) Zero; TypeScript does not support inheritance"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 25,
+      "question": "What is the purpose of the `override` keyword in TypeScript?\n\n```ts\nclass Child extends Base {\n  override greet() { return 'hi'; }\n}\n```",
+      "options": [
+        "A) It is required to override any method",
+        "B) It explicitly indicates a method overrides a parent method, helping catch errors if the parent method changes",
+        "C) It makes the method final so it cannot be overridden further",
+        "D) It calls the parent method automatically"
+      ],
+      "answer": "B"
+    }
+  ]
+}

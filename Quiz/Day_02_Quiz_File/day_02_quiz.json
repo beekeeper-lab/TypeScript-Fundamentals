@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 2: Variables and Type Annotations",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the key difference between `let` and `const` in TypeScript?",
+      "options": [
+        "A) `let` is typed and `const` is untyped",
+        "B) `const` cannot be reassigned after declaration, `let` can",
+        "C) `let` is block-scoped and `const` is function-scoped",
+        "D) There is no difference in TypeScript"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "question": "What type does TypeScript infer for `const name = 'Alice';`?",
+      "options": [
+        "A) string",
+        "B) 'Alice' (the literal type)",
+        "C) any",
+        "D) unknown"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "question": "What type does TypeScript infer for `let count = 10;`?",
+      "options": [
+        "A) 10 (the literal type)",
+        "B) any",
+        "C) number",
+        "D) int"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 4,
+      "question": "Which of the following is a correct type annotation?",
+      "options": [
+        "A) let age: int = 25;",
+        "B) let age: number = 25;",
+        "C) let age: Number = 25;",
+        "D) let age = number(25);"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "question": "What is the difference between `any` and `unknown`?",
+      "options": [
+        "A) They are identical in behavior",
+        "B) `any` disables type checking; `unknown` requires type narrowing before use",
+        "C) `unknown` disables type checking; `any` requires type narrowing",
+        "D) `any` is for numbers only; `unknown` is for strings only"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 6,
+      "question": "What does the `void` type represent?",
+      "options": [
+        "A) A variable that can hold any value",
+        "B) A function that never finishes executing",
+        "C) The absence of a return value from a function",
+        "D) A null or undefined variable"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 7,
+      "question": "When is the `never` type used?",
+      "options": [
+        "A) When a variable might be null",
+        "B) When a function always throws an error or has an infinite loop (never returns)",
+        "C) When a variable has not been initialized",
+        "D) When a function returns undefined"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 8,
+      "question": "What will TypeScript infer for `let value;` with no initializer?",
+      "options": [
+        "A) undefined",
+        "B) null",
+        "C) any",
+        "D) unknown"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 9,
+      "question": "Which of the following is a valid template literal type?",
+      "options": [
+        "A) type Greeting = `Hello, ${string}`;",
+        "B) type Greeting = 'Hello, ' + string;",
+        "C) type Greeting = concat('Hello, ', string);",
+        "D) type Greeting = Hello<string>;"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 10,
+      "question": "What happens when you assign a value of type `unknown` to a `string` variable without narrowing?",
+      "options": [
+        "A) It works fine",
+        "B) A compile-time error occurs",
+        "C) A runtime error occurs",
+        "D) The value is automatically converted to a string"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "question": "What is the type of `null` in TypeScript with `strictNullChecks` enabled?",
+      "options": [
+        "A) any",
+        "B) undefined",
+        "C) null",
+        "D) void"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 12,
+      "question": "Which code will produce a TypeScript error?\n\n1) let x: number = 5; x = 10;\n2) const y: number = 5; y = 10;\n3) let z = 'hello'; z = 'world';\n4) const w = 'hello';",
+      "options": [
+        "A) Option 1",
+        "B) Option 2",
+        "C) Option 3",
+        "D) Option 4"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 13,
+      "question": "What does TypeScript infer for `const isActive = true;`?",
+      "options": [
+        "A) boolean",
+        "B) true (literal type)",
+        "C) Boolean",
+        "D) any"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 14,
+      "question": "Which primitive types are available in TypeScript?",
+      "options": [
+        "A) string, number, boolean, null, undefined, symbol, bigint",
+        "B) String, Number, Boolean, Null, Undefined",
+        "C) str, int, bool, float, char",
+        "D) string, integer, boolean, decimal, char"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 15,
+      "question": "What is the output type of `typeof 'hello'` in TypeScript at the type level?",
+      "options": [
+        "A) 'hello'",
+        "B) string",
+        "C) String",
+        "D) any"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 16,
+      "question": "What does the following code evaluate to?\n\n```ts\nlet x: string | undefined = undefined;\nconsole.log(typeof x);\n```",
+      "options": [
+        "A) 'string'",
+        "B) 'null'",
+        "C) 'undefined'",
+        "D) 'object'"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 17,
+      "question": "Which annotation correctly types a variable that can be either a string or a number?",
+      "options": [
+        "A) let val: string & number;",
+        "B) let val: string, number;",
+        "C) let val: string | number;",
+        "D) let val: (string, number);"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 18,
+      "question": "Why should you avoid using `any` in TypeScript?",
+      "options": [
+        "A) It makes the code run slower",
+        "B) It disables type checking for that value, defeating TypeScript's purpose",
+        "C) It is deprecated in TypeScript 5+",
+        "D) It causes runtime errors"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 19,
+      "question": "What type does TypeScript infer for the variable `result` in: `let result = 3 + 4;`?",
+      "options": [
+        "A) any",
+        "B) 7",
+        "C) number",
+        "D) int"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 20,
+      "question": "Which of the following correctly narrows an `unknown` type to a `string`?",
+      "options": [
+        "A) const str = value as string; (without checking)",
+        "B) if (typeof value === 'string') { /* value is string here */ }",
+        "C) const str: string = value;",
+        "D) const str = String(value);"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 21,
+      "question": "What is the result of this code?\n\n```ts\nconst greeting = 'hello';\nlet message: typeof greeting;\n```\nWhat is the type of `message`?",
+      "options": [
+        "A) string",
+        "B) 'hello'",
+        "C) any",
+        "D) undefined"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 22,
+      "question": "Which statement about `undefined` and `null` in TypeScript is correct?",
+      "options": [
+        "A) They are the same type",
+        "B) They are separate types when `strictNullChecks` is enabled",
+        "C) `null` is not a valid TypeScript value",
+        "D) `undefined` cannot be used as a type annotation"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 23,
+      "question": "What does the following code produce?\n\n```ts\nlet x: number = 5;\nlet y: string = x;\n```",
+      "options": [
+        "A) y becomes '5'",
+        "B) A compile-time type error",
+        "C) A runtime error",
+        "D) y becomes 5"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 24,
+      "question": "What is a template literal in JavaScript/TypeScript?",
+      "options": [
+        "A) A string declared with single quotes",
+        "B) A string declared with backticks that supports embedded expressions via ${...}",
+        "C) A special type annotation syntax",
+        "D) A way to define multi-line comments"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 25,
+      "question": "What type does TypeScript assign to `const arr = [1, 2, 3];`?",
+      "options": [
+        "A) [number, number, number]",
+        "B) number[]",
+        "C) Array<any>",
+        "D) [1, 2, 3]"
+      ],
+      "answer": "B"
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 3: Arrays, Tuples, and Objects",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which two syntaxes are equivalent for typing an array of numbers?",
+      "options": [
+        "A) number[] and Array<number>",
+        "B) number[] and [number]",
+        "C) Array(number) and number[]",
+        "D) number<Array> and number[]"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 2,
+      "question": "What is a tuple in TypeScript?",
+      "options": [
+        "A) An array with unlimited elements of the same type",
+        "B) A fixed-length array where each element has a specific type",
+        "C) A special object type",
+        "D) A read-only array"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "question": "What is the type of `pair` in: `const pair: [string, number] = ['age', 25];`?",
+      "options": [
+        "A) (string | number)[]",
+        "B) [string, number]",
+        "C) Array<string | number>",
+        "D) { string, number }"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 4,
+      "question": "What does the `readonly` modifier do on an array?",
+      "options": [
+        "A) Makes the array elements immutable at runtime",
+        "B) Prevents adding, removing, or replacing elements at the type level",
+        "C) Freezes the array using Object.freeze",
+        "D) Makes only the first element read-only"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "question": "Which of the following correctly types an object with a `name` string and `age` number?",
+      "options": [
+        "A) let person: {name: string, age: number};",
+        "B) let person: [name: string, age: number];",
+        "C) let person: (string, number);",
+        "D) let person: Object<string, number>;"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 6,
+      "question": "What does the `?` mean in this type: `{ name: string; age?: number }`?",
+      "options": [
+        "A) `age` must be null",
+        "B) `age` is an optional property that may or may not exist",
+        "C) `age` is always undefined",
+        "D) `age` is a nullable number that must be provided"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 7,
+      "question": "What will TypeScript report for this code?\n\n```ts\nconst arr: readonly number[] = [1, 2, 3];\narr.push(4);\n```",
+      "options": [
+        "A) No error, [1, 2, 3, 4]",
+        "B) Runtime error",
+        "C) Compile-time error: push does not exist on readonly number[]",
+        "D) Warning but compiles successfully"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 8,
+      "question": "What is the result of destructuring: `const [first, ...rest] = [1, 2, 3, 4];`?",
+      "options": [
+        "A) first = 1, rest = [2, 3, 4]",
+        "B) first = [1], rest = [2, 3, 4]",
+        "C) first = 1, rest = 2",
+        "D) first = 4, rest = [1, 2, 3]"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 9,
+      "question": "What is a labeled tuple in TypeScript?",
+      "options": [
+        "A) A tuple with string keys like an object",
+        "B) A tuple where each position has a descriptive name for documentation: [name: string, age: number]",
+        "C) A tuple that can only contain strings",
+        "D) A tuple with a label property"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 10,
+      "question": "What does the spread operator do with arrays?\n\n```ts\nconst a = [1, 2];\nconst b = [3, 4];\nconst c = [...a, ...b];\n```",
+      "options": [
+        "A) c = [[1, 2], [3, 4]]",
+        "B) c = [1, 2, 3, 4]",
+        "C) c = [4, 3, 2, 1]",
+        "D) Compile error"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "question": "What type does TypeScript infer for `const tuple = [1, 'hello'] as const;`?",
+      "options": [
+        "A) (string | number)[]",
+        "B) [number, string]",
+        "C) readonly [1, 'hello']",
+        "D) [1, 'hello']"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 12,
+      "question": "Which of the following correctly types a readonly object property?",
+      "options": [
+        "A) { const name: string }",
+        "B) { readonly name: string }",
+        "C) { final name: string }",
+        "D) { immutable name: string }"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 13,
+      "question": "What happens when you access an index beyond a tuple's defined length?\n\n```ts\nconst pair: [string, number] = ['hello', 42];\nconst val = pair[5];\n```",
+      "options": [
+        "A) Returns undefined with no error",
+        "B) TypeScript reports a compile-time error about the index",
+        "C) Returns null",
+        "D) Returns the last element"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 14,
+      "question": "What is object destructuring?",
+      "options": [
+        "A) Deleting properties from an object",
+        "B) Extracting properties from an object into individual variables",
+        "C) Converting an object to an array",
+        "D) Creating a deep copy of an object"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 15,
+      "question": "What does this code produce?\n\n```ts\nconst obj = { x: 1, y: 2 };\nconst { x, y } = obj;\nconsole.log(x, y);\n```",
+      "options": [
+        "A) { x: 1 } { y: 2 }",
+        "B) 1 2",
+        "C) undefined undefined",
+        "D) [1, 2]"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 16,
+      "question": "What is an optional tuple element?\n\n```ts\ntype FlexTuple = [string, number?];\n```",
+      "options": [
+        "A) The second element must be null",
+        "B) The tuple can have 1 or 2 elements; the second is optional",
+        "C) The second element defaults to 0",
+        "D) Both elements are optional"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 17,
+      "question": "What does the spread operator do with objects?\n\n```ts\nconst a = { x: 1, y: 2 };\nconst b = { y: 3, z: 4 };\nconst c = { ...a, ...b };\n```",
+      "options": [
+        "A) c = { x: 1, y: 2, z: 4 }",
+        "B) c = { x: 1, y: 3, z: 4 }",
+        "C) Compile error due to duplicate y",
+        "D) c = { x: 1, y: [2, 3], z: 4 }"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 18,
+      "question": "Which of the following is a correct way to type an array of objects?",
+      "options": [
+        "A) { name: string }[]",
+        "B) Array({ name: string })",
+        "C) [{ name: string }]",
+        "D) Object<{ name: string }>"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 19,
+      "question": "What does `ReadonlyArray<number>` prevent?",
+      "options": [
+        "A) Reading elements from the array",
+        "B) Mutating methods like push, pop, and splice",
+        "C) Iterating over the array",
+        "D) Passing the array to functions"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 20,
+      "question": "What type does TypeScript infer for `const obj = { a: 1, b: 'two' };`?",
+      "options": [
+        "A) { a: 1, b: 'two' }",
+        "B) { a: number, b: string }",
+        "C) object",
+        "D) any"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 21,
+      "question": "What is the result of this code?\n\n```ts\nconst arr: [string, ...number[]] = ['start', 1, 2, 3];\n```\nWhat does the `...number[]` mean in this tuple?",
+      "options": [
+        "A) The tuple must end with exactly one number",
+        "B) After the first string element, any number of number elements can follow",
+        "C) The tuple must have exactly 4 elements",
+        "D) The rest elements must be strings"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 22,
+      "question": "What error does this code produce?\n\n```ts\nconst person: { readonly name: string } = { name: 'Alice' };\nperson.name = 'Bob';\n```",
+      "options": [
+        "A) No error",
+        "B) Runtime TypeError",
+        "C) Compile-time error: Cannot assign to 'name' because it is a read-only property",
+        "D) Warning about immutability"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 23,
+      "question": "How do you type an array that can contain both strings and numbers?",
+      "options": [
+        "A) (string + number)[]",
+        "B) string[] | number[]",
+        "C) (string | number)[]",
+        "D) Array<string, number>"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 24,
+      "question": "What does `as const` do when applied to an object literal?\n\n```ts\nconst config = { port: 3000, host: 'localhost' } as const;\n```",
+      "options": [
+        "A) Makes the object mutable",
+        "B) Infers the narrowest literal types and makes all properties readonly",
+        "C) Converts the object to a class instance",
+        "D) Has no effect on objects"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 25,
+      "question": "What does TypeScript infer for the destructured variable `b` here?\n\n```ts\nconst data: [number, string, boolean] = [1, 'two', true];\nconst [a, b, c] = data;\n```",
+      "options": [
+        "A) number",
+        "B) string",
+        "C) boolean",
+        "D) any"
+      ],
+      "answer": "B"
+    }
+  ]
+}

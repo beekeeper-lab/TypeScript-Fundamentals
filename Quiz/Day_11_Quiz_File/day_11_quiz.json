@@ -1,0 +1,283 @@
+{
+  "quiz_title": "Day 11: Type Narrowing",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What does 'type narrowing' mean in TypeScript?",
+      "options": [
+        "A) Converting a value to a different type at runtime",
+        "B) Refining a broader type to a more specific type within a code block",
+        "C) Removing properties from an object type",
+        "D) Making a type alias shorter"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "question": "What does the following code output?\n\nfunction check(x: string | number) {\n  if (typeof x === 'string') {\n    return x.toUpperCase();\n  }\n  return x.toFixed(2);\n}\nconsole.log(check(3.14159));",
+      "options": [
+        "A) 3.14159",
+        "B) '3.14'",
+        "C) Error: toFixed is not a function",
+        "D) '3.14159'"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "question": "Which of these is NOT a valid typeof guard return value in JavaScript?",
+      "options": [
+        "A) 'string'",
+        "B) 'object'",
+        "C) 'array'",
+        "D) 'undefined'"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 4,
+      "question": "What does the 'instanceof' operator check?",
+      "options": [
+        "A) Whether a value matches a TypeScript interface",
+        "B) Whether an object's prototype chain contains a specific constructor",
+        "C) Whether a type is a subtype of another",
+        "D) Whether two objects have the same properties"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "question": "What does the following code output?\n\nclass Dog { bark() { return 'woof'; } }\nclass Cat { meow() { return 'meow'; } }\n\nfunction speak(pet: Dog | Cat) {\n  if (pet instanceof Dog) {\n    return pet.bark();\n  }\n  return pet.meow();\n}\nconsole.log(speak(new Cat()));",
+      "options": [
+        "A) 'woof'",
+        "B) 'meow'",
+        "C) undefined",
+        "D) Compile error"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 6,
+      "question": "How does the 'in' operator narrow types?",
+      "options": [
+        "A) It checks if a value is inside an array",
+        "B) It checks if a property exists on an object, narrowing the union",
+        "C) It checks if a type is defined in a module",
+        "D) It iterates over an object's keys"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 7,
+      "question": "What does the following code output?\n\ntype Fish = { swim: () => string };\ntype Bird = { fly: () => string };\n\nfunction move(animal: Fish | Bird) {\n  if ('swim' in animal) {\n    return animal.swim();\n  }\n  return animal.fly();\n}\nconsole.log(move({ fly: () => 'soaring' }));",
+      "options": [
+        "A) undefined",
+        "B) 'swimming'",
+        "C) 'soaring'",
+        "D) Compile error"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 8,
+      "question": "What is a discriminated union in TypeScript?",
+      "options": [
+        "A) A union of types that share a common literal-typed property used for narrowing",
+        "B) A union that excludes certain types",
+        "C) A union of only primitive types",
+        "D) A union that can only contain two members"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 9,
+      "question": "Given:\n\ntype Shape =\n  | { kind: 'circle'; radius: number }\n  | { kind: 'square'; side: number };\n\nfunction area(s: Shape) {\n  switch (s.kind) {\n    case 'circle': return Math.PI * s.radius ** 2;\n    case 'square': return s.side ** 2;\n  }\n}\nconsole.log(area({ kind: 'square', side: 4 }));",
+      "options": [
+        "A) 8",
+        "B) 16",
+        "C) 12.566",
+        "D) NaN"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 10,
+      "question": "What is the return type annotation for a custom type guard function?",
+      "options": [
+        "A) boolean",
+        "B) value is Type",
+        "C) param is Type",
+        "D) typeof param === 'Type'"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 11,
+      "question": "What does this custom type guard do?\n\nfunction isString(val: unknown): val is string {\n  return typeof val === 'string';\n}",
+      "options": [
+        "A) It converts val to a string",
+        "B) It tells TypeScript that if the function returns true, val is a string",
+        "C) It throws an error if val is not a string",
+        "D) It creates a new string from val"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 12,
+      "question": "What is the purpose of the assertNever pattern?",
+      "options": [
+        "A) To assert that a value is always truthy",
+        "B) To ensure all cases of a discriminated union are handled exhaustively",
+        "C) To prevent a function from ever being called",
+        "D) To mark code as unreachable for performance"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 13,
+      "question": "What happens if you add a new variant to a discriminated union but forget to handle it in a switch, with assertNever in the default?",
+      "options": [
+        "A) Nothing, the code works fine",
+        "B) A runtime error occurs",
+        "C) A compile-time error occurs because the new variant can't be assigned to never",
+        "D) TypeScript ignores the new variant"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 14,
+      "question": "What does typeof null return in JavaScript?",
+      "options": [
+        "A) 'null'",
+        "B) 'undefined'",
+        "C) 'object'",
+        "D) 'none'"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 15,
+      "question": "What does the following code output?\n\nfunction describe(x: string | null) {\n  if (x !== null) {\n    return x.length;\n  }\n  return -1;\n}\nconsole.log(describe(null));",
+      "options": [
+        "A) 0",
+        "B) null",
+        "C) -1",
+        "D) Compile error"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 16,
+      "question": "What is an assertion function in TypeScript?",
+      "options": [
+        "A) A function that returns a boolean",
+        "B) A function with 'asserts param is Type' return type that throws if the condition is false",
+        "C) A function that converts types",
+        "D) A function that always returns true"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 17,
+      "question": "Which syntax declares an assertion function?\n\nfunction assertIsString(val: unknown): ???",
+      "options": [
+        "A) val is string",
+        "B) asserts val is string",
+        "C) assert string",
+        "D) val as string"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 18,
+      "question": "What does the following output?\n\nfunction process(val: string | number | boolean) {\n  if (typeof val === 'string') {\n    return 'S';\n  } else if (typeof val === 'number') {\n    return 'N';\n  } else {\n    return 'B';\n  }\n}\nconsole.log(process(true));",
+      "options": [
+        "A) 'S'",
+        "B) 'N'",
+        "C) 'B'",
+        "D) undefined"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 19,
+      "question": "Why can't 'instanceof' be used with TypeScript interfaces?",
+      "options": [
+        "A) It's a TypeScript bug",
+        "B) Interfaces don't exist at runtime, so there's no constructor to check",
+        "C) instanceof only works with primitive types",
+        "D) Interfaces can't be part of unions"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 20,
+      "question": "What does this code output?\n\ntype Result = { ok: true; value: number } | { ok: false; error: string };\n\nfunction show(r: Result) {\n  if (r.ok) {\n    return r.value * 2;\n  }\n  return r.error;\n}\nconsole.log(show({ ok: true, value: 21 }));",
+      "options": [
+        "A) 21",
+        "B) 42",
+        "C) true",
+        "D) undefined"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 21,
+      "question": "What type does TypeScript assign to 'x' in the else branch?\n\nfunction test(x: string | number) {\n  if (typeof x === 'string') {\n    // x is string here\n  } else {\n    // x is ??? here\n  }\n}",
+      "options": [
+        "A) string | number",
+        "B) unknown",
+        "C) number",
+        "D) any"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 22,
+      "question": "Which narrowing technique works best for distinguishing interface types that share no common properties?",
+      "options": [
+        "A) typeof",
+        "B) instanceof",
+        "C) The 'in' operator checking for a unique property",
+        "D) Strict equality with ===",
+        "E) None"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 23,
+      "question": "What does this code output?\n\nfunction assertDefined<T>(val: T | undefined): asserts val is T {\n  if (val === undefined) throw new Error('undefined!');\n}\n\nlet x: string | undefined = 'hello';\nassertDefined(x);\nconsole.log(x.toUpperCase());",
+      "options": [
+        "A) 'HELLO'",
+        "B) undefined",
+        "C) Throws 'undefined!'",
+        "D) Compile error"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 24,
+      "question": "What is the 'never' type used for in exhaustive checks?",
+      "options": [
+        "A) Representing an empty array",
+        "B) Representing a value that should never occur if all cases are handled",
+        "C) Representing null or undefined",
+        "D) Representing an unknown type"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 25,
+      "question": "What does this output?\n\nfunction narrow(x: unknown) {\n  if (typeof x === 'object' && x !== null && 'name' in x) {\n    return (x as { name: string }).name;\n  }\n  return 'none';\n}\nconsole.log(narrow({ name: 'Alice' }));",
+      "options": [
+        "A) 'none'",
+        "B) undefined",
+        "C) 'Alice'",
+        "D) Compile error"
+      ],
+      "answer": "C"
+    }
+  ]
+}

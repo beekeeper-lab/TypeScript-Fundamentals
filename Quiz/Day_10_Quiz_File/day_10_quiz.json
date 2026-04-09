@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 10: Enums and Utility Types",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is a numeric enum in TypeScript?",
+      "options": [
+        "A) An enum where members are assigned string values",
+        "B) An enum where members are auto-assigned incrementing numeric values starting from 0 by default",
+        "C) An enum that can only hold even numbers",
+        "D) A type alias for number"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "question": "What is the value of `Direction.South`?\n\n```ts\nenum Direction {\n  North,\n  South,\n  East,\n  West\n}\n```",
+      "options": [
+        "A) 0",
+        "B) 1",
+        "C) 'South'",
+        "D) 2"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "question": "What is a string enum?",
+      "options": [
+        "A) An enum that auto-generates string values",
+        "B) An enum where each member is explicitly assigned a string value",
+        "C) A type alias for a set of strings",
+        "D) An enum that converts numbers to strings"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 4,
+      "question": "What is the value of `Color.Green`?\n\n```ts\nenum Color {\n  Red = 'RED',\n  Green = 'GREEN',\n  Blue = 'BLUE'\n}\n```",
+      "options": [
+        "A) 1",
+        "B) 'Green'",
+        "C) 'GREEN'",
+        "D) 2"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 5,
+      "question": "What does `const enum` do differently from a regular enum?",
+      "options": [
+        "A) It prevents the enum from being used",
+        "B) It is completely inlined at compile time, producing no runtime JavaScript object",
+        "C) It makes all values constant numbers",
+        "D) It is identical to a regular enum"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 6,
+      "question": "What does `Partial<T>` do?",
+      "options": [
+        "A) Makes all properties of T required",
+        "B) Makes all properties of T optional",
+        "C) Removes all properties from T",
+        "D) Makes all properties readonly"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 7,
+      "question": "What is the result type of `Partial<{ name: string; age: number }>`?",
+      "options": [
+        "A) { name: string; age: number }",
+        "B) { name?: string; age?: number }",
+        "C) { name: string | undefined; age: number | undefined }",
+        "D) {}"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 8,
+      "question": "What does `Required<T>` do?",
+      "options": [
+        "A) Makes all properties optional",
+        "B) Makes all properties of T required (removes the ? modifier)",
+        "C) Adds a 'required' field to T",
+        "D) Makes the type immutable"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 9,
+      "question": "What does `Pick<T, K>` do?",
+      "options": [
+        "A) Removes the specified keys from T",
+        "B) Creates a type with only the specified keys K from T",
+        "C) Picks a random property from T",
+        "D) Validates that K exists in T"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 10,
+      "question": "What is the result of `Pick<{ name: string; age: number; email: string }, 'name' | 'email'>`?",
+      "options": [
+        "A) { age: number }",
+        "B) { name: string; email: string }",
+        "C) { name: string; age: number; email: string }",
+        "D) string"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "question": "What does `Omit<T, K>` do?",
+      "options": [
+        "A) Keeps only the specified keys",
+        "B) Creates a type with all properties of T except the specified keys K",
+        "C) Makes the specified keys optional",
+        "D) Makes the specified keys readonly"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 12,
+      "question": "What is the result of `Omit<{ name: string; age: number; email: string }, 'age'>`?",
+      "options": [
+        "A) { age: number }",
+        "B) { name: string; email: string }",
+        "C) { name: string; age: number; email: string }",
+        "D) never"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 13,
+      "question": "What does `Record<K, V>` do?",
+      "options": [
+        "A) Creates an array of key-value pairs",
+        "B) Creates an object type with keys of type K and values of type V",
+        "C) Records changes to an object",
+        "D) Creates a map data structure"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 14,
+      "question": "What is the type of `scores`?\n\n```ts\nconst scores: Record<string, number> = {\n  math: 95,\n  english: 88\n};\n```",
+      "options": [
+        "A) { math: number; english: number }",
+        "B) An object where any string key maps to a number value",
+        "C) Map<string, number>",
+        "D) [string, number][]"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 15,
+      "question": "What does `Readonly<T>` do?",
+      "options": [
+        "A) Makes all properties of T writable",
+        "B) Makes all properties of T readonly",
+        "C) Freezes the object at runtime",
+        "D) Makes the type immutable only in strict mode"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 16,
+      "question": "What error does this produce?\n\n```ts\ntype User = { name: string; age: number };\nconst user: Readonly<User> = { name: 'Alice', age: 30 };\nuser.name = 'Bob';\n```",
+      "options": [
+        "A) No error",
+        "B) Compile error: Cannot assign to 'name' because it is a read-only property",
+        "C) Runtime error",
+        "D) Warning only"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 17,
+      "question": "What does `ReturnType<T>` extract?",
+      "options": [
+        "A) The parameter types of function T",
+        "B) The return type of function type T",
+        "C) The class type of T",
+        "D) The name of the function"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 18,
+      "question": "What is the result of this?\n\n```ts\nfunction greet(name: string): string {\n  return `Hello, ${name}`;\n}\ntype GreetReturn = ReturnType<typeof greet>;\n```",
+      "options": [
+        "A) typeof greet",
+        "B) (name: string) => string",
+        "C) string",
+        "D) void"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 19,
+      "question": "What does `Parameters<T>` extract?",
+      "options": [
+        "A) The return type of function T",
+        "B) A tuple type of the parameter types of function type T",
+        "C) The number of parameters",
+        "D) The names of the parameters"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 20,
+      "question": "What is the result of `Parameters<typeof greet>` given `function greet(name: string, age: number): void`?",
+      "options": [
+        "A) [string, number]",
+        "B) { name: string; age: number }",
+        "C) string | number",
+        "D) void"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 21,
+      "question": "What is reverse mapping in numeric enums?\n\n```ts\nenum Status { Active, Inactive }\nconsole.log(Status[0]);\n```",
+      "options": [
+        "A) It prints 0",
+        "B) It prints 'Active' — numeric enums support both name-to-value and value-to-name lookups",
+        "C) It throws an error",
+        "D) It prints undefined"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 22,
+      "question": "Do string enums support reverse mapping?",
+      "options": [
+        "A) Yes, just like numeric enums",
+        "B) No, string enums do NOT generate reverse mappings",
+        "C) Only with const enums",
+        "D) Only when using the --reverseMap flag"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 23,
+      "question": "What is the difference between `Pick` and `Omit`?",
+      "options": [
+        "A) They are identical",
+        "B) Pick selects specified keys; Omit removes specified keys",
+        "C) Pick works on arrays; Omit works on objects",
+        "D) Pick is for types; Omit is for interfaces"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 24,
+      "question": "Which utility type would you use to create an update function parameter where all fields are optional?\n\n```ts\ninterface User { name: string; age: number; email: string; }\nfunction updateUser(id: number, updates: ???) {}\n```",
+      "options": [
+        "A) Required<User>",
+        "B) Readonly<User>",
+        "C) Partial<User>",
+        "D) Pick<User, 'name'>"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 25,
+      "question": "What does this code produce?\n\n```ts\nconst enum Fruit {\n  Apple = 'APPLE',\n  Banana = 'BANANA',\n  Cherry = 'CHERRY'\n}\nconst f = Fruit.Banana;\nconsole.log(f);\n```",
+      "options": [
+        "A) 'Banana'",
+        "B) 'BANANA'",
+        "C) 1",
+        "D) Compile error"
+      ],
+      "answer": "B"
+    }
+  ]
+}

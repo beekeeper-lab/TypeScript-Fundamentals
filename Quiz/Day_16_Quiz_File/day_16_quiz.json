@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 16: npm and Package Management",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What does 'npm init' do?",
+      "options": [
+        "A) Installs all dependencies",
+        "B) Creates a new package.json file with project metadata",
+        "C) Initializes a Git repository",
+        "D) Compiles TypeScript files"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "question": "What does 'npm init -y' do differently from 'npm init'?",
+      "options": [
+        "A) It installs default packages",
+        "B) It creates package.json with all default values, skipping prompts",
+        "C) It creates a yarn.lock file",
+        "D) It initializes a TypeScript project"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "question": "What is the purpose of package.json?",
+      "options": [
+        "A) To store compiled JavaScript code",
+        "B) To define project metadata, dependencies, and scripts",
+        "C) To configure the TypeScript compiler",
+        "D) To list all files in the project"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 4,
+      "question": "What is the difference between 'dependencies' and 'devDependencies'?",
+      "options": [
+        "A) There is no difference",
+        "B) dependencies are for production, devDependencies are only needed during development/building",
+        "C) devDependencies are optional",
+        "D) dependencies are installed globally"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "question": "Which command installs a package as a devDependency?",
+      "options": [
+        "A) npm install package",
+        "B) npm install package --save-dev",
+        "C) npm install package --global",
+        "D) npm install package --dev-only"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 6,
+      "question": "Where should TypeScript (@types packages, vitest, etc.) be listed?",
+      "options": [
+        "A) dependencies",
+        "B) peerDependencies",
+        "C) devDependencies",
+        "D) optionalDependencies"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 7,
+      "question": "What does semantic versioning (semver) look like?",
+      "options": [
+        "A) version-date-patch",
+        "B) MAJOR.MINOR.PATCH (e.g., 2.1.3)",
+        "C) year.month.day",
+        "D) name-version-build"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 8,
+      "question": "In semver 2.1.3, what does incrementing the MAJOR version indicate?",
+      "options": [
+        "A) A bug fix",
+        "B) A new feature that is backward-compatible",
+        "C) A breaking change that may not be backward-compatible",
+        "D) A documentation update"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 9,
+      "question": "What does the caret (^) mean in '^2.1.3'?",
+      "options": [
+        "A) Exactly version 2.1.3",
+        "B) Compatible with 2.x.x (allows minor and patch updates)",
+        "C) Any version above 2.1.3",
+        "D) Only patch updates (2.1.x)"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 10,
+      "question": "What does the tilde (~) mean in '~2.1.3'?",
+      "options": [
+        "A) Any version of the package",
+        "B) Compatible with 2.x.x",
+        "C) Approximately equivalent: allows patch updates only (2.1.x)",
+        "D) Exactly version 2.1.3"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 11,
+      "question": "What is the purpose of package-lock.json?",
+      "options": [
+        "A) To replace package.json",
+        "B) To lock the exact versions of all installed dependencies for reproducible builds",
+        "C) To prevent anyone from modifying package.json",
+        "D) To store npm login credentials"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 12,
+      "question": "Should package-lock.json be committed to version control?",
+      "options": [
+        "A) No, it should always be in .gitignore",
+        "B) Yes, to ensure all team members get the same dependency versions",
+        "C) Only for library projects",
+        "D) Only if using npm, not yarn"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 13,
+      "question": "What does 'npm run' do?",
+      "options": [
+        "A) Runs the main entry point of the package",
+        "B) Executes a script defined in the 'scripts' section of package.json",
+        "C) Runs npm in interactive mode",
+        "D) Compiles and runs TypeScript"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 14,
+      "question": "Given this package.json scripts section:\n\"scripts\": {\n  \"build\": \"tsc\",\n  \"start\": \"node dist/index.js\",\n  \"test\": \"vitest\"\n}\n\nHow do you run the build script?",
+      "options": [
+        "A) npm build",
+        "B) npm run build",
+        "C) npm exec build",
+        "D) npm start build"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 15,
+      "question": "Which npm scripts can be run without the 'run' keyword?",
+      "options": [
+        "A) Any script",
+        "B) Only 'start', 'test', 'stop', and 'restart'",
+        "C) Only 'build'",
+        "D) None, 'run' is always required"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 16,
+      "question": "What does 'npx' do?",
+      "options": [
+        "A) Installs packages globally",
+        "B) Executes a package binary without permanently installing it",
+        "C) Publishes a package to npm",
+        "D) Creates a new project from a template"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 17,
+      "question": "Where does npm install packages locally?",
+      "options": [
+        "A) /usr/local/lib/node_modules",
+        "B) The project's node_modules/ directory",
+        "C) ~/.npm/packages",
+        "D) ./packages"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 18,
+      "question": "Should node_modules/ be committed to Git?",
+      "options": [
+        "A) Yes, for faster cloning",
+        "B) No, it should be in .gitignore and recreated via 'npm install'",
+        "C) Only for production projects",
+        "D) Yes, but only for small projects"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 19,
+      "question": "What does 'npm install' (with no package name) do?",
+      "options": [
+        "A) Installs npm itself",
+        "B) Installs all dependencies listed in package.json",
+        "C) Shows a list of available packages",
+        "D) Creates a new package.json"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 20,
+      "question": "What does 'npm uninstall lodash' do?",
+      "options": [
+        "A) Removes lodash from node_modules and package.json",
+        "B) Removes lodash from node_modules only",
+        "C) Hides lodash from imports",
+        "D) Moves lodash to devDependencies"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 21,
+      "question": "What is the 'main' field in package.json used for?",
+      "options": [
+        "A) Specifying the main development file",
+        "B) Defining the entry point when the package is imported by other modules",
+        "C) Setting the main test file",
+        "D) Choosing the primary author"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 22,
+      "question": "What are @types/ packages (e.g., @types/node)?",
+      "options": [
+        "A) Runtime type checking libraries",
+        "B) TypeScript type declaration packages that provide types for JavaScript libraries",
+        "C) Custom font packages",
+        "D) Testing framework plugins"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 23,
+      "question": "What does 'npm outdated' show?",
+      "options": [
+        "A) A list of deprecated packages",
+        "B) Packages that have newer versions available compared to what's installed",
+        "C) Packages that are no longer in the registry",
+        "D) Security vulnerabilities"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 24,
+      "question": "What is the difference between 'npm install -g' and 'npm install'?",
+      "options": [
+        "A) -g installs a greater number of files",
+        "B) -g installs the package globally, available system-wide; without -g installs locally",
+        "C) -g generates type definitions",
+        "D) There is no difference"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 25,
+      "question": "What field in package.json sets the project to use ES modules instead of CommonJS?",
+      "options": [
+        "A) \"module\": true",
+        "B) \"type\": \"module\"",
+        "C) \"esm\": true",
+        "D) \"format\": \"esm\""
+      ],
+      "answer": "B"
+    }
+  ]
+}

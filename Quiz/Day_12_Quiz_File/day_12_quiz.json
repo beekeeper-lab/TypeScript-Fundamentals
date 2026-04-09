@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 12: Modules and Imports",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What makes a file a module in TypeScript?",
+      "options": [
+        "A) Having a .ts extension",
+        "B) Having at least one import or export statement",
+        "C) Being inside a src/ directory",
+        "D) Having a module declaration at the top"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "question": "What is the difference between a named export and a default export?",
+      "options": [
+        "A) Named exports must use 'let', default exports use 'const'",
+        "B) Named exports are imported by exact name (or alias), default exports can be imported with any name",
+        "C) You can only have named exports in a file",
+        "D) Default exports are faster at runtime"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 3,
+      "question": "How many default exports can a single module have?",
+      "options": [
+        "A) Unlimited",
+        "B) Two",
+        "C) One",
+        "D) Zero"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 4,
+      "question": "Which syntax correctly imports a named export called 'greet' from './utils'?",
+      "options": [
+        "A) import greet from './utils';",
+        "B) import { greet } from './utils';",
+        "C) import * as greet from './utils';",
+        "D) require('./utils').greet;"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "question": "Which syntax correctly imports a default export from './logger'?",
+      "options": [
+        "A) import { default } from './logger';",
+        "B) import logger from './logger';",
+        "C) import * from './logger';",
+        "D) import [logger] from './logger';"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 6,
+      "question": "What is a barrel file in TypeScript?",
+      "options": [
+        "A) A file that contains all the project's tests",
+        "B) An index.ts file that re-exports from multiple modules to simplify imports",
+        "C) A configuration file for the TypeScript compiler",
+        "D) A file that stores environment variables"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 7,
+      "question": "Given an index.ts barrel file with:\nexport { add } from './math';\nexport { greet } from './strings';\n\nHow do you import both in another file?",
+      "options": [
+        "A) import { add, greet } from './index';",
+        "B) import { add } from './math'; import { greet } from './strings';",
+        "C) import * from './index';",
+        "D) Both A and B work"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": 8,
+      "question": "What does 'export *' do?",
+      "options": [
+        "A) Exports the default export only",
+        "B) Re-exports all named exports from the specified module",
+        "C) Exports everything including private variables",
+        "D) Creates a wildcard type export"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 9,
+      "question": "What is the result of: import * as utils from './helpers'?",
+      "options": [
+        "A) Imports the default export as 'utils'",
+        "B) Imports all named exports as properties of the 'utils' namespace object",
+        "C) Creates a copy of the module",
+        "D) Imports only type exports"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 10,
+      "question": "How do you rename a named import?",
+      "options": [
+        "A) import { original: renamed } from './mod';",
+        "B) import { original as renamed } from './mod';",
+        "C) import renamed from './mod/original';",
+        "D) import { rename(original, renamed) } from './mod';"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "question": "What does 'export type' do in TypeScript?",
+      "options": [
+        "A) Exports the type of a variable",
+        "B) Marks the export as type-only, ensuring it is erased during compilation",
+        "C) Exports a default type",
+        "D) Creates a runtime type object"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 12,
+      "question": "What happens if you try to use a non-exported function from another module?",
+      "options": [
+        "A) It works but shows a warning",
+        "B) It causes a compile-time error",
+        "C) It returns undefined at runtime",
+        "D) It throws a runtime error"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 13,
+      "question": "In a multi-file project, which tsconfig.json option specifies the output directory for compiled JavaScript?",
+      "options": [
+        "A) rootDir",
+        "B) outDir",
+        "C) baseUrl",
+        "D) sourceRoot"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 14,
+      "question": "What is the difference between 'import type { X }' and 'import { X }'?",
+      "options": [
+        "A) No difference",
+        "B) 'import type' is only for classes",
+        "C) 'import type' is erased at compile time and cannot be used as a value",
+        "D) 'import type' is faster at runtime"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 15,
+      "question": "Which module system does TypeScript use by default when targeting modern JavaScript?",
+      "options": [
+        "A) CommonJS",
+        "B) AMD",
+        "C) ES Modules (ESM)",
+        "D) UMD"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": 16,
+      "question": "What does this re-export do?\nexport { default as myLogger } from './logger';",
+      "options": [
+        "A) Exports the default export of './logger' as a named export called 'myLogger'",
+        "B) Creates a new default export called 'myLogger'",
+        "C) Imports and logs myLogger",
+        "D) This syntax is invalid"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 17,
+      "question": "What happens when you import a module that has side effects (e.g., console.log at top level)?",
+      "options": [
+        "A) Side effects run every time the module is imported",
+        "B) Side effects run only the first time the module is loaded",
+        "C) Side effects are ignored",
+        "D) Side effects cause a compile error"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 18,
+      "question": "How do you import a module only for its side effects?",
+      "options": [
+        "A) import './module';",
+        "B) require('./module');",
+        "C) import { } from './module';",
+        "D) import side from './module';"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 19,
+      "question": "In a barrel file (index.ts), which pattern is commonly used to re-export everything from a sub-module?",
+      "options": [
+        "A) export all from './sub';",
+        "B) export * from './sub';",
+        "C) module.exports = require('./sub');",
+        "D) export { * } from './sub';"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 20,
+      "question": "What is circular dependency?",
+      "options": [
+        "A) When a module imports itself",
+        "B) When two or more modules import each other directly or indirectly",
+        "C) When a module exports and imports the same name",
+        "D) When imports form a tree structure"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 21,
+      "question": "If fileA.ts exports: export const x = 10;\nAnd fileB.ts has: import { x } from './fileA'; x = 20;\nWhat happens?",
+      "options": [
+        "A) x becomes 20",
+        "B) Compile error: cannot assign to a const",
+        "C) Runtime error",
+        "D) x stays 10 silently"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 22,
+      "question": "Which file extension should you use in import paths when using Node.js ES module resolution with TypeScript?",
+      "options": [
+        "A) Always .ts",
+        "B) Always .js (even for .ts source files)",
+        "C) No extension needed",
+        "D) Always .mjs"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 23,
+      "question": "What does 'export =' syntax represent in TypeScript?",
+      "options": [
+        "A) ES module default export",
+        "B) CommonJS module.exports compatibility syntax",
+        "C) Named export shorthand",
+        "D) Type-only export"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 24,
+      "question": "What advantage does a barrel file provide?",
+      "options": [
+        "A) Faster compilation",
+        "B) Cleaner import paths by consolidating exports into a single entry point",
+        "C) Automatic tree-shaking",
+        "D) Preventing circular dependencies"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 25,
+      "question": "Given:\n// math.ts\nexport function add(a: number, b: number) { return a + b; }\nexport function multiply(a: number, b: number) { return a * b; }\n\n// index.ts\nexport { add } from './math';\n\nCan another file import 'multiply' from './index'?",
+      "options": [
+        "A) Yes, barrel files export everything automatically",
+        "B) No, only 'add' was re-exported from the barrel file",
+        "C) Yes, but only with 'import * as'",
+        "D) No, this causes a circular dependency"
+      ],
+      "answer": "B"
+    }
+  ]
+}
