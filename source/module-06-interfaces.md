@@ -1,5 +1,8 @@
 # Module 6: Interfaces
 
+
+![Two characters side by side representing interface and type](../images/module-06/interface-vs-type.png)
+
 ## Introduction
 
 > 🏷️ Useful Soon
@@ -11,6 +14,12 @@
 > **Feel:** That interfaces are the natural choice for describing object shapes, and that the interface-vs-type decision has a simple rule of thumb.
 
 > 🔄 **Where this fits:** You already know type aliases and union types from Module 5. Interfaces give you a second way to define object shapes -- one that's optimized for extension and declaration merging. In Module 7 you'll see classes that implement interfaces.
+
+
+
+![An envelope template with a slot labeled "T" where different content types can be inserted](../images/module-06/generic-api-response.png)
+
+![A form with several fields](../images/module-06/property-modifiers.png)
 
 ## Interfaces
 
@@ -29,6 +38,9 @@ interface User {
 ```
 
 ### Extending Interfaces
+
+
+![A layered cake where each tier represents an interface level](../images/module-06/interface-hierarchy-extends.png)
 
 ```typescript
 interface Animal { name: string; legs: number; }

@@ -6,6 +6,9 @@
 
 > 🔄 **Where this fits:** You have been writing TypeScript files and compiling them by hand. Real projects use npm to manage dependencies, automate builds, and share code. This module introduces the tooling layer that turns individual .ts files into a professional project.
 
+
+![A hub-and-spoke diagram with package](../images/module-15/npm-ecosystem-hub.png)
+
 ## What Is npm?
 
 > 🎯 **Teach:** What npm is and the three things it manages -- dependencies, scripts, and metadata. **See:** A package.json file with dependencies, devDependencies, and scripts sections. **Feel:** Clear on why npm is the foundation of every professional TypeScript project.
@@ -36,8 +39,6 @@
 - **dependencies** -- packages needed at runtime (`axios`, `express`)
 - **devDependencies** -- packages needed only for development (`typescript`, `vitest`, `@types/node`)
 
-![npm package.json at the center of a project, with arrows connecting to node_modules, scripts, and the npm registry](../images/module-15/npm-ecosystem.png)
-*package.json is the heart of every Node.js project*
 
 ---
 

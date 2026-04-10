@@ -6,6 +6,12 @@
 
 > 🔄 **Where this fits:** Modules 0-3 covered data types and functions. Now you learn the structures that make decisions and repeat work. Control flow is where TypeScript's type narrowing truly shines — the compiler uses your if/else checks and switch statements to automatically narrow union types, eliminating the need for manual type assertions.
 
+
+
+![Five cards laid out in a row, each showing a different loop type: for, for-of, for-in, while, and...](../images/module-04/loop-types-overview.png)
+
+![A wide funnel at the top labeled with a union type](../images/module-04/type-narrowing-funnel.png)
+
 ## Type Narrowing Through Control Flow
 
 > 🎯 **Teach:** How TypeScript uses your if/else and switch logic to automatically narrow union types — no manual casts needed. **See:** A function that accepts `string | number` where TypeScript knows the exact type inside each branch of an if/else. **Feel:** That control flow is not just about logic — it is how TypeScript gets smarter about your types at each point in the code.
@@ -169,14 +175,15 @@ console.log();
 
 > 🎯 **Teach:** How to use `map`, `filter`, `reduce`, `find`, `some`, `every`, `includes`, and method chaining as a typed data processing pipeline. **See:** Each array method demonstrated individually, then chained together into a single expression with TypeScript tracking types through every step. **Feel:** That functional array methods are often cleaner and safer than manual loops — and TypeScript makes them even better.
 
+
+![A factory assembly line with three stations](../images/module-04/map-filter-reduce-pipeline.png)
+
 ### Method Chaining
 
 > 🎙️ Array iteration methods — map, filter, reduce, find, some, every — are the functional programming toolkit built into JavaScript and fully typed by TypeScript. The real power comes from chaining them together. When you write `numbers.filter(n => n % 2 === 0).map(n => n ** 2).reduce((sum, n) => sum + n, 0)`, you are building a data processing pipeline. Each step transforms the data and TypeScript tracks the types through every link in the chain. This is often cleaner and safer than writing manual loops.
 
 ### Program C: iteration.ts
 
-![Array iteration methods — map transforms, filter selects, reduce accumulates](../images/module-04/iteration-methods.png)
-*Array iteration methods — map transforms, filter selects, reduce accumulates*
 
 ```typescript
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -227,6 +234,8 @@ console.log(`\nSum of squared evens: ${result}`);
 ## Practical Application: Data Processor
 
 > 🎯 **Teach:** How to combine typed interfaces, filtering, grouping, sorting, and reduce to process a real dataset. **See:** A student dataset filtered by major and GPA, averaged by group, sorted for a Dean's list, and counted by grade level. **Feel:** That control flow and iteration methods together make TypeScript a powerful tool for real data processing.
+
+![Data processing pipeline: filter, group, sort, aggregate](../images/module-04/data-processing-pipeline.png)
 
 ### Program D: data_processor.ts
 

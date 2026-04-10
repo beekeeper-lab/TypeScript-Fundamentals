@@ -1,5 +1,8 @@
 # Module 7: Classes
 
+
+![Three concentric circles representing access levels](../images/module-07/access-modifiers-zones.png)
+
 ## Introduction
 
 > 🏷️ Useful Soon

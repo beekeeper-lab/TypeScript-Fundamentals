@@ -24,8 +24,6 @@ function process(value: string | number) {
 }
 ```
 
-![Type narrowing — a broad union funnels through conditional checks into specific types](../images/module-10/type-narrowing-funnel.png)
-*Type narrowing — a broad union funnels through conditional checks into specific types*
 
 ---
 

@@ -36,8 +36,6 @@ function fetchUserById(id: number): Promise<{ id: number; name: string }> {
 }
 ```
 
-![Promise lifecycle — pending, then either resolved with a value or rejected with an error](../images/module-12/promise-lifecycle.png)
-*Promise lifecycle — pending, then either resolved with a value or rejected with an error*
 
 ### Chaining with .then vs async/await
 

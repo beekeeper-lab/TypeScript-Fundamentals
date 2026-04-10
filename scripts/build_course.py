@@ -338,11 +338,11 @@ def generate_quiz_html(module_num: int, module_slug: str) -> str:
                 f'{opt_text}</label>\n'
             )
         q_html_parts.append(
-            f'<div class="quiz-question" data-answer="{q["answer"]}">\n'
+            f'<div class="quiz-question" data-answer="{q["answer"]}" style="display:none;">\n'
             f'  <div class="quiz-question-number">Question {qid} of {total}</div>\n'
             f'  <div class="quiz-question-text">{q["question"]}</div>\n'
             f'  <div class="quiz-options">\n{opts}  </div>\n'
-            f'  <div class="quiz-feedback"></div>\n'
+            f'  <div class="quiz-feedback-text"></div>\n'
             f'</div>'
         )
 
@@ -350,18 +350,26 @@ def generate_quiz_html(module_num: int, module_slug: str) -> str:
 
     return (
         f'<h2 id="quiz">Knowledge Check: {title}</h2>\n'
+        f'<p class="quiz-meta">{total} questions &middot; {passing} to pass &middot; 45 seconds per question</p>\n'
+        f'<div class="quiz-status-bar">\n'
+        f'  <span id="quizStatusScore">Score: 0 / 0</span>\n'
+        f'  <span id="quizStatusProgress">0 of {total} answered</span>\n'
+        f'  <span class="quiz-timer" id="quizTimer">45s</span>\n'
+        f'</div>\n'
+        f'<div class="quiz-progress-track"><div class="quiz-progress-fill" id="quizProgressFill" style="width:0%"></div></div>\n'
         f'<script type="application/json" id="quizData">'
         f'{{"moduleSlug":"{module_slug}","passingScore":{passing},"totalQuestions":{total}}}'
         f'</script>\n'
         f'<div class="quiz-container" id="quizForm">\n'
         f'{questions_html}\n'
-        f'<button class="quiz-submit-btn" id="quizSubmitBtn">Submit Answers</button>\n'
+        f'</div>\n'
+        f'<button class="quiz-action-btn" id="quizActionBtn" disabled>Submit Answer</button>\n'
         f'<div class="quiz-results" id="quizResults">\n'
         f'  <div class="quiz-score" id="quizScore"></div>\n'
+        f'  <div class="quiz-pct" id="quizScorePct"></div>\n'
         f'  <div class="quiz-label" id="quizLabel"></div>\n'
         f'  <div class="quiz-detail" id="quizDetail"></div>\n'
-        f'  <button class="quiz-retry-btn" id="quizRetryBtn">Try Again</button>\n'
-        f'</div>\n'
+        f'  <button class="quiz-retry-btn" id="quizRetryBtn">Retake Quiz</button>\n'
         f'</div>\n'
     )
 

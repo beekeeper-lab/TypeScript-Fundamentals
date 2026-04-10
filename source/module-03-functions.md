@@ -6,6 +6,9 @@
 
 > 🔄 **Where this fits:** Modules 0-2 covered types for data — variables, arrays, tuples, and objects. Now you learn to type the behavior that operates on that data. Functions are where types and logic meet, and typing them correctly is what makes TypeScript code safe to refactor and extend.
 
+
+![A biology-style anatomy poster of a function, with labeled arrows pointing to each part: the func...](../images/module-03/function-anatomy-poster.png)
+
 ## Function Syntax
 
 > 🎯 **Teach:** The core syntax for typing function parameters, return values, optional/default/rest parameters, and arrow functions. **See:** Named functions, arrow functions, and parameter variations — all with explicit type annotations. **Feel:** Grounded in the basic patterns you will use every time you write a typed function.
@@ -37,12 +40,12 @@ function sum(...numbers: number[]): number {
 }
 ```
 
-![Anatomy of a TypeScript function — parameter types, return type, optional and default parameters](../images/module-03/function-anatomy.png)
-*Anatomy of a TypeScript function — parameter types, return type, optional and default parameters*
 
 ## Function Types
 
 > 🎯 **Teach:** How functions are first-class values with their own type signatures, and how to create type aliases for function types. **See:** Function type annotations, type aliases like `MathOp`, and the distinction between `void` and `never` return types. **Feel:** That functions are not just procedures — they are typed values you can assign, pass, and compose.
+
+![Functions as first-class values: stored, passed, and returned](../images/module-03/functions-first-class.png)
 
 ### Functions as Values
 
@@ -165,6 +168,9 @@ console.log(buildUrl("https://api.example.com", "/search", "q=typescript", "page
 ## Arrow Functions and Callbacks
 
 > 🎯 **Teach:** How arrow functions work as callbacks in higher-order functions like map, filter, reduce, and sort — with types flowing automatically. **See:** Arrow functions passed to array methods, typed comparators for sorting, and a custom higher-order function that accepts a callback. **Feel:** Fluent with the functional programming patterns that make TypeScript code concise and expressive.
+
+
+![A large friendly robot accepting a smaller robot as input through a slot](../images/module-03/higher-order-functions.png)
 
 ### Higher-Order Functions
 
@@ -303,6 +309,9 @@ for (const [a, op, b] of tests) {
 > 🎯 **Teach:** How to apply function syntax, parameter patterns, arrow functions, function types, and real-world composition through hands-on practice. **See:** Five exercises building from basic typed functions to a full calculator application. **Feel:** Capable of writing each program independently, solidifying every function concept from this module.
 
 > ✏️ Sharpen Your Pencil
+
+
+![Three parameter patterns illustrated as input devices](../images/module-03/parameter-patterns.png)
 
 1. Write `basic_functions.ts` with at least 5 typed functions (different parameter types and return types). Call each one and log the result.
 2. Write `parameters.ts` demonstrating optional parameters, default parameters, rest parameters, and a function that combines all three.

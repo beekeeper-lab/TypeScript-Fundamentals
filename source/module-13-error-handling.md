@@ -52,8 +52,6 @@ class RateLimitError extends AppError {
 }
 ```
 
-![Error hierarchy — AppError at the top, with ValidationError, NotFoundError, AuthenticationError, and RateLimitError branching below](../images/module-13/error-hierarchy.png)
-*Error hierarchy — AppError at the top, with specialized subclasses for each error category*
 
 ### Throwing and Catching Typed Errors
 
