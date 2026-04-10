@@ -40,8 +40,6 @@ expect(fn).toThrow();                 // Function throws
 expect(value).toBeGreaterThan(n);     // Numeric comparison
 ```
 
-![A test suite as a safety net catching bugs before they reach users](../images/module-17/testing-safety-net.png)
-*Tests catch bugs before they reach users*
 
 ---
 

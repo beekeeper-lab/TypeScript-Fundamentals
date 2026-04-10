@@ -29,8 +29,6 @@ import { add, PI } from "./math";
 import Logger from "./logger";
 ```
 
-![Module exports and imports — named exports flow through curly braces, default exports flow directly](../images/module-11/exports-imports-flow.png)
-*Module exports and imports — named exports flow through curly braces, default exports flow directly*
 
 ### Barrel Files
 

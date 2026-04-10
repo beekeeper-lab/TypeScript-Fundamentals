@@ -6,9 +6,15 @@
 
 > 🔄 **Where this fits:** This is the very first step. Before you write TypeScript, you need to understand what it is, why it exists, and how to set up your environment. Everything in this course builds on this foundation.
 
+
+![Shows the TypeScript compilation flow as a conveyor belt: a ](../images/module-00/compilation-pipeline.png)
+
 ## Why TypeScript?
 
 > 🎯 **Teach:** Why JavaScript's dynamic typing leads to runtime bugs and how TypeScript's static type checking eliminates them before code runs. **See:** A side-by-side comparison of the same function in JavaScript (silent bug) and TypeScript (compile-time error). **Feel:** Motivated to adopt TypeScript as a safety net that catches mistakes early.
+
+
+![A split-panel comparison](../images/module-00/js-vs-ts-silent-bug.png)
 
 ### The Problem TypeScript Solves
 
@@ -32,8 +38,7 @@ add("hello", 5); // ❌ Compile error: string is not assignable to number
 TypeScript (.ts) → tsc compiler → JavaScript (.js) → Node.js / Browser
 ```
 
-![TypeScript compilation flow — .ts file enters the tsc compiler, type errors are caught, and clean .js is emitted](../images/module-00/compilation-flow.png)
-*TypeScript compilation flow — .ts file enters the tsc compiler, type errors are caught, and clean .js is emitted*
+![Type annotations are stripped away during compilation](../images/module-00/type-annotations-stripped.png)
 
 ### Why Developers Choose TypeScript
 
@@ -133,6 +138,8 @@ Same output, no intermediate `.js` file needed. Use `ts-node` during development
 ## See Type Checking in Action
 
 > 🎯 **Teach:** How TypeScript's compiler catches type errors with clear, actionable error messages — and how the same mistakes silently pass in JavaScript. **See:** Intentional type errors that produce compiler messages, compared with equivalent JavaScript that runs without complaint but produces wrong output. **Feel:** Convinced that TypeScript error messages are a helpful guide, not an obstacle.
+
+![Error messages are your friends — they tell you exactly what's wrong](../images/module-00/error-messages-as-friends.png)
 
 ### The Type Error Demo
 

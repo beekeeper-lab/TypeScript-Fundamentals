@@ -30,8 +30,6 @@ task-tracker/
   .gitignore
 ```
 
-![A complete project structure with types, logic, CLI, and tests all connected](../images/module-19/project-structure.png)
-*A well-structured TypeScript project separates types, logic, interface, and tests*
 
 ---
 

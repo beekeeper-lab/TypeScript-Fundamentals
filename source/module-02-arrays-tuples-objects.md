@@ -6,6 +6,9 @@
 
 > 🔄 **Where this fits:** Module 1 gave you the primitive types. Now you combine them into structures. Arrays, tuples, and objects are how real programs organize data — from API responses to database records to configuration objects. Every module from here forward uses these structures.
 
+
+![Three columns side by side](../images/module-02/array-tuple-object-comparison.png)
+
 ## Arrays
 
 > 🎯 **Teach:** How to declare typed arrays that enforce a single element type across the entire collection. **See:** Array declarations using both `type[]` and `Array<type>` syntax, including union type arrays. **Feel:** Clear on how TypeScript prevents you from accidentally mixing incompatible types in an array.
@@ -39,6 +42,9 @@ let rgb: [number, number, number] = [255, 128, 0];
 
 > 🎯 **Teach:** How to define inline object types with required, optional, and readonly properties. **See:** Object literals with typed fields, optional properties using `?`, and `readonly` preventing mutation at compile time. **Feel:** Able to model real-world entities as typed objects with precisely the shape you need.
 
+
+![A large index card representing an object with several property fields](../images/module-02/readonly-lock-icons.png)
+
 ### Inline Object Types
 
 ```typescript
@@ -69,8 +75,6 @@ let user: { readonly id: number; name: string } = { id: 1, name: "Alice" };
 user.name = "Bob"; // OK — only id is readonly
 ```
 
-![Data structures in TypeScript — arrays, tuples, and objects compared](../images/module-02/data-structures.png)
-*Data structures in TypeScript — arrays, tuples, and objects compared*
 
 ---
 
@@ -245,6 +249,8 @@ console.log(`${company.name} — ${company.address.city}, ${company.address.stat
 
 > 🎯 **Teach:** How spread and destructuring work with TypeScript's type system for copying, merging, and extracting values from objects and arrays. **See:** Object destructuring with rename, spread for merging objects, array spread for concatenation, and rest syntax. **Feel:** Empowered to write concise, readable code for common data manipulation patterns.
 
+![Spread operator merges objects and arrays into new containers](../images/module-02/spread-merging.png)
+
 ### Program D: spread_destructure.ts
 
 ```typescript
@@ -280,6 +286,8 @@ console.log(`Other:`, otherPrefs);
 ## Practical Application: Inventory Tracker
 
 > 🎯 **Teach:** How to combine typed arrays and objects to build a realistic data processing program. **See:** An inventory tracker that calculates total value, finds the most expensive item, and groups items by category using reduce. **Feel:** That arrays, tuples, and objects are not just theory — they power real applications.
+
+![Warehouse shelf with typed inventory item cards](../images/module-02/inventory-data-model.png)
 
 ### Program E: inventory.ts
 

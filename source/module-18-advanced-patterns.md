@@ -464,8 +464,6 @@ handlers.onKeypress({ key: "Enter" });
 handlers.onResize({ width: 1920, height: 1080 });
 ```
 
-![Type-level programming: mapped types, conditional types, and template literal types transforming type shapes](../images/module-18/type-level-programming.png)
-*Advanced types let TypeScript model complex relationships at the type level*
 
 ---
 

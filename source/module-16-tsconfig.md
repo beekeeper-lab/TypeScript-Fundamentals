@@ -41,8 +41,6 @@
 | `sourceMap` | Generate `.map` files for debugging |
 | `esModuleInterop` | Better compatibility with CommonJS imports |
 
-![tsconfig.json as a control panel with switches for target, strict, declaration, and sourceMap](../images/module-16/tsconfig-control-panel.png)
-*tsconfig.json is your compiler's control panel*
 
 ---
 

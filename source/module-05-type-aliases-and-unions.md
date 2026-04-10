@@ -1,5 +1,11 @@
 # Module 5: Type Aliases and Union Types
 
+
+
+![On the left, a long unwieldy scroll containing a verbose type definition](../images/module-05/type-aliases-shortcuts.png)
+
+![A large pipe carrying mixed items (representing a union type) splits through typeof gates that so...](../images/module-05/union-narrowing-pipe.png)
+
 ## Introduction
 
 > 🏷️ Useful Soon
@@ -11,6 +17,12 @@
 > **Feel:** That the type system is a design tool, not just an error checker -- it models the actual shape of your data.
 
 > 🔄 **Where this fits:** You've learned primitive types, arrays, tuples, objects, functions, and control flow. Type aliases and unions let you compose those building blocks into richer, more precise types that reflect how your data actually works.
+
+
+
+![A Venn diagram with two overlapping circles](../images/module-05/intersection-composition.png)
+
+![Three geometric shapes (circle, square, triangle) each wearing a name tag with their "kind" property](../images/module-05/discriminated-unions.png)
 
 ## Type Aliases
 

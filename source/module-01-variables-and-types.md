@@ -6,11 +6,17 @@
 
 > 🔄 **Where this fits:** Module 0 showed you that TypeScript adds types to JavaScript. Now you learn what those types actually are. This vocabulary is the foundation for every module that follows — you cannot type arrays, functions, or objects without knowing these primitives first.
 
+
+![A large illustrated tree where the trunk represents the base type system and the main branches ar...](../images/module-01/type-hierarchy-tree.png)
+
 ## Variable Declarations
 
 > 🎯 **Teach:** The difference between `let` and `const`, and the full set of primitive types TypeScript provides. **See:** A reference table of every primitive type with examples and usage notes. **Feel:** Grounded in the basic vocabulary needed to declare and type any variable.
 
 ### let vs const
+
+
+![Two side-by-side containers](../images/module-01/let-vs-const-mutability.png)
 
 ```typescript
 let mutable: string = "can change";     // Mutable
@@ -32,14 +38,14 @@ const immutable: string = "cannot change"; // Immutable (like Java's final)
 | `void` | — | Function returns nothing |
 | `never` | — | Function never returns (throws or infinite loop) |
 
-![TypeScript type hierarchy — primitives at the base, special types branching off](../images/module-01/type-hierarchy.png)
-*TypeScript type hierarchy — primitives at the base, special types branching off*
-
 ---
 
 ## Type Inference
 
 > 🎯 **Teach:** How TypeScript's inference engine automatically determines types from assigned values — and when `const` produces literal types. **See:** Variables declared without annotations where TypeScript correctly infers the type, including the difference between `let` and `const` inference. **Feel:** Relieved that you do not have to annotate everything — TypeScript is smarter than you might expect.
+
+
+![A code editor view showing several variable declarations](../images/module-01/type-inference-tooltips.png)
 
 ### How TypeScript Reads Your Mind
 
@@ -140,6 +146,9 @@ console.log(`Grades: ${grades}`);
 ### The any vs unknown Distinction
 
 > 🎙️ TypeScript has two types that accept any value: `any` and `unknown`. They look similar but behave very differently. Using `any` is like turning off the type checker — you can do anything with the value and TypeScript will not complain. Using `unknown` is the safe alternative — TypeScript forces you to check what type the value actually is before you can use it. Prefer `unknown` over `any` whenever you are dealing with values whose type you do not know at compile time. It keeps the safety net intact.
+
+
+![A horizontal spectrum bar ranging from red on the left (labeled "any" with a danger symbol) to gr...](../images/module-01/any-vs-unknown-safety.png)
 
 ### Program C: special_types.ts
 
