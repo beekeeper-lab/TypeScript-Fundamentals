@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:25:24",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: On the left, five small file icons each export one or two items (shown as small colored balls). Streams of these balls flow rightward into a large barrel labeled \"index.ts\" in the center. The barrel has a funnel on top collecting all the exports. On the right, a consumer file imports from the barrel through a single clean spout, receiving all the items through one import statement. Without the barrel (shown as a faded \"before\" ghost image above), the consumer would need five separate import arrows. A \"clean vs messy\" comparison feel.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "barrel-file.png",
+  "generation_time_ms": 21552,
+  "usage": {
+    "prompt_tokens": 180,
+    "candidates_tokens": 1409,
+    "total_tokens": 1858
+  }
+}

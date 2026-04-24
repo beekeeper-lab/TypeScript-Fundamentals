@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:31:30",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A retro-futuristic control panel dashboard with five large labeled buttons arranged in a row. Button 1 \"build\" (blue, hammer icon): display shows \"tsc\" compiling. Button 2 \"test\" (green, checkmark icon): display shows test results running. Button 3 \"start\" (orange, play triangle icon): display shows the app launching. Button 4 \"lint\" (yellow, magnifying glass icon): display shows code being checked. Button 5 \"dev\" (purple, refresh icon): display shows watch mode active. A hand hovers over the \"build\" button about to press it. The panel has a satisfying industrial feel with indicator lights and gauges.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "npm-scripts-command-center.png",
+  "generation_time_ms": 21009,
+  "usage": {
+    "prompt_tokens": 207,
+    "candidates_tokens": 1572,
+    "total_tokens": 2077
+  }
+}

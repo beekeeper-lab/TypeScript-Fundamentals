@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:27:04",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: Two race track diagrams stacked vertically. Top track \"Promise.all (parallel)\": three parallel lanes with three runners starting at the same time from a single starting gun. They run simultaneously and all cross the finish line around the same time. A results board collects all three results. A stopwatch shows \"1x time\". Bottom track \"Sequential (await each)\": a single lane with three runners going one after another; runner 2 waits for runner 1 to finish before starting. A stopwatch shows \"3x time\". The parallel approach is clearly highlighted as faster with a gold star.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "promise-all-parallel.png",
+  "generation_time_ms": 24264,
+  "usage": {
+    "prompt_tokens": 185,
+    "candidates_tokens": 1483,
+    "total_tokens": 1950
+  }
+}

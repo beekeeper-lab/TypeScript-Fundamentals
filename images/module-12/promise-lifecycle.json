@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:26:13",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A glowing golden orb in the center labeled \"Pending\" with a swirling animation effect suggesting it is processing. Two paths diverge from it. The upper path (green, curving upward) leads to a smiling resolved state: the orb has turned green and cracked open to reveal a gift box labeled \"value\" inside. The lower path (red, curving downward) leads to a frowning rejected state: the orb has turned red and cracked to show a warning symbol labeled \"error\". A timeline arrow at the bottom shows \"created \u2192 pending \u2192 settled\". Small clock icons suggest the passage of time.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "promise-lifecycle.png",
+  "generation_time_ms": 24945,
+  "usage": {
+    "prompt_tokens": 184,
+    "candidates_tokens": 1584,
+    "total_tokens": 1981
+  }
+}

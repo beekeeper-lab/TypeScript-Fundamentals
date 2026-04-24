@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:21:44",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: Four small factory machines in a row on a workbench, each with an input slot and output slot. Machine 1 \"Partial\": a complete card goes in, comes out with all fields now showing \"?\" optional badges. Machine 2 \"Pick\": a complete card goes in, comes out with only selected fields remaining (others dropped into a bin below). Machine 3 \"Omit\": a complete card goes in, specific fields are punched out and fall away, remaining fields exit. Machine 4 \"Record\": a key list and value type go into two slots, a complete mapped grid card comes out. Each machine has a different color and a label plate.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "utility-types-machines.png",
+  "generation_time_ms": 27665,
+  "usage": {
+    "prompt_tokens": 199,
+    "candidates_tokens": 1818,
+    "total_tokens": 2330
+  }
+}

@@ -312,66 +312,47 @@ def generate_grouped_toc(html_body: str) -> str:
     return "\n".join(lines)
 
 
-def generate_quiz_html(module_num: int, module_slug: str) -> str:
-    """Generate quiz HTML from a Day_XX quiz JSON file. Returns empty string if no quiz."""
-    quiz_dir = QUIZ_DIR / f"Day_{module_num + 1:02d}_Quiz_File"
-    quiz_file = quiz_dir / f"day_{module_num + 1:02d}_quiz.json"
-    if not quiz_file.exists():
-        return ""
+def resolve_quiz_json(source_filename: str) -> Path | None:
+    """Given a TypeScript source filename (e.g. 'module-03-functions.md'),
+    return the matching quiz JSON path.
 
-    data = json.loads(quiz_file.read_text())
-    title = data.get("quiz_title", f"Module {module_num} Quiz")
-    passing = data.get("passing_score", 20)
-    total = data.get("total_questions", 25)
-    questions = data.get("questions", [])
-    if not questions:
-        return ""
+    Mixed naming with +1 offset: source uses `module-XX-` starting at
+    module-00, but Quiz folders use `Day_XX_Quiz_File/day_XX_quiz.json`
+    starting at Day_01. So `module-00-what-is-typescript.md` ->
+    `Day_01_Quiz_File/day_01_quiz.json`, `module-03-functions.md` ->
+    `Day_04_Quiz_File/day_04_quiz.json`.
+    """
+    m = re.match(r"module-(\d+)-", source_filename)
+    if not m:
+        return None
+    num = f"{int(m.group(1)) + 1:02d}"
+    path = QUIZ_DIR / f"Day_{num}_Quiz_File" / f"day_{num}_quiz.json"
+    return path if path.exists() else None
 
-    # Build question HTML
-    q_html_parts = []
-    for q in questions:
-        qid = q["id"]
-        opts = ""
-        for letter, opt_text in zip("ABCD", q["options"]):
-            opts += (
-                f'<label><input type="radio" name="q{qid}" value="{letter}"> '
-                f'{opt_text}</label>\n'
-            )
-        q_html_parts.append(
-            f'<div class="quiz-question" data-answer="{q["answer"]}" style="display:none;">\n'
-            f'  <div class="quiz-question-number">Question {qid} of {total}</div>\n'
-            f'  <div class="quiz-question-text">{q["question"]}</div>\n'
-            f'  <div class="quiz-options">\n{opts}  </div>\n'
-            f'  <div class="quiz-feedback-text"></div>\n'
-            f'</div>'
-        )
 
-    questions_html = "\n".join(q_html_parts)
-
+def build_quiz_page_html(data_page_idx: int) -> str:
+    """HTML scaffold for the injected Module Quiz page. Populated at runtime
+    by initQuiz() in module_template.html (reads #quiz-data, paints #quiz-mount).
+    """
     return (
-        f'<h2 id="quiz">Knowledge Check: {title}</h2>\n'
-        f'<p class="quiz-meta">{total} questions &middot; {passing} to pass &middot; 45 seconds per question</p>\n'
-        f'<div class="quiz-status-bar">\n'
-        f'  <span id="quizStatusScore">Score: 0 / 0</span>\n'
-        f'  <span id="quizStatusProgress">0 of {total} answered</span>\n'
-        f'  <span class="quiz-timer" id="quizTimer">45s</span>\n'
-        f'</div>\n'
-        f'<div class="quiz-progress-track"><div class="quiz-progress-fill" id="quizProgressFill" style="width:0%"></div></div>\n'
-        f'<script type="application/json" id="quizData">'
-        f'{{"moduleSlug":"{module_slug}","passingScore":{passing},"totalQuestions":{total}}}'
-        f'</script>\n'
-        f'<div class="quiz-container" id="quizForm">\n'
-        f'{questions_html}\n'
-        f'</div>\n'
-        f'<button class="quiz-action-btn" id="quizActionBtn" disabled>Submit Answer</button>\n'
-        f'<div class="quiz-results" id="quizResults">\n'
-        f'  <div class="quiz-score" id="quizScore"></div>\n'
-        f'  <div class="quiz-pct" id="quizScorePct"></div>\n'
-        f'  <div class="quiz-label" id="quizLabel"></div>\n'
-        f'  <div class="quiz-detail" id="quizDetail"></div>\n'
-        f'  <button class="quiz-retry-btn" id="quizRetryBtn">Retake Quiz</button>\n'
-        f'</div>\n'
+        f'<div class="page" data-page="{data_page_idx}">'
+        '<h2 id="module-quiz">Module Quiz</h2>'
+        '<p class="quiz-intro">Test what you learned. 45 seconds per question. '
+        'Your best attempt is saved in your browser so you can track progress -- '
+        'nothing is sent to a server.</p>'
+        '<div id="quiz-mount"></div>'
+        '</div>'
     )
+
+
+def renumber_pages(pages: list[str]) -> list[str]:
+    """Renumber data-page attributes sequentially starting from 0.
+    Needed when we insert a quiz page mid-list."""
+    result = []
+    for i, page in enumerate(pages):
+        renumbered = re.sub(r'data-page="\d+"', f'data-page="{i}"', page, count=1)
+        result.append(renumbered)
+    return result
 
 
 MARKER_EMOJI_RE = re.compile(r'\U0001F3F7\uFE0F|\U0001F3AF|\U0001F399\uFE0F|\U0001F504|\U0001F4A1')
@@ -464,17 +445,24 @@ def build_module_html(
     if embed_media:
         body = embed_images(body)
 
-    # Append quiz if available
-    module_num_match = re.search(r'module-(\d+)', module_stem)
-    if module_num_match:
-        module_num = int(module_num_match.group(1))
-        quiz_html = generate_quiz_html(module_num, module_stem)
-        if quiz_html:
-            body += quiz_html
-
     # Split into pages
     pages = split_into_pages(body)
-    paginated_body = "\n".join(pages)
+
+    # Inject the Module Quiz page (if a quiz JSON exists) as the LAST page.
+    # The quiz becomes the final checkpoint at module end.
+    quiz_data_script = ""
+    quiz_json_path = resolve_quiz_json(source_path.name)
+    if quiz_json_path and pages:
+        pages.append(build_quiz_page_html(len(pages)))
+        pages = renumber_pages(pages)
+        quiz_json_text = quiz_json_path.read_text(encoding="utf-8")
+        quiz_data_script = (
+            '\n<script type="application/json" id="quiz-data">\n'
+            f'{quiz_json_text}\n'
+            '</script>\n'
+        )
+
+    paginated_body = "\n".join(pages) + quiz_data_script
 
     # Navigation
     prev_link = ""
@@ -535,11 +523,27 @@ def build_index_html() -> str:
         cards = [_build_card(MODULES[i]) for i in indices if i < len(MODULES)]
         section_cards[section_name] = "\n".join(cards)
 
+    # Build a {slug: passing_score} map by reading each module's quiz JSON.
+    # Consumed by the landing-page JS to determine pass/fail per module.
+    quiz_passing = {}
+    for mod in MODULES:
+        slug = Path(mod["file"]).stem
+        qpath = resolve_quiz_json(mod["file"])
+        if qpath:
+            try:
+                with open(qpath) as qf:
+                    qdata = json.load(qf)
+                if isinstance(qdata.get("passing_score"), (int, float)):
+                    quiz_passing[slug] = qdata["passing_score"]
+            except Exception:
+                pass
+
     return INDEX_TEMPLATE.format(
         cards_foundations=section_cards["foundations"],
         cards_intermediate=section_cards["intermediate"],
         cards_advanced=section_cards["advanced"],
         cards_expert=section_cards["expert"],
+        quiz_passing_json=json.dumps(quiz_passing),
     )
 
 
@@ -867,25 +871,42 @@ function toggleTheme() {{
         }}
     }});
 
-    // Update quiz badges from stored results
-    const quizResults = JSON.parse(localStorage.getItem('tsfund-quiz-results') || '{{}}');
+    // Update quiz badges from per-module localStorage keys written by the
+    // new quiz runtime:
+    //   ts_quiz_<slug>_best ("score/total")
+    //   ts_quiz_<slug>_attempts (int)
+    //   ts_quiz_<slug>_last (YYYY-MM-DD)
+    const QUIZ_PASSING = {quiz_passing_json};
     document.querySelectorAll('.module-card[data-module-slug]').forEach(card => {{
         const slug = card.getAttribute('data-module-slug');
         const badge = card.querySelector('[data-quiz-badge]');
         const scoreLine = card.querySelector('[data-quiz-score]');
-        const result = quizResults[slug];
-        if (badge && result) {{
-            badge.classList.remove('not-taken');
-            if (result.passed) {{
-                badge.classList.add('passed');
-                badge.textContent = 'Passed';
-            }} else {{
-                badge.classList.add('failed');
-                badge.textContent = 'Retry';
-            }}
-            if (scoreLine) {{
-                scoreLine.textContent = `${{result.score}}/${{result.total}}`;
-            }}
+        if (!badge) return;
+        const bestRaw = localStorage.getItem('ts_quiz_' + slug + '_best');
+        const attempts = parseInt(localStorage.getItem('ts_quiz_' + slug + '_attempts') || '0', 10);
+        const last = localStorage.getItem('ts_quiz_' + slug + '_last') || '';
+        if (!bestRaw) return;
+        const parts = bestRaw.split('/');
+        const score = parseInt(parts[0], 10);
+        const total = parseInt(parts[1], 10);
+        const passing = QUIZ_PASSING[slug];
+        const passed = (typeof passing === 'number') ? (score >= passing) : null;
+        badge.classList.remove('not-taken');
+        if (passed === true) {{
+            badge.classList.add('passed');
+            badge.textContent = 'Passed';
+        }} else if (passed === false) {{
+            badge.classList.add('failed');
+            badge.textContent = 'Retry';
+        }} else {{
+            badge.classList.add('failed');
+            badge.textContent = 'Attempted';
+        }}
+        if (scoreLine) {{
+            let line = `${{score}}/${{total}}`;
+            if (attempts) line += ' · ' + attempts + ' attempt' + (attempts === 1 ? '' : 's');
+            if (last) line += ' · ' + last;
+            scoreLine.textContent = line;
         }}
     }});
 }})();

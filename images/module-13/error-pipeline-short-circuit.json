@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:28:41",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A horizontal processing pipeline with three stations labeled \"validate\", \"transform\", \"save\". A green item flows through all three stations successfully along the top path, arriving at a \"Success\" output. A second red item enters the pipeline but fails at station 2 \"transform\": an alarm goes off and the item drops through a trapdoor escape hatch, sliding down a red chute that bypasses station 3 entirely, landing in an \"Error handled\" zone below. The remaining stations have ghosted outlines for the failed item, showing they were skipped. Small arrows show the short-circuit path clearly.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "error-pipeline-short-circuit.png",
+  "generation_time_ms": 25572,
+  "usage": {
+    "prompt_tokens": 187,
+    "candidates_tokens": 1869,
+    "total_tokens": 2331
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:30:45",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A medieval castle wall dividing the image. Outside the wall (left, chaotic): untyped data flies around as messy scrolls, suspicious packages labeled \"API response\", \"user input\", \"file data\", with question marks and \"unknown\" stamps. The sky is slightly stormy. At the castle gate, guard characters check each piece of data against a validation checklist before allowing entry. Inside the wall (right, orderly): clean, typed data cards are neatly organized on shelves in a sunny courtyard. The typed kingdom is calm and well-lit. A banner reads \"trust boundary\" on the wall. Rejected data is turned away at the gate.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "boundary-defense.png",
+  "generation_time_ms": 24297,
+  "usage": {
+    "prompt_tokens": 196,
+    "candidates_tokens": 1506,
+    "total_tokens": 1941
+  }
+}

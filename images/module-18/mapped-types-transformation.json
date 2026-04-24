@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:35:59",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A \"User\" type card on the far left showing fields: name (string), age (number), email (string). Three transformation arrows lead to three variant cards on the right. Top variant \"Readonly<User>\": same fields but each has a lock icon and shield, all properties frozen. Middle variant \"Partial<User>\": same fields but each has a \"?\" badge, all optional. Bottom variant \"Nullable<User>\": same fields but each shows \"| null\" appended, with a ghost icon. The original card is clearly the source, and each variant shows how mapped types systematically transform every property. Color coding distinguishes each transformation: blue for readonly, green for partial, purple for nullable.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "mapped-types-transformation.png",
+  "generation_time_ms": 25229,
+  "usage": {
+    "prompt_tokens": 209,
+    "candidates_tokens": 1625,
+    "total_tokens": 2191
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:33:17",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A single input file \"app.ts\" (blue, on the left) enters a \"tsc\" compiler machine in the center. Three output conveyor belts emerge from the right side, each carrying a different file. Top belt: \"app.js\" (yellow) with a gear icon, labeled \"runtime code - what runs in Node\". Middle belt: \"app.d.ts\" (green) with a type icon, labeled \"type declarations - for other TS consumers\". Bottom belt: \"app.js.map\" (purple) with a map pin icon, labeled \"source map - for debugging\". Each output file has a distinct visual identity. The compiler machine shows which tsconfig flags enable each output: \"declaration: true\" and \"sourceMap: true\".\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "declaration-file-generation.png",
+  "generation_time_ms": 22691,
+  "usage": {
+    "prompt_tokens": 224,
+    "candidates_tokens": 1594,
+    "total_tokens": 2100
+  }
+}

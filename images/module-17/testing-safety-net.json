@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:33:38",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A circus scene. A trapeze artist (representing a developer) swings confidently above a large safety net. The net is woven from strings labeled with test names like \"should add items\", \"handles empty input\", \"validates email\". Several cartoonish bug creatures have fallen off the trapeze and are caught safely in the net, looking surprised but trapped. Below the net, a crowd labeled \"Production\" sits safely, completely protected. A sign reads \"Tests: your safety net\". The mood is fun and reassuring, showing that tests catch problems before they reach users.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "testing-safety-net.png",
+  "generation_time_ms": 20929,
+  "usage": {
+    "prompt_tokens": 183,
+    "candidates_tokens": 1463,
+    "total_tokens": 1878
+  }
+}

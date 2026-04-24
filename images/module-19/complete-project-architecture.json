@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:36:55",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A bird's-eye view of a project campus. In the center, a hub building labeled \"index.ts\" connects via pathways to four satellite buildings. North: \"types/\" building (blue, foundational, with type definition blueprints visible through windows). East: \"store/\" building (green, with data storage shelves and CRUD operation signs). South: \"cli/\" building (orange, with a command terminal entrance and user-facing signage). West: \"tests/\" building (purple, with checkmark flags and test report boards). Clean pathways with arrows show import relationships between buildings. The overall layout feels like a well-planned campus viewed from above.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "complete-project-architecture.png",
+  "generation_time_ms": 25523,
+  "usage": {
+    "prompt_tokens": 199,
+    "candidates_tokens": 1853,
+    "total_tokens": 2341
+  }
+}

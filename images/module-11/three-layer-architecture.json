@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:25:02",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A three-layer cake viewed in cross-section. Bottom layer (blue, labeled \"models/\"): contains type definition cards and interface documents, forming the foundation. Middle layer (green, labeled \"services/\"): contains business logic gears and processing units that reference the models below via downward arrows. Top layer (orange, labeled \"main.ts\"): the entry point with a \"start\" button that orchestrates the services. Arrows flow strictly downward showing dependency direction. A side legend shows \"imports flow down, never up\". The cake sits on a plate labeled \"src/\".\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "three-layer-architecture.png",
+  "generation_time_ms": 24847,
+  "usage": {
+    "prompt_tokens": 183,
+    "candidates_tokens": 1615,
+    "total_tokens": 2064
+  }
+}

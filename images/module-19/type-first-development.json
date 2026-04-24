@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:37:46",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A central star or sun labeled \"types.ts\" radiates golden beams outward to surrounding module files arranged in a circle: \"store.ts\", \"service.ts\", \"cli.ts\", \"utils.ts\", \"validators.ts\", \"tests/\". Each surrounding file has a small import arrow pointing back to the central types.ts, showing dependency. The types.ts star contains visible type definitions that cast their shape as shadows onto each consuming module, indicating that the types define the shape of all code. A timeline at the bottom shows \"Step 1: Define types\" highlighted, followed by grayed-out \"Step 2: Implement\" and \"Step 3: Test\". The star metaphor emphasizes types as the center of the universe.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "type-first-development.png",
+  "generation_time_ms": 25376,
+  "usage": {
+    "prompt_tokens": 220,
+    "candidates_tokens": 1831,
+    "total_tokens": 2306
+  }
+}

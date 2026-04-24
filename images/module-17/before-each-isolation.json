@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:34:46",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A horizontal timeline with three test cycles. Each cycle has the same pattern: a \"beforeEach\" station (shown as a janitor with a broom wiping a whiteboard clean and setting up fresh supplies), followed by a test execution block (a scientist performing an experiment), followed by an \"afterEach\" station (the janitor cleaning up again). Between each cycle, a wall or divider prevents any contamination. Each test gets pristine, identical starting conditions. A crossed-out arrow tries to pass state between tests but is blocked. Labels emphasize \"fresh state\" and \"no shared mutations\". The isolation between tests is visually clear.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "before-each-isolation.png",
+  "generation_time_ms": 25014,
+  "usage": {
+    "prompt_tokens": 192,
+    "candidates_tokens": 1469,
+    "total_tokens": 2082
+  }
+}

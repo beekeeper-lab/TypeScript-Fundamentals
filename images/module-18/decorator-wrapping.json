@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:35:06",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A core function represented as a small golden sphere in the center labeled \"originalFn\". Concentric translucent layers wrap around it like onion rings. The innermost layer (blue) is labeled \"withLogging\" and adds log entry/exit behavior. The middle layer (green) is labeled \"withCaching\" and adds a memo pad for cached results. The outermost layer (orange) is labeled \"withTiming\" and has a stopwatch measuring duration. An incoming function call arrow pierces through all layers from outside to inside, and the result passes back out through all layers. Each layer adds its own annotation to the passing data.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "decorator-wrapping.png",
+  "generation_time_ms": 19979,
+  "usage": {
+    "prompt_tokens": 191,
+    "candidates_tokens": 1404,
+    "total_tokens": 1848
+  }
+}

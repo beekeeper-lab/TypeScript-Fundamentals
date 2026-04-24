@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:25:48",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A whimsical tree where the trunk is labeled with the project root name. Main branches represent top-level directories: \"src/\" (largest branch, green), \"tests/\" (medium branch, blue), \"config/\" (small branch, orange). From the \"src/\" branch, sub-branches sprout for \"models/\", \"services/\", \"utils/\". Each sub-branch has leaf-shaped file icons: \".ts\" files as green leaves, \".json\" files as orange leaves. The root has \"package.json\" and \"tsconfig.json\" as acorns at the base. A bird labeled \"main.ts\" sits at the top of the src branch. The tree looks healthy and well-organized.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "project-file-tree.png",
+  "generation_time_ms": 23815,
+  "usage": {
+    "prompt_tokens": 211,
+    "candidates_tokens": 1410,
+    "total_tokens": 1870
+  }
+}

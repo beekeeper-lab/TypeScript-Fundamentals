@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:22:06",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: Two clipboard forms side by side. Left form labeled \"User\" (complete): all five fields (name, email, age, role, active) are filled in with solid text, checkmarks beside each. Right form labeled \"Partial<User>\" (update): only two fields (name, email) are filled in, while the other three are ghosted out with dotted outlines and small \"?\" marks, indicating they are optional. An arrow between the forms shows the transformation. A small use-case note shows \"updateUser(changes)\" to illustrate why partial updates are useful.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "partial-updates.png",
+  "generation_time_ms": 21920,
+  "usage": {
+    "prompt_tokens": 183,
+    "candidates_tokens": 1394,
+    "total_tokens": 1917
+  }
+}

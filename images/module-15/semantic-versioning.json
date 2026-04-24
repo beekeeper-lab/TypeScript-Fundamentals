@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:31:09",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: The version number \"2.4.1\" displayed large in the center, with the three segments pulled apart and color-coded with connecting dots between them. The \"2\" is red with a warning/breaking icon (explosion) and labeled \"MAJOR - breaking changes\". The \"4\" is blue with a gift/feature icon (wrapped present) and labeled \"MINOR - new features\". The \"1\" is green with a bandage/fix icon (adhesive bandage) and labeled \"PATCH - bug fixes\". Below, three example version bumps are shown: breaking change increments major, new feature increments minor, bug fix increments patch. The overall look is like a medical chart or anatomy diagram.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "semantic-versioning.png",
+  "generation_time_ms": 23389,
+  "usage": {
+    "prompt_tokens": 206,
+    "candidates_tokens": 1671,
+    "total_tokens": 2146
+  }
+}

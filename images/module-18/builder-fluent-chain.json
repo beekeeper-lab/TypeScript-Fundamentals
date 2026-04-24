@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:35:34",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A horizontal assembly line with five stations. An empty chassis enters on the left. Station 1 \".setName()\": attaches a name plate and returns the chassis (a curved \"return this\" arrow loops back to the conveyor). Station 2 \".setEmail()\": adds an email badge, returns this. Station 3 \".setAge()\": adds an age counter, returns this. Station 4 \".setRole()\": adds a role tag, returns this. Final station \".build()\": a special golden station that stamps \"COMPLETE\" and outputs the finished product off the line. The key visual is each station's \"return this\" loop that keeps the item on the belt. The method chain reads like a sentence from left to right.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "builder-fluent-chain.png",
+  "generation_time_ms": 28495,
+  "usage": {
+    "prompt_tokens": 216,
+    "candidates_tokens": 1917,
+    "total_tokens": 2373
+  }
+}

@@ -1,6 +1,6 @@
 # Image Plan
 
-Total proposed images: 80
+Total proposed images: 94 (80 original + 14 added during content audit for rewritten thin pages in modules 02, 03, 06)
 
 ---
 
@@ -194,6 +194,81 @@ Total proposed images: 80
   Text in image: minimal or none
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
+### Image 81: Typed Array Guardrail
+- **File**: `images/module-02/typed-array-guardrail.png`
+- **Page**: Typed Arrays in Depth
+- **Placement**: after "Program A: arrays.ts" heading
+- **Description**: A bowling lane scene where numbered balls (representing typed number elements) roll down a lane lined with bright guardrails labeled "number[]". A stray letter-shaped ball labeled "A" is bounced off the lane by a force-field at the edge, symbolizing TypeScript rejecting a string push into a number array.
+- **Status**: Not generated
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A bowling lane running left to right. Round numbered balls (1, 2, 3, 4) are rolling down the lane between glowing blue guardrails labeled "number[]". Off to the side, a star-shaped ball labeled "A" is being deflected by a shimmering shield at the lane edge, with a small cartoon spark at the impact point. A friendly referee character at the top of the lane holds a checklist labeled "push()" and gives a thumbs up to the numbered balls while waving the letter ball away.
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Image 82: Tuple Slots
+- **File**: `images/module-02/tuple-slots.png`
+- **Page**: Tuples in Depth
+- **Placement**: after "Program B: tuples.ts" heading
+- **Description**: Two labeled molds side by side showing how tuples fix a type at each position. The first mold has two slots labeled "string" and "number"; the second has three slots for labeled tuple elements "x", "y", "z" each typed "number". Mismatched shapes bounce out of the slots.
+- **Status**: Not generated
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: Two side-by-side display cases shaped like molded trays. The left tray has two shaped slots labeled at the top "[string, number]": the left slot is letter-shaped and holds a string card reading "Alice", the right slot is circular and holds a numeric token reading "88". The right tray shows a longer mold labeled "[x, y, z: number]" with three circular slots each holding a numbered token. Above the trays, a small mismatched piece (a numeric token) is being gently bounced away from a string-shaped slot, with a red X indicator. The feel is precise and puzzle-like.
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Image 83: Inline Object Type
+- **File**: `images/module-02/inline-object-type.png`
+- **Page**: Object Types in Depth
+- **Placement**: after "Program C: objects.ts" heading
+- **Description**: A blueprint-style illustration of an inline object type declaration with each property pinned and labeled with its type, optional-badge, or readonly-lock. A nested address blueprint hangs below as a sub-document.
+- **Status**: Not generated
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A large drafting table showing a paper blueprint of a "Student" object type. Each property is pinned to the blueprint with a colored thumbtack: "name: string" with a blue tack, "age: number" with an orange tack, "gpa: number" with an orange tack, "graduated: boolean" with a green tack, and "courses: string[]" with a stack of small string cards. A second smaller blueprint labeled "address" hangs by a ribbon below the main one, showing nested fields. A small golden lock icon sits next to one field labeled "id" indicating readonly. A small "?" badge sits next to an optional field.
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Image 84: Arrays Overview
+- **File**: `images/module-02/typed-arrays-single-file.png`
+- **Page**: Arrays
+- **Placement**: after "Typed Arrays" heading
+- **Description**: A row of identical filing cabinets labeled "number[]", each containing numbered files. A mismatched file labeled "A" is tagged by a small alarm icon, showing that TypeScript enforces a single element type across the whole collection.
+- **Status**: Not generated
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A line of three identical filing cabinets each labeled on the front "number[]". Each drawer is partly open revealing numbered paper files (1, 2, 3 in the first cabinet, etc.). Off to one side, a single lettered file "A" is being flagged by a small cartoon alarm bell with a red ribbon, indicating it does not belong. A clerk character stands behind the cabinets with a clipboard labeled "element type: number", smiling reassuringly. The cabinets sit on a polished wooden floor.
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Image 85: Tuples Overview
+- **File**: `images/module-02/tuples-fixed-length.png`
+- **Page**: Tuples
+- **Placement**: after "Tuples" heading
+- **Description**: A boarded seat on a train showing two assigned seats, one typed "name: string" and one typed "score: number" — a visual metaphor for tuples having a fixed length and a specific type at each position.
+- **Status**: Not generated
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A cozy two-seat train compartment seen from the side. The left seat has a small plaque that reads "name: string" with a string-shaped character (a tall cheerful figure made of connected letters) sitting in it. The right seat has a plaque that reads "score: number" with a numeric character (a round figure with digits) sitting in it. A conductor character stands nearby holding a tuple-shaped ticket reading "[string, number]" and punching it approvingly. A "Reserved: 2 Seats" sign hangs above. The feel is orderly and warm.
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
 ---
 
 ## Module 03: Functions
@@ -252,6 +327,81 @@ Total proposed images: 80
 - **Prompt**:
   Goal: editorial illustration for a programming textbook
   Scene: A large cheerful robot with a wide input slot on its chest. A smaller, equally cheerful robot is being inserted into this slot by a pair of hands. Inside the large robot (shown via a transparent panel), the small robot is being activated to process data items on a tiny internal conveyor belt. The large robot's output chute produces transformed results. Labels float nearby: "higher-order function" for the big robot and "callback" for the small one.
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Image 86: Function Syntax Forms
+- **File**: `images/module-03/function-syntax-forms.png`
+- **Page**: Function Syntax
+- **Placement**: after "The Basics" heading
+- **Description**: Three flash cards laid out showing the core syntactic flavors of a TypeScript function — named declaration, arrow, and rest-parameter — with each parameter and return slot labeled.
+- **Status**: Not generated
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: Three large flash cards arranged in a row like a museum display. The left card shows a named function sketch with input slots labeled "a: number", "b: number" feeding into a curly brace, and a return arrow labeled ": number". The middle card shows an arrow function with the same slots but the body represented by a friendly arrow drawing from inputs to result. The right card shows a rest-parameter function with a funnel-shaped input labeled "...numbers: number[]" pouring into the body. Each card has a small tab at the top with the function's name. The feel is clean and textbook-like.
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Image 87: Typed Function Contract
+- **File**: `images/module-03/typed-function-contract.png`
+- **Page**: Basic Functions
+- **Placement**: after "Program A: basic_functions.ts" heading
+- **Description**: A handshake scene where a function and its caller sign a contract listing the parameter types and return type. The contract has a golden seal labeled ": number" at the bottom.
+- **Status**: Not generated
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: Two cartoon characters shaking hands over a desk. The left character is labeled "caller" and is handing over a small tagged parcel marked "a: number, b: number". The right character is labeled "function" wearing a vest with a nametag "add". On the desk between them, a large paper contract shows two clauses — "accepts: (number, number)" and "returns: number" — with a prominent golden wax seal beneath labeled ": number". A small printing press in the background produces identical signed contracts for each of the other four functions referenced in the sample (isEven, reverse, maxOfThree, repeat), each lightly visible.
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Image 88: Parameter Flexibility Toolbox
+- **File**: `images/module-03/parameter-flexibility-toolbox.png`
+- **Page**: Optional, Default, and Rest Parameters
+- **Placement**: after "Program B: parameters.ts" heading
+- **Description**: A toolbox with three compartments labeled optional, default, and rest. Each compartment holds a visual icon representing its pattern: a question mark tag, a preset knob, and a funnel collecting many items.
+- **Status**: Not generated
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: An open carpenter-style toolbox with three compartments. Compartment one holds a small blue sign labeled "optional" with a question-mark badge hovering over a paintbrush. Compartment two holds a preset dial labeled "default" turned to a specific value, with a small note reading "= value". Compartment three holds a funnel labeled "rest" with an array of small colored balls pouring into it from above, all stamped "number". A small workbench behind the toolbox shows a finished function signature with each tool applied to a parameter.
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Image 89: Function Type Alias
+- **File**: `images/module-03/function-type-alias.png`
+- **Page**: Function Types
+- **Placement**: after "Program D: function_types.ts" heading
+- **Description**: A rubber-stamp factory where a single stamp labeled "Predicate" imprints the same shape onto every function that passes through, showing how a named function type provides a reusable contract.
+- **Status**: Not generated
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A small factory line where blank function-shaped cards pass under a large rubber stamp labeled "Predicate" hanging from a mechanical arm. Each stamped card shows the imprint "(n: number) => boolean" in neat ink. A stack of similarly stamped cards piles on the output end, each titled something different (isEven, isPositive, isLarge) but all sharing the same imprint. A friendly worker character gestures at the stamp with a thumbs-up and holds a clipboard labeled "reusable signatures". A second smaller stamp labeled "Transform" sits nearby waiting to be used.
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Image 90: Calculator Dispatch
+- **File**: `images/module-03/calculator-dispatch.png`
+- **Page**: Practical Application: Calculator
+- **Placement**: after "Program E: calculator.ts" heading
+- **Description**: An old-style telephone switchboard where each operator key ("+", "-", "*", "/") plugs into a different function module. A "calculate" operator character routes incoming calls to the right function based on the operator string.
+- **Status**: Not generated
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A classic switchboard panel with six labeled jacks on the left side marked "+", "-", "*", "/", "**", "%". Each jack is connected by a bright cable to a matching boxy machine on the right side labeled "add", "subtract", "multiply", "divide", "power", "modulo". Sitting in front of the board is a friendly operator character wearing a headset labeled "calculate" pulling a cable toward the correct jack. Two numeric cards "10" and "5" hover near the top waiting to be sent. A small sign on the desk reads "Operation = (a, b) => number".
   Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
   Aspect ratio: 16:9
   Background: white
@@ -444,6 +594,66 @@ Total proposed images: 80
 - **Prompt**:
   Goal: editorial illustration for a programming textbook
   Scene: A large envelope template in the center labeled "ApiResponse<T>" with standard fields like "status" and "timestamp" printed on it, plus a prominent empty slot labeled "data: T" with a dotted outline. To the left, a "User" card is shown being slid into the slot, producing an "ApiResponse<User>" envelope. To the right, a "Product" card creates an "ApiResponse<Product>" envelope. Arrows show the insertion. The T slot glows to indicate it is the generic placeholder. Multiple completed envelopes fan out below.
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Image 91: Interface Shape Template
+- **File**: `images/module-06/interface-shape-template.png`
+- **Page**: Interfaces
+- **Placement**: after "Interfaces" subsection heading (overview page)
+- **Description**: A set of nested cookie-cutters representing different interfaces. Each cookie cutter stamps out the same precise shape, and only objects with the matching shape can fit through the cutter opening.
+- **Status**: Not generated
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A bakery countertop with three metal cookie-cutters of increasing complexity, each labeled "interface". A worker character is pressing a dough-like object shape through the cutters; the dough retains the precise field pattern of the interface (small divots for id, name, email, etc.) when it comes out the other side. Off to the side, a misshapen dough blob is being gently pushed away because it does not match the cutter shape. A clipboard at the corner reads "interface = shape contract".
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Image 92: Product Record Card
+- **File**: `images/module-06/product-record-card.png`
+- **Page**: Basic Interfaces
+- **Placement**: after "Program A: basic_interfaces.ts" heading
+- **Description**: A product record card showing typed fields with a golden lock on "id" (readonly), a "?" badge on "tags" (optional), and standard fields for name, price, category, and inStock. A scrap of broken padlock lies on the floor with the failed attempt to change id.
+- **Status**: Not generated
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A large product record card pinned to a corkboard. The card has six labeled rows: "id: number" with a prominent golden padlock icon attached to it, "name: string", "price: number", "category: string", "inStock: boolean", and "tags?: string[]" with a small blue question mark badge. A cartoon hand is attempting to reach for the id field but a translucent shield deflects it, leaving a crumpled "REJECTED" slip on the floor. Another hand is freely editing the price field, showing "899.99" being written. A small caption plaque at the bottom reads "readonly vs mutable".
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Image 93: Signature Palette
+- **File**: `images/module-06/signature-palette.png`
+- **Page**: Function and Index Signatures
+- **Placement**: after "Program C: signatures.ts" heading
+- **Description**: A palette showing the three signature shapes an interface can hold: a method signature (labeled brush), an index signature (labeled bracketed key), and a callable signature (labeled function parentheses). A hybrid object is being painted with all three.
+- **Status**: Not generated
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: An artist's palette with three distinct paint wells. The first well is labeled "method" and holds a brush painting a method block labeled "add(a, b): number". The second well is labeled "[key: string]" and holds a stencil of bracketed dynamic keys painting a dictionary-like object. The third well is labeled "(args)" and holds a brush drawing a functional-object hybrid — a shape that is both callable and has properties. An easel in the foreground shows a finished "Formatter" object that has been touched by all three wells: a callable signature, a "prefix" property, and no contradictions.
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Image 94: Generic Envelope Factory
+- **File**: `images/module-06/generic-envelope-factory.png`
+- **Page**: Practical Exercise: Generic API Response Interfaces
+- **Placement**: after "Program D: api_types.ts" heading
+- **Description**: An envelope-stamping machine that produces ApiResponse envelopes in three flavors: ApiResponse<TodoItem[]>, ApiResponse<TodoItem | null>, and ApiResponse<User>. Each envelope has identical outer fields (status, message, pagination) and a distinct payload slot.
+- **Status**: Not generated
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A small assembly-line machine labeled "ApiResponse<T>" producing identical outer envelopes stamped with "status", "message", and a small "pagination?" clip. Three conveyor chutes exit the machine: one produces envelopes with a stack of todo cards inside (labeled "<TodoItem[]>"), another produces envelopes with a single todo card or a void slot (labeled "<TodoItem | null>"), and a third produces envelopes with a user card (labeled "<User>"). A worker character holds a sign "one envelope, any payload". The feel is organized and industrial, not cold.
   Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
   Aspect ratio: 16:9
   Background: white

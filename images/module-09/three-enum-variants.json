@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:21:16",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: Three vertical panels. Left panel \"Numeric Enum\": a vertical list of labels (Up, Down, Left, Right) with auto-incrementing numbers (0, 1, 2, 3) attached by small chains, a counter incrementing automatically. Center panel \"String Enum\": the same labels but each connected to explicit string values (\"UP\", \"DOWN\", \"LEFT\", \"RIGHT\") written on attached tags. Right panel \"Const Enum\": the labels are shown dissolving/fading, with their values being stamped directly into the code below, a \"compiled away\" ghost effect on the enum itself. Each panel has a distinct color scheme.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "three-enum-variants.png",
+  "generation_time_ms": 25544,
+  "usage": {
+    "prompt_tokens": 199,
+    "candidates_tokens": 1448,
+    "total_tokens": 1999
+  }
+}

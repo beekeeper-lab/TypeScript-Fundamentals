@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:31:50",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A three-step horizontal flow. Step 1 \"Read\": a friendly robot holds a clipboard showing package.json's dependency list, scanning each package name and version. Step 2 \"Fetch\": the robot reaches up into a cloud labeled \"npm registry\" and pulls down package boxes that match the list. Step 3 \"Install\": the robot neatly stacks the downloaded package boxes into a large folder labeled \"node_modules/\". A small lock file (package-lock.json) is generated as a receipt. Arrows connect the three steps. The robot looks efficient and happy.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "dependency-installation-flow.png",
+  "generation_time_ms": 20083,
+  "usage": {
+    "prompt_tokens": 185,
+    "candidates_tokens": 1371,
+    "total_tokens": 1859
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:20:03",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A large form letter template in the center with a prominent blank space labeled \"<T>\" in a golden highlighted box. On the left, a hand writes \"string\" into the blank, producing a completed letter with string-specific content below. On the right, another hand writes \"number\" into a copy of the same template, producing number-specific content. Multiple completed letters fan out at the bottom, each customized but all sharing the same template structure. The T blank glows to show it is the key variable piece.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "type-parameter-placeholder.png",
+  "generation_time_ms": 22130,
+  "usage": {
+    "prompt_tokens": 171,
+    "candidates_tokens": 1362,
+    "total_tokens": 1795
+  }
+}

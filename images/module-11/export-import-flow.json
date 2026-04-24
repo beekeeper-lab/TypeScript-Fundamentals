@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:24:38",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: Three file icons arranged on the left, each with colored export badges on specific functions and types (small gift-box icons with \"export\" ribbons). On the right, two consuming files have import arrows reaching back to the exported items, like fishing lines hooking onto specific exports. Named imports show specific items being pulled in, while one file uses \"import *\" to grab everything via a wide net. The arrows are color-coded to match which export connects to which import. Small package icons show the items traveling along the arrows.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "export-import-flow.png",
+  "generation_time_ms": 24673,
+  "usage": {
+    "prompt_tokens": 172,
+    "candidates_tokens": 1789,
+    "total_tokens": 2199
+  }
+}

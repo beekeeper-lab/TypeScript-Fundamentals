@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:30:00",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A pyramid with three horizontal layers, viewed from the front. Bottom layer (widest, gray): labeled \"is object? not null?\" with basic structural checks. Raw data enters from below; non-objects are rejected out the sides. Middle layer (medium, yellow): labeled \"has required fields?\" checking for specific property names. Objects missing fields are rejected. Top layer (narrow, green): labeled \"correct types?\" validating that each field has the right type. Only fully validated data reaches the golden peak, emerging as a typed object with a checkmark crown. Rejected items at each layer slide off the pyramid into a reject pile.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "type-guard-validation-pyramid.png",
+  "generation_time_ms": 25063,
+  "usage": {
+    "prompt_tokens": 195,
+    "candidates_tokens": 1891,
+    "total_tokens": 2385
+  }
+}

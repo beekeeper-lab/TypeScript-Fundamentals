@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:32:33",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A single TypeScript source code card at the top center using modern syntax (async/await, optional chaining, nullish coalescing). Two arrows descend from it labeled \"tsc\". Left output card \"target: ES2022\": the compiled code looks nearly identical to the source, clean and concise, with a happy face and a small size indicator. Right output card \"target: ES5\": the compiled code is significantly longer and more verbose, with helper functions, Promise chains instead of async/await, and manual checks instead of optional chaining. It has a slightly overwhelmed face and a large size indicator. The contrast in length and complexity is stark.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "es2022-vs-es5-output.png",
+  "generation_time_ms": 22013,
+  "usage": {
+    "prompt_tokens": 198,
+    "candidates_tokens": 1543,
+    "total_tokens": 2061
+  }
+}

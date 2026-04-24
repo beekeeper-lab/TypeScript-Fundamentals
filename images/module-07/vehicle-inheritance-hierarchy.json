@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:18:49",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A family tree diagram. At the top, a generic \"Vehicle\" card shows shared properties: \"make\", \"model\", \"year\", and a \"start()\" method. Three lines branch downward to child cards. Left: \"Car\" inherits all Vehicle properties and adds \"numDoors\" and \"trunkSize\". Center: \"Truck\" adds \"payloadCapacity\" and \"towRating\". Right: \"Motorcycle\" adds \"engineCC\" and \"hasSidecar\". Each child card shows inherited properties in a lighter shade and its own unique properties in bold. Small vehicle icons decorate each card. Arrows labeled \"extends\" connect parent to children.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "vehicle-inheritance-hierarchy.png",
+  "generation_time_ms": 22459,
+  "usage": {
+    "prompt_tokens": 197,
+    "candidates_tokens": 1427,
+    "total_tokens": 1862
+  }
+}

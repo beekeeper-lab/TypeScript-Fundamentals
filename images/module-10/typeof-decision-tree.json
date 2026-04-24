@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:23:27",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A vertical flowchart decision tree. At the top, an input box labeled \"value: unknown\" feeds into the first diamond node: \"typeof === 'string'?\" with Yes/No branches. The Yes branch leads to a green box \"handle string\". The No branch leads to another diamond: \"typeof === 'number'?\" with Yes leading to an orange \"handle number\" box and No leading to a third diamond: \"typeof === 'boolean'?\" and so on. Each resolved branch shows the narrowed type in its box. The tree has clean connecting arrows and each level is color-coded. A small legend shows typeof return values.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "typeof-decision-tree.png",
+  "generation_time_ms": 35321,
+  "usage": {
+    "prompt_tokens": 196,
+    "candidates_tokens": 1926,
+    "total_tokens": 2545
+  }
+}

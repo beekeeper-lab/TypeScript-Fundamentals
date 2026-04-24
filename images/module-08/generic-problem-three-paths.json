@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:19:41",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A character stands at a three-way fork in a road. Left path (red-tinted, labeled \"Duplication\"): leads to a cluttered desk with three nearly identical function copies, a stressed developer surrounded by redundant paperwork. Middle path (orange-tinted, labeled \"any\"): leads past skull-and-crossbones danger signs, with a blindfolded figure stumbling toward a cliff edge. Right path (green-tinted, labeled \"Generics\"): leads to a sunny meadow where a developer confidently holds a single flexible template card with a \"<T>\" badge. The right path is clearly the best choice. Signposts mark each path.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "generic-problem-three-paths.png",
+  "generation_time_ms": 28971,
+  "usage": {
+    "prompt_tokens": 197,
+    "candidates_tokens": 1507,
+    "total_tokens": 1969
+  }
+}

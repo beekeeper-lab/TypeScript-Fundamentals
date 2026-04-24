@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:32:11",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A large control panel mounted on a wall labeled \"tsconfig.json\". It has several controls: a rotary dial labeled \"target\" with positions from ES5 to ES2022 to ESNext (currently set to ES2022). Another dial labeled \"module\" with CommonJS and ESModule options. A row of toggle switches for \"strict\" (flipped ON, glowing green), \"sourceMap\" (ON), \"declaration\" (ON), \"esModuleInterop\" (ON). A digital display at the top shows the current configuration summary. LED indicators glow beside each active setting. A developer's hand adjusts the \"target\" dial. The panel has a satisfying retro-tech aesthetic.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "tsconfig-control-panel.png",
+  "generation_time_ms": 20681,
+  "usage": {
+    "prompt_tokens": 209,
+    "candidates_tokens": 1374,
+    "total_tokens": 1809
+  }
+}

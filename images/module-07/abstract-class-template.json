@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:19:12",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A large blueprint paper labeled \"abstract Shape\" with a grid background. Some method slots are drawn in solid blue lines and filled in (like \"getColor()\" with implementation visible). Other method slots are drawn in dashed red lines and empty inside (like \"area()\" and \"perimeter()\" marked \"abstract - must implement\"). Below, a second blueprint labeled \"Circle extends Shape\" overlays the first, with the previously dashed slots now filled in with solid implementations. Arrows show the dashed slots becoming concrete. A \"cannot instantiate\" stamp appears on the abstract blueprint.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "abstract-class-template.png",
+  "generation_time_ms": 23483,
+  "usage": {
+    "prompt_tokens": 177,
+    "candidates_tokens": 1660,
+    "total_tokens": 2062
+  }
+}

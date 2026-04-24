@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:37:21",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A four-story building shown in cross-section, like a dollhouse view. Ground floor (blue, labeled \"Types & Interfaces\"): contains type definition documents and interface blueprints forming the foundation, with thick structural walls. Second floor (green, labeled \"Data Store\"): contains filing cabinets, databases, and CRUD operation desks, built on top of the types foundation. Third floor (orange, labeled \"Services\"): contains business logic processing machines that reference the store below. Top floor (red, labeled \"CLI / Entry Point\"): contains a terminal desk and user interface, the only floor visible to the outside. Arrows flow strictly downward showing dependency direction. An elevator shaft labeled \"imports\" connects the floors.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "layer-stacked-architecture.png",
+  "generation_time_ms": 25635,
+  "usage": {
+    "prompt_tokens": 207,
+    "candidates_tokens": 1607,
+    "total_tokens": 2159
+  }
+}

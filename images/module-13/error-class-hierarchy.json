@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:27:54",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A family tree diagram with \"Error\" as the patriarch at the top in a gray box. One level down, \"AppError\" branches off in a blue box, adding \"code\" and \"context\" properties. From AppError, three branches extend to grandchildren: \"ValidationError\" (orange box, adds \"field\" property), \"NotFoundError\" (purple box, adds \"resource\" property), and \"NetworkError\" (red box, adds \"statusCode\" property). Each box shows its unique properties plus inherited ones in a lighter shade. Connecting lines are labeled \"extends\". The hierarchy flows top to bottom like a corporate org chart.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "error-class-hierarchy.png",
+  "generation_time_ms": 29904,
+  "usage": {
+    "prompt_tokens": 195,
+    "candidates_tokens": 1615,
+    "total_tokens": 2720
+  }
+}

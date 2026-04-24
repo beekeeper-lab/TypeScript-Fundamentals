@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:29:35",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A circular flow diagram. Top: a structured TypeScript object card with typed fields in a blue glow of safety. Right: an arrow labeled \"JSON.stringify()\" leads to a plain text JSON string on a scroll, losing its type coloring (now gray/untyped, with a caution strip). Bottom: the JSON string sits in an \"untyped zone\" with question marks. Left: an arrow labeled \"JSON.parse() + validate\" leads back up to a typed object, passing through a validation checkpoint that restores the blue type safety glow. A warning icon marks the untyped zone. The cycle flows clockwise.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "json-serialization-cycle.png",
+  "generation_time_ms": 27931,
+  "usage": {
+    "prompt_tokens": 192,
+    "candidates_tokens": 1685,
+    "total_tokens": 2181
+  }
+}

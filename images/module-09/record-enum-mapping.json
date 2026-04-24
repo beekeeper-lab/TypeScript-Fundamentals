@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:22:30",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A mapping grid or switchboard. On the left column, three color-coded enum keys are displayed as labeled pegs: red \"Error\", yellow \"Warning\", green \"Info\". Lines connect each peg to the right column where corresponding value arrays are displayed as stacked cards. Red connects to an array of error message cards, yellow connects to warning cards, green connects to info cards. The overall structure shows \"Record<LogLevel, string[]>\". The grid has a neat, organized appearance with wires or ribbons connecting keys to values.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "record-enum-mapping.png",
+  "generation_time_ms": 23650,
+  "usage": {
+    "prompt_tokens": 172,
+    "candidates_tokens": 1409,
+    "total_tokens": 1803
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:36:29",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A multiplication-table-style grid. Row headers on the left show a union: \"get\", \"set\", \"delete\". Column headers on top show another union: \"Name\", \"Age\", \"Email\". Each cell in the grid contains the template literal combination: \"getName\", \"getAge\", \"getEmail\", \"setName\", \"setAge\", \"setEmail\", \"deleteName\", \"deleteAge\", \"deleteEmail\". Each cell is color-coded by row. An equation at the top shows the template: `${Action}${Field}` = 3 x 3 = 9 combinations. The grid visually demonstrates the combinatorial explosion. Arrows from row and column headers merge into each cell showing the concatenation.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "template-literal-combinations.png",
+  "generation_time_ms": 29915,
+  "usage": {
+    "prompt_tokens": 209,
+    "candidates_tokens": 2197,
+    "total_tokens": 2685
+  }
+}

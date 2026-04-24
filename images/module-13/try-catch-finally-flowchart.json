@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:29:07",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A flowchart with three distinctly colored blocks. The blue \"try\" block at the top contains code steps. Two arrows exit: a green \"success\" arrow and a red \"throws\" arrow. The red arrow leads to an orange \"catch(error)\" block where the error is handled. Both the green success path and the orange catch path converge into a purple \"finally\" block at the bottom, which always executes (labeled \"always runs: cleanup\"). The finally block then exits to \"continue program\". A small side note shows that catch receives the error object. The flow is clean and easy to follow.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "try-catch-finally-flowchart.png",
+  "generation_time_ms": 25508,
+  "usage": {
+    "prompt_tokens": 189,
+    "candidates_tokens": 1610,
+    "total_tokens": 2181
+  }
+}

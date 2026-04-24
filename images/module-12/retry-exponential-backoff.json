@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:27:25",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A horizontal timeline stretching left to right. Four attempt markers are placed along it. Attempt 1 (red X): fails, followed by a small 1-second gap shown as a thin space. Attempt 2 (red X): fails, followed by a 2-second gap (double the width). Attempt 3 (red X): fails, followed by a 4-second gap (double again, visually much wider). Attempt 4 (green checkmark): succeeds. The growing gaps between attempts are clearly labeled \"1s\", \"2s\", \"4s\" and visually increase in width. A small exponential curve graph (2^n) appears in the corner. A bouncing ball metaphor shows each bounce waiting longer before the next try.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "retry-exponential-backoff.png",
+  "generation_time_ms": 20769,
+  "usage": {
+    "prompt_tokens": 219,
+    "candidates_tokens": 1512,
+    "total_tokens": 1976
+  }
+}

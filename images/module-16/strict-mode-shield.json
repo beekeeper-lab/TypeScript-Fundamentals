@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:32:54",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A large medieval shield in the center, divided into six segments like a puzzle. Each segment is a different color and labeled with a strict flag: \"strictNullChecks\" (blue), \"noImplicitAny\" (orange), \"strictFunctionTypes\" (green), \"strictBindCallApply\" (purple), \"noImplicitThis\" (red), \"strictPropertyInitialization\" (yellow). On the left, the segments are shown scattered and separate (strict: false), leaving gaps. On the right, all segments click together into a complete, glowing shield (strict: true). A banner across the top reads \"strict: true = all flags combined\". The assembled shield radiates a protective aura.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "strict-mode-shield.png",
+  "generation_time_ms": 21779,
+  "usage": {
+    "prompt_tokens": 206,
+    "candidates_tokens": 1355,
+    "total_tokens": 1890
+  }
+}

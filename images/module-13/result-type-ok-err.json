@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:28:16",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A large box divided vertically in half by a thick line. Left half (green background, labeled \"Ok<T>\"): contains a neatly wrapped gift box with a value tag, a checkmark above, and a happy face. Right half (red background, labeled \"Err<E>\"): contains a caution-taped package with an error tag, a warning triangle above, and a concerned face. Below the box, a function pipe shows input entering and the box coming out, with text indicating \"always one or the other, never both\". Two arrows from the box show pattern matching: \"if ok \u2192 use value\" and \"if err \u2192 handle error\".\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "result-type-ok-err.png",
+  "generation_time_ms": 21244,
+  "usage": {
+    "prompt_tokens": 201,
+    "candidates_tokens": 1599,
+    "total_tokens": 2088
+  }
+}

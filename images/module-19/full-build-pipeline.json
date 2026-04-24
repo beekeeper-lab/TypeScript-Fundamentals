@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:38:08",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A horizontal pipeline flowing left to right with four major stages connected by conveyor belts. Stage 1 \"src/\": a folder of TypeScript source files (.ts) on the left, neatly organized. Stage 2 \"tsc compile\": the files pass through a compiler machine that transforms them, type-checking along the way (green checkmarks pop up). Stage 3 \"test\": the compiled output runs through a testing station with Vitest branding, showing all tests passing on a results board. Stage 4 \"dist/\": the final production-ready files (.js, .d.ts) are packaged into a clean output folder with a \"ready to ship\" stamp and a small rocket icon. A progress bar at the bottom shows the pipeline completing from 0% to 100%.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "full-build-pipeline.png",
+  "generation_time_ms": 21711,
+  "usage": {
+    "prompt_tokens": 227,
+    "candidates_tokens": 1454,
+    "total_tokens": 1987
+  }
+}

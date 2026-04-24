@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:30:21",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: Colorful LEGO-style building blocks on a table. Individual small blocks are labeled with primitive validators: blue \"isString\", orange \"isNumber\", green \"isBoolean\", purple \"isArray\". A hand is shown snapping these blocks together to build larger composite structures: an \"isUser\" validator made of \"isString\" + \"isNumber\" + \"isBoolean\" blocks arranged in a specific pattern, and an \"isUserList\" made by combining \"isArray\" with \"isUser\". The assembled structures click together with satisfying connection points. A finished complex validator stands proudly on the right, clearly built from smaller pieces.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "schema-validator-composability.png",
+  "generation_time_ms": 21176,
+  "usage": {
+    "prompt_tokens": 192,
+    "candidates_tokens": 1358,
+    "total_tokens": 1789
+  }
+}

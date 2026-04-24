@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:20:26",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A border checkpoint gate with a sign reading \"extends HasLength\". A guard robot checks each type trying to pass. In the \"approved\" lane (green): a string character holding a \".length\" badge passes through smiling, and an array character with its own \".length\" badge follows. In the \"rejected\" lane (red): a number character without a length badge is stopped by a barrier arm, looking confused, with a red X above. The gate has a friendly but firm appearance. A small spec sheet on the guard's clipboard shows \"must have: length property\".\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "generic-constraints.png",
+  "generation_time_ms": 22570,
+  "usage": {
+    "prompt_tokens": 184,
+    "candidates_tokens": 1432,
+    "total_tokens": 1831
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:20:51",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: Two structures side by side. Left: a cafeteria-style spring-loaded plate dispenser labeled \"Stack<T>\". Plates labeled with values are stacked vertically, with the most recent on top. A hand pushes a new plate on top (push) and an arrow shows the top plate being removed (pop). A \"<T>\" badge indicates any type of plate. Right: a filing cabinet labeled \"Store<T>\" with labeled drawer handles (keys) and corresponding value cards inside each drawer. A hand pulls open a drawer by its key to retrieve the value. A \"<T>\" badge shows the values can be any type.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "generic-classes-stack-store.png",
+  "generation_time_ms": 24971,
+  "usage": {
+    "prompt_tokens": 193,
+    "candidates_tokens": 1643,
+    "total_tokens": 2114
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:22:52",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A tall vertical funnel structure. At the wide top, a swirling colorful mix of shapes represents \"string | number | boolean | object | null\". The mix flows downward through a series of horizontal gate barriers inside the funnel, each labeled with a type guard: \"!== null\", \"typeof === 'object'\", \"has property 'name'\". After each gate, some shapes are filtered out to the sides. At the narrow bottom, only one specific shape emerges, now clearly identified and labeled. The funnel glows with progressive clarity from murky at top to crystal clear at bottom.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "union-funneling-through-guards.png",
+  "generation_time_ms": 22178,
+  "usage": {
+    "prompt_tokens": 180,
+    "candidates_tokens": 1556,
+    "total_tokens": 1953
+  }
+}

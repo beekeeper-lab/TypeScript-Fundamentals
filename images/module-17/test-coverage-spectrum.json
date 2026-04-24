@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:34:21",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: Four horizontal progress bars stacked vertically on a dashboard display. Bar 1 \"Statements: 87%\": mostly green with a small red segment at the end. Bar 2 \"Branches: 72%\": more red showing weaker coverage, with a small warning icon. Bar 3 \"Functions: 95%\": almost entirely green with a gold star. Bar 4 \"Lines: 84%\": mostly green. Each bar has the percentage displayed on the right. A color legend shows green (covered) and red (uncovered). An overall health indicator in the corner shows \"Good\" in yellow-green. The dashboard has a clean, monitoring-tool aesthetic with subtle grid lines.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "test-coverage-spectrum.png",
+  "generation_time_ms": 21231,
+  "usage": {
+    "prompt_tokens": 211,
+    "candidates_tokens": 1515,
+    "total_tokens": 2034
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T10:26:40",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: Split panel comparison. Left side \"async/await\": a character walks down a clean, flat staircase where each step is labeled with a sequential operation (fetch, parse, transform, save). The code beside it is flat and readable, each line at the same indentation level. The character looks relaxed and confident. Right side \".then() chains\": the same operations but shown as a cascading waterfall where each step is nested inside the previous one, creating a pyramid of indentation. The character here looks dizzy trying to follow the nesting. The left side is clearly preferable.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "async-await-vs-then.png",
+  "generation_time_ms": 26705,
+  "usage": {
+    "prompt_tokens": 179,
+    "candidates_tokens": 1554,
+    "total_tokens": 2179
+  }
+}
