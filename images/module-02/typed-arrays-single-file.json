@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T22:02:31",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A line of three identical filing cabinets each labeled on the front \"number[]\". Each drawer is partly open revealing numbered paper files (1, 2, 3 in the first cabinet, etc.). Off to one side, a single lettered file \"A\" is being flagged by a small cartoon alarm bell with a red ribbon, indicating it does not belong. A clerk character stands behind the cabinets with a clipboard labeled \"element type: number\", smiling reassuringly. The cabinets sit on a polished wooden floor.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "typed-arrays-single-file.png",
+  "generation_time_ms": 21728,
+  "usage": {
+    "prompt_tokens": 170,
+    "candidates_tokens": 1370,
+    "total_tokens": 1814
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T22:02:50",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A cozy two-seat train compartment seen from the side. The left seat has a small plaque that reads \"name: string\" with a string-shaped character (a tall cheerful figure made of connected letters) sitting in it. The right seat has a plaque that reads \"score: number\" with a numeric character (a round figure with digits) sitting in it. A conductor character stands nearby holding a tuple-shaped ticket reading \"[string, number]\" and punching it approvingly. A \"Reserved: 2 Seats\" sign hangs above. The feel is orderly and warm.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "tuples-fixed-length.png",
+  "generation_time_ms": 18854,
+  "usage": {
+    "prompt_tokens": 183,
+    "candidates_tokens": 1337,
+    "total_tokens": 1743
+  }
+}

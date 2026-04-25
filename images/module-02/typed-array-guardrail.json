@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T22:01:31",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A bowling lane running left to right. Round numbered balls (1, 2, 3, 4) are rolling down the lane between glowing blue guardrails labeled \"number[]\". Off to the side, a star-shaped ball labeled \"A\" is being deflected by a shimmering shield at the lane edge, with a small cartoon spark at the impact point. A friendly referee character at the top of the lane holds a checklist labeled \"push()\" and gives a thumbs up to the numbered balls while waving the letter ball away.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "typed-array-guardrail.png",
+  "generation_time_ms": 17968,
+  "usage": {
+    "prompt_tokens": 174,
+    "candidates_tokens": 1363,
+    "total_tokens": 1755
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T22:04:17",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A small factory line where blank function-shaped cards pass under a large rubber stamp labeled \"Predicate\" hanging from a mechanical arm. Each stamped card shows the imprint \"(n: number) => boolean\" in neat ink. A stack of similarly stamped cards piles on the output end, each titled something different (isEven, isPositive, isLarge) but all sharing the same imprint. A friendly worker character gestures at the stamp with a thumbs-up and holds a clipboard labeled \"reusable signatures\". A second smaller stamp labeled \"Transform\" sits nearby waiting to be used.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "function-type-alias.png",
+  "generation_time_ms": 19726,
+  "usage": {
+    "prompt_tokens": 182,
+    "candidates_tokens": 1396,
+    "total_tokens": 1850
+  }
+}

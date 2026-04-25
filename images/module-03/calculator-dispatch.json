@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T22:04:37",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A classic switchboard panel with six labeled jacks on the left side marked \"+\", \"-\", \"*\", \"/\", \"**\", \"%\". Each jack is connected by a bright cable to a matching boxy machine on the right side labeled \"add\", \"subtract\", \"multiply\", \"divide\", \"power\", \"modulo\". Sitting in front of the board is a friendly operator character wearing a headset labeled \"calculate\" pulling a cable toward the correct jack. Two numeric cards \"10\" and \"5\" hover near the top waiting to be sent. A small sign on the desk reads \"Operation = (a, b) => number\".\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "calculator-dispatch.png",
+  "generation_time_ms": 20558,
+  "usage": {
+    "prompt_tokens": 192,
+    "candidates_tokens": 1414,
+    "total_tokens": 1891
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T22:03:10",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: Three large flash cards arranged in a row like a museum display. The left card shows a named function sketch with input slots labeled \"a: number\", \"b: number\" feeding into a curly brace, and a return arrow labeled \": number\". The middle card shows an arrow function with the same slots but the body represented by a friendly arrow drawing from inputs to result. The right card shows a rest-parameter function with a funnel-shaped input labeled \"...numbers: number[]\" pouring into the body. Each card has a small tab at the top with the function's name. The feel is clean and textbook-like.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "function-syntax-forms.png",
+  "generation_time_ms": 19642,
+  "usage": {
+    "prompt_tokens": 193,
+    "candidates_tokens": 1395,
+    "total_tokens": 1819
+  }
+}

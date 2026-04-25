@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T22:03:34",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: Two cartoon characters shaking hands over a desk. The left character is labeled \"caller\" and is handing over a small tagged parcel marked \"a: number, b: number\". The right character is labeled \"function\" wearing a vest with a nametag \"add\". On the desk between them, a large paper contract shows two clauses \u2014 \"accepts: (number, number)\" and \"returns: number\" \u2014 with a prominent golden wax seal beneath labeled \": number\". A small printing press in the background produces identical signed contracts for each of the other four functions referenced in the sample (isEven, reverse, maxOfThree, repeat), each lightly visible.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "typed-function-contract.png",
+  "generation_time_ms": 24167,
+  "usage": {
+    "prompt_tokens": 199,
+    "candidates_tokens": 1491,
+    "total_tokens": 1946
+  }
+}

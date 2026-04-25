@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T22:04:56",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A bakery countertop with three metal cookie-cutters of increasing complexity, each labeled \"interface\". A worker character is pressing a dough-like object shape through the cutters; the dough retains the precise field pattern of the interface (small divots for id, name, email, etc.) when it comes out the other side. Off to the side, a misshapen dough blob is being gently pushed away because it does not match the cutter shape. A clipboard at the corner reads \"interface = shape contract\".\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "interface-shape-template.png",
+  "generation_time_ms": 19052,
+  "usage": {
+    "prompt_tokens": 169,
+    "candidates_tokens": 1371,
+    "total_tokens": 1822
+  }
+}

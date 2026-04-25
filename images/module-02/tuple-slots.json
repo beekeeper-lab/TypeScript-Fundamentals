@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T22:01:49",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: Two side-by-side display cases shaped like molded trays. The left tray has two shaped slots labeled at the top \"[string, number]\": the left slot is letter-shaped and holds a string card reading \"Alice\", the right slot is circular and holds a numeric token reading \"88\". The right tray shows a longer mold labeled \"[x, y, z: number]\" with three circular slots each holding a numbered token. Above the trays, a small mismatched piece (a numeric token) is being gently bounced away from a string-shaped slot, with a red X indicator. The feel is precise and puzzle-like.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "tuple-slots.png",
+  "generation_time_ms": 18223,
+  "usage": {
+    "prompt_tokens": 195,
+    "candidates_tokens": 1496,
+    "total_tokens": 1910
+  }
+}

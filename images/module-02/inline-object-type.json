@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T22:02:10",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A large drafting table showing a paper blueprint of a \"Student\" object type. Each property is pinned to the blueprint with a colored thumbtack: \"name: string\" with a blue tack, \"age: number\" with an orange tack, \"gpa: number\" with an orange tack, \"graduated: boolean\" with a green tack, and \"courses: string[]\" with a stack of small string cards. A second smaller blueprint labeled \"address\" hangs by a ribbon below the main one, showing nested fields. A small golden lock icon sits next to one field labeled \"id\" indicating readonly. A small \"?\" badge sits next to an optional field.\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "inline-object-type.png",
+  "generation_time_ms": 20586,
+  "usage": {
+    "prompt_tokens": 204,
+    "candidates_tokens": 1468,
+    "total_tokens": 1934
+  }
+}
