@@ -1,0 +1,30 @@
+[
+  {
+    "index": 1,
+    "module": "module-09-enums-and-utility-types",
+    "audio_file": "01_module-09-enums-and-utility-types.mp3",
+    "text": "TypeScript gives you two tools that don't exist in JavaScript at all: enums and utility types. Enums define a fixed set of named constants -- things like log levels, HTTP status codes, or priority levels -- so you never accidentally use an invalid value. Utility types are built-in type transformations that take an existing type and produce a new one. Partial makes all properties optional. Pick selects specific properties. Omit removes them. Record maps keys to values. These are the type-level equivalents of array methods like map and filter, and they're used constantly in real TypeScript codebases.",
+    "size_bytes": 648298
+  },
+  {
+    "index": 2,
+    "module": "module-09-enums-and-utility-types",
+    "audio_file": "02_module-09-enums-and-utility-types.mp3",
+    "text": "An enum defines a set of named constants. Numeric enums auto-increment from zero by default, but you can set explicit values. String enums require each member to be initialized with a string literal. And const enums are inlined at compile time -- they produce no runtime JavaScript object at all, just the raw values substituted wherever you use them. Use numeric enums when the values don't matter, string enums when you need readable values in logs or APIs, and const enums when you want zero runtime overhead.",
+    "size_bytes": 577663
+  },
+  {
+    "index": 3,
+    "module": "module-09-enums-and-utility-types",
+    "audio_file": "03_module-09-enums-and-utility-types.mp3",
+    "text": "Think of utility types as type transformations. You feed in an existing type and get back a modified version. Partial takes a type and makes every property optional -- perfect for update payloads where you only send the fields that changed. Required does the opposite, making every property required. Pick selects specific properties by name. Omit removes specific properties. Record creates a type that maps a set of keys to a value type. Readonly makes everything immutable. And ReturnType and Parameters extract types from function signatures. These are all generic types built into TypeScript -- you don't need to import anything.",
+    "size_bytes": 689258
+  },
+  {
+    "index": 4,
+    "module": "module-09-enums-and-utility-types",
+    "audio_file": "04_module-09-enums-and-utility-types.mp3",
+    "text": "This exercise ties everything together. You'll define Permission and Department enums, build an Employee type that uses them, and then derive specialized types using utility types. DirectoryEntry uses Pick to select just the fields needed for a listing. PublicProfile uses Omit to hide salary. EmployeeUpdate combines Partial and Omit to create an update payload that can change any field except the ID. And DepartmentRoster uses Record to map each department to its list of employees. This is how real TypeScript applications compose enums and utility types.",
+    "size_bytes": 643701
+  }
+]

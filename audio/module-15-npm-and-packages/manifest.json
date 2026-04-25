@@ -1,0 +1,51 @@
+[
+  {
+    "index": 1,
+    "module": "module-15-npm-and-packages",
+    "audio_file": "01_module-15-npm-and-packages.mp3",
+    "text": "npm is the default package manager for Node.js, and it is the gateway to the largest software registry in the world. Every serious TypeScript project uses npm to manage three things: dependencies (the packages your project needs), scripts (the commands you run to build, test, and deploy), and metadata (your project's name, version, and configuration). The package.json file is the heart of every Node.js and TypeScript project.",
+    "size_bytes": 516641
+  },
+  {
+    "index": 2,
+    "module": "module-15-npm-and-packages",
+    "audio_file": "02_module-15-npm-and-packages.mp3",
+    "text": "Every project starts with npm init. This command walks you through creating a package.json file by asking a series of questions: project name, version, description, entry point, and license. You can also skip the questions entirely with the dash-y flag, which accepts all the defaults. Either way, you end up with a package.json that defines your project.",
+    "size_bytes": 400866
+  },
+  {
+    "index": 3,
+    "module": "module-15-npm-and-packages",
+    "audio_file": "03_module-15-npm-and-packages.mp3",
+    "text": "Installing packages is where npm really shines. The npm install command downloads a package from the registry, saves it into node_modules, and records it in your package.json. Use the save-dev flag for packages that are only needed during development, like TypeScript itself or type definition packages. The node_modules directory can contain thousands of files -- that is normal. Never commit it to version control.",
+    "size_bytes": 512879
+  },
+  {
+    "index": 4,
+    "module": "module-15-npm-and-packages",
+    "audio_file": "04_module-15-npm-and-packages.mp3",
+    "text": "npm scripts are custom commands you define in package.json. Instead of remembering long compiler flags or complex shell commands, you give them short names like build, start, and dev. This is how every professional project works: the scripts section of package.json is the single source of truth for how to build, run, and test the project. Anyone who clones your repo can look at the scripts and immediately know how to work with it.",
+    "size_bytes": 463978
+  },
+  {
+    "index": 5,
+    "module": "module-15-npm-and-packages",
+    "audio_file": "05_module-15-npm-and-packages.mp3",
+    "text": "npx is npm's companion tool for running packages without installing them globally. When you type npx followed by a command, it first checks your local node_modules, then checks if the package is installed globally, and finally downloads it temporarily if needed. This is how you run project-local tools like tsc or ts-node, and it is how you try out packages without cluttering your global installation.",
+    "size_bytes": 412151
+  },
+  {
+    "index": 6,
+    "module": "module-15-npm-and-packages",
+    "audio_file": "06_module-15-npm-and-packages.mp3",
+    "text": "Every npm package follows semantic versioning, or SemVer. Version numbers have three parts: major dot minor dot patch. A major version bump means breaking changes. A minor bump means new features that are backward compatible. A patch bump means bug fixes. The symbols in front of version numbers in package.json control how much npm is allowed to update automatically. The caret allows minor and patch updates. The tilde allows only patch updates. And a bare version number means that exact version, no updates at all.",
+    "size_bytes": 605248
+  },
+  {
+    "index": 7,
+    "module": "module-15-npm-and-packages",
+    "audio_file": "07_module-15-npm-and-packages.mp3",
+    "text": "Beyond install, npm gives you several commands for managing your project's dependencies. npm list shows what is installed. npm outdated shows which packages have newer versions available. npm audit checks for known security vulnerabilities. These are commands you should run regularly to keep your project healthy and secure.",
+    "size_bytes": 365758
+  }
+]

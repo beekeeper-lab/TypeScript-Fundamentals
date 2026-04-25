@@ -1,0 +1,44 @@
+[
+  {
+    "index": 1,
+    "module": "module-08-generics",
+    "audio_file": "01_module-08-generics.mp3",
+    "text": "Generics are the key to writing reusable code in TypeScript without sacrificing type safety. Without generics, you'd have two choices: write a separate function for every type, or use any and lose all type checking. Generics give you a third option -- write the code once with a type parameter, and let TypeScript fill in the concrete type each time you use it. The type parameter is like a variable, but for types instead of values. Today you'll write generic functions, generic interfaces, generic classes, and you'll learn how to constrain generic types so they only accept values with the right shape.",
+    "size_bytes": 652896
+  },
+  {
+    "index": 2,
+    "module": "module-08-generics",
+    "audio_file": "02_module-08-generics.mp3",
+    "text": "Here's the core problem generics solve. Without generics, a function that returns the first element of an array either has to be written separately for numbers, strings, and every other type -- or it uses any, which means TypeScript forgets the type completely. With a generic type parameter T, you write the function once. When you call it with a number array, TypeScript knows the return type is number. When you call it with a string array, TypeScript knows the return type is string. You get full type safety and full reuse.",
+    "size_bytes": 559691
+  },
+  {
+    "index": 3,
+    "module": "module-08-generics",
+    "audio_file": "03_module-08-generics.mp3",
+    "text": "The angle brackets after the function name declare a type parameter. You can name it anything, but single uppercase letters are conventional -- T for the primary type, A and B when you have two, K and V for key-value pairs. TypeScript usually infers the type parameter from the arguments you pass, so you rarely need to specify it explicitly. The identity function below is the simplest possible generic -- it just returns what you give it, but with the type preserved.",
+    "size_bytes": 514551
+  },
+  {
+    "index": 4,
+    "module": "module-08-generics",
+    "audio_file": "04_module-08-generics.mp3",
+    "text": "Generics aren't limited to functions. You can parameterize interfaces and type aliases too. The Result interface below is a pattern you'll see constantly -- it wraps a success or failure with a typed data field. When you call success with a user object, the return type is Result with the user type filled in. The KeyValuePair and MapFn types show how generic type aliases work the same way.",
+    "size_bytes": 459381
+  },
+  {
+    "index": 5,
+    "module": "module-08-generics",
+    "audio_file": "05_module-08-generics.mp3",
+    "text": "Generic classes let you build reusable data structures. The Stack class below works with any type -- you create a Stack of numbers, a Stack of strings, or a Stack of anything. The type parameter T flows through every method: push takes a T, pop returns a T or undefined, and toArray returns a T array. The Store class goes further with two type parameters, K and V, creating a typed wrapper around a Map. These patterns show up constantly in libraries and frameworks.",
+    "size_bytes": 507864
+  },
+  {
+    "index": 6,
+    "module": "module-08-generics",
+    "audio_file": "06_module-08-generics.mp3",
+    "text": "Sometimes any type is too permissive. Constraints let you say \"T can be anything, as long as it has these properties.\" The extends keyword in a generic parameter adds a constraint. T extends HasLength means T must have a length property. K extends keyof T means K must be one of T's property names. You can also set default types, so callers don't have to specify the type parameter if the default is fine.",
+    "size_bytes": 427616
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "index": 1,
+    "module": "module-11-modules-and-imports",
+    "audio_file": "01_module-11-modules-and-imports.mp3",
+    "text": "TypeScript uses ES module syntax to organize code across files. Every file is its own module. You choose what to expose by marking things with the export keyword. There are two kinds of exports: named exports, where you export specific items by name, and default exports, where you export one main thing from the file. When importing, named exports use curly braces and default exports do not. This distinction matters because it affects how consumers import your code and how refactoring tools can track references.",
+    "size_bytes": 580589
+  },
+  {
+    "index": 2,
+    "module": "module-11-modules-and-imports",
+    "audio_file": "02_module-11-modules-and-imports.mp3",
+    "text": "As your project grows, you end up with many files in a folder. Instead of making every consumer import from individual files deep inside your directory structure, you create a barrel file \u2014 an index.ts that re-exports everything from the folder. Consumers import from the folder path, and the barrel file decides what is public. This gives you clean import paths and a single place to control the public API of each folder.",
+    "size_bytes": 487802
+  },
+  {
+    "index": 3,
+    "module": "module-11-modules-and-imports",
+    "audio_file": "03_module-11-modules-and-imports.mp3",
+    "text": "Let us build a multi-file project step by step. We start with the models layer \u2014 the types and factory functions that define the shape of our data. The user model exports a type alias for roles, an interface for the user object, and two functions: one to create users and one to format them for display. Notice that everything is a named export. This makes it easy to import exactly what you need.",
+    "size_bytes": 451439
+  },
+  {
+    "index": 4,
+    "module": "module-11-modules-and-imports",
+    "audio_file": "04_module-11-modules-and-imports.mp3",
+    "text": "The services layer imports from the models layer and adds business logic. The UserService class manages a collection of users \u2014 adding, finding, filtering, and deactivating them. Notice how the import statement pulls in exactly the types and functions it needs from the models layer. This is the pattern: models define data shapes, services operate on that data.",
+    "size_bytes": 398777
+  },
+  {
+    "index": 5,
+    "module": "module-11-modules-and-imports",
+    "audio_file": "05_module-11-modules-and-imports.mp3",
+    "text": "The ProductService shows two important import patterns. First, it imports the default export ProductCatalog without curly braces, alongside named exports in curly braces \u2014 all from the same file. Second, it uses import type for the Product interface, which tells TypeScript this import is only for type checking and should be erased completely from the compiled JavaScript. Finally, notice the re-export at the bottom \u2014 the service re-exports Category so that consumers do not need to reach into the models layer directly.",
+    "size_bytes": 544226
+  },
+  {
+    "index": 6,
+    "module": "module-11-modules-and-imports",
+    "audio_file": "06_module-11-modules-and-imports.mp3",
+    "text": "Now we create the barrel files \u2014 the index.ts in each folder that re-exports everything the folder wants to make public. The models barrel file re-exports all the types, functions, and the default ProductCatalog class from both model files. The services barrel file does the same for the service classes. With these in place, the main entry point can import from just two clean paths instead of reaching into individual files.",
+    "size_bytes": 440991
+  },
+  {
+    "index": 7,
+    "module": "module-11-modules-and-imports",
+    "audio_file": "07_module-11-modules-and-imports.mp3",
+    "text": "To compile a multi-file project, you need a tsconfig.json that tells the compiler where to find your source files and how to resolve module imports. The include array lists the file patterns to compile. The module and moduleResolution settings tell TypeScript to use Node's module resolution algorithm. Once this is in place, you can compile the entire project with a single tsc command.",
+    "size_bytes": 415077
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "index": 1,
+    "module": "module-03-functions",
+    "audio_file": "01_module-03-functions.mp3",
+    "text": "In TypeScript, functions are first-class values. That means you can assign a function to a variable, pass it as an argument to another function, and return it from a function \u2014 just like you would with a number or a string. The key insight is that functions have types, just like data does. A function type describes the shape of the function: what parameters it accepts and what it returns. You can create type aliases for function types, which makes your code cleaner and lets you reuse the same signature in multiple places.",
+    "size_bytes": 563453
+  },
+  {
+    "index": 2,
+    "module": "module-03-functions",
+    "audio_file": "02_module-03-functions.mp3",
+    "text": "A higher-order function is a function that takes another function as a parameter or returns a function as its result. This is one of the most powerful patterns in TypeScript. Array methods like map, filter, and reduce are higher-order functions \u2014 they take a callback function that you provide. TypeScript types flow through these seamlessly: when you call numbers.filter(n => n > 5), TypeScript knows n is a number because numbers is a number[]. You get full type safety inside your callbacks without writing a single annotation.",
+    "size_bytes": 611100
+  }
+]

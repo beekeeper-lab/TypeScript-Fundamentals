@@ -1,0 +1,65 @@
+[
+  {
+    "index": 1,
+    "module": "module-12-async-await",
+    "audio_file": "01_module-12-async-await.mp3",
+    "text": "A Promise represents a value that will be available in the future. You create one by passing a function to the Promise constructor. That function receives two callbacks: resolve, which you call with the successful value, and reject, which you call with an error. TypeScript lets you type the Promise with a generic parameter so you know exactly what type the resolved value will be. The simplest async pattern is a delay function that returns a Promise of void \u2014 it resolves after a timeout with no value.",
+    "size_bytes": 535867
+  },
+  {
+    "index": 2,
+    "module": "module-12-async-await",
+    "audio_file": "02_module-12-async-await.mp3",
+    "text": "There are two ways to consume Promises. The original way is chaining with dot-then: you call dot-then on the Promise and pass a callback that receives the resolved value. Each dot-then returns a new Promise, so you can chain them. The modern way is async/await: you mark a function as async, then use the await keyword to pause execution until the Promise resolves. The result is the same, but async/await reads like synchronous code, which makes it much easier to follow. Both approaches handle errors \u2014 dot-then uses dot-catch, while async/await uses try/catch.",
+    "size_bytes": 654986
+  },
+  {
+    "index": 3,
+    "module": "module-12-async-await",
+    "audio_file": "03_module-12-async-await.mp3",
+    "text": "When you have multiple async operations that do not depend on each other, you should run them in parallel rather than one after another. Promise.all takes an array of Promises and returns a single Promise that resolves with an array of all the results \u2014 but only if every Promise succeeds. If any one fails, the entire Promise.all rejects. TypeScript preserves the tuple types, so if you pass three different Promise types, you get a tuple of three different result types back.",
+    "size_bytes": 528762
+  },
+  {
+    "index": 4,
+    "module": "module-12-async-await",
+    "audio_file": "04_module-12-async-await.mp3",
+    "text": "Promise.all fails fast \u2014 if any one Promise rejects, you lose everything. Sometimes you want to fire off multiple requests and get back whatever succeeded along with information about what failed. That is what Promise.allSettled does. It waits for every Promise to settle, whether it resolved or rejected, and returns an array of result objects. Each result has a status of either fulfilled with a value or rejected with a reason. This is essential for batch operations where partial success is acceptable.",
+    "size_bytes": 602741
+  },
+  {
+    "index": 5,
+    "module": "module-12-async-await",
+    "audio_file": "05_module-12-async-await.mp3",
+    "text": "Promise.race returns the result of whichever Promise settles first. The classic use case is a timeout: you race your real request against a timer that rejects after a deadline. If the request finishes first, you get the data. If the timer fires first, you get a timeout error. This pattern is essential for any code that talks to external services where you cannot afford to wait forever.",
+    "size_bytes": 406718
+  },
+  {
+    "index": 6,
+    "module": "module-12-async-await",
+    "audio_file": "06_module-12-async-await.mp3",
+    "text": "TypeScript's generics combine powerfully with async/await. You can write a generic apiGet function that takes a type parameter and returns a Promise of a typed response wrapper. The caller specifies the type, and TypeScript ensures the resolved value matches. This is how real API client libraries work \u2014 they give you typed responses without sacrificing flexibility.",
+    "size_bytes": 407554
+  },
+  {
+    "index": 7,
+    "module": "module-12-async-await",
+    "audio_file": "07_module-12-async-await.mp3",
+    "text": "A retry function is a common async pattern. You pass it a function that returns a Promise, and it calls that function up to a maximum number of times, backing off between attempts. If any attempt succeeds, it returns the result immediately. If all attempts fail, it throws the last error. With TypeScript generics, the retry function preserves the return type of whatever function you pass in \u2014 the caller gets back the same typed result they would get from a single call.",
+    "size_bytes": 515387
+  },
+  {
+    "index": 8,
+    "module": "module-12-async-await",
+    "audio_file": "08_module-12-async-await.mp3",
+    "text": "When you have many items to process asynchronously, you often cannot fire them all at once \u2014 you might overwhelm an API or run out of memory. The batch processing pattern divides items into chunks and processes each chunk in parallel with Promise.all before moving on to the next. TypeScript generics make this pattern reusable: you parameterize the input type, the output type, and the processor function, and the batch function handles the rest.",
+    "size_bytes": 490728
+  },
+  {
+    "index": 9,
+    "module": "module-12-async-await",
+    "audio_file": "09_module-12-async-await.mp3",
+    "text": "An async generator is a function that can yield values over time, pausing between each one. You declare it with async function star and use yield to emit values. The consumer uses a for-await-of loop to receive values as they become available. This is useful for streaming data, paginated API results, or any scenario where you produce values asynchronously one at a time rather than all at once.",
+    "size_bytes": 412151
+  }
+]

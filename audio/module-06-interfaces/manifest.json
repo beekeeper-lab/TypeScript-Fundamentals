@@ -1,0 +1,44 @@
+[
+  {
+    "index": 1,
+    "module": "module-06-interfaces",
+    "audio_file": "01_module-06-interfaces.mp3",
+    "text": "In the last module you used type aliases to define object shapes. TypeScript has a second tool for the same job: interfaces. Interfaces are the preferred way to define object shapes in TypeScript. They support extension with the extends keyword, they auto-merge when declared multiple times, and they make your intent clear -- when someone sees interface, they know it describes the shape of an object. Today you'll define interfaces with optional and readonly properties, extend them through single and multiple inheritance, write function and index signatures, and build generic API response interfaces.",
+    "size_bytes": 636177
+  },
+  {
+    "index": 2,
+    "module": "module-06-interfaces",
+    "audio_file": "02_module-06-interfaces.mp3",
+    "text": "An interface defines the shape of an object -- what properties it must have, their types, and whether they're optional or readonly. It looks similar to a type alias for an object, but uses the interface keyword. The key difference is that interfaces are designed for extension and merging, which makes them the better choice when you're defining object shapes that other code will build on.",
+    "size_bytes": 408808
+  },
+  {
+    "index": 3,
+    "module": "module-06-interfaces",
+    "audio_file": "03_module-06-interfaces.mp3",
+    "text": "The Product interface below is the shape of real application data. Notice three decisions baked into it. First, readonly on id. Once a product is created, its id is locked. The compiler will reject any attempt to change it. Second, an optional tags field. Some products have tags, some do not, and the question mark lets both be valid. And third, the typed array of products. TypeScript checks every element against the interface, so you cannot accidentally put a mismatched object into the list. Inside displayProduct, watch how TypeScript narrows the type. The if-check on tags lets the compiler prove that inside the block, tags is definitely a string array and join is safe to call. That is what a well-designed interface gives you: a compile-time proof that your code handles the optional fields correctly.",
+    "size_bytes": 891133
+  },
+  {
+    "index": 4,
+    "module": "module-06-interfaces",
+    "audio_file": "04_module-06-interfaces.mp3",
+    "text": "Extension is the reason many teams reach for interface first. With extends, you build a hierarchy of shapes: define the common fields once in BaseEntity, then let User inherit them, then let AdminUser add permissions on top. Each layer adds only what is new. And you can extend multiple interfaces at once \u2014 AuditedUser below pulls fields from both User and Auditable. This is how real codebases stay DRY. When you change a base interface, every descendant inherits the change and TypeScript tells you immediately about any object literal that needs updating. That is a refactor you can make with confidence.",
+    "size_bytes": 693438
+  },
+  {
+    "index": 5,
+    "module": "module-06-interfaces",
+    "audio_file": "05_module-06-interfaces.mp3",
+    "text": "Interfaces describe three shapes of object beyond plain data. First, method signatures. The Calculator interface declares four methods \u2014 add, subtract, multiply, divide \u2014 and any object assigned to Calculator must provide all four. Second, index signatures. StringMap below says every string key in the object maps to a string value, giving you a typed dictionary without enumerating every possible key. Third, callable signatures. The Formatter interface describes an object that is itself a function \u2014 you can call it like a function, and it also has a prefix property. These three forms mean interfaces can describe almost any object you will encounter, from plain records to the fancy hybrid objects that libraries love to hand you.",
+    "size_bytes": 837634
+  },
+  {
+    "index": 6,
+    "module": "module-06-interfaces",
+    "audio_file": "06_module-06-interfaces.mp3",
+    "text": "Every REST API wraps its data in an envelope: a status code, a message, maybe pagination, maybe a trace id. The envelope is always the same shape \u2014 only the data field changes. That is why ApiResponse is generic. You define it once with a type parameter T, and then any endpoint can return ApiResponse of whatever data type it produces. TodoItem array for a list endpoint, TodoItem or null for a single-item lookup. Same envelope, different payload. This is the pattern behind every typed HTTP client you will ever use.",
+    "size_bytes": 634924
+  }
+]

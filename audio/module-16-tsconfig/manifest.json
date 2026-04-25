@@ -1,0 +1,44 @@
+[
+  {
+    "index": 1,
+    "module": "module-16-tsconfig",
+    "audio_file": "01_module-16-tsconfig.mp3",
+    "text": "tsconfig.json is the single file that controls how TypeScript compiles your code. Every option in this file affects one of three things: what errors are caught, what JavaScript is produced, and how modules are resolved. When you run tsc with no arguments, it looks for tsconfig.json in the current directory and follows its instructions exactly. Understanding these options is the difference between a project that catches bugs early and one that lets them slip through.",
+    "size_bytes": 511626
+  },
+  {
+    "index": 2,
+    "module": "module-16-tsconfig",
+    "audio_file": "02_module-16-tsconfig.mp3",
+    "text": "You can generate a default tsconfig.json with the tsc init command, which creates a heavily commented file showing every available option. But for real projects, it is better to write your own clean configuration from scratch, including only the options you need. This way you understand every line in the file. Here is a production-ready tsconfig that covers the most important options.",
+    "size_bytes": 425944
+  },
+  {
+    "index": 3,
+    "module": "module-16-tsconfig",
+    "audio_file": "03_module-16-tsconfig.mp3",
+    "text": "The target option tells TypeScript which version of JavaScript to produce. When you target ES2022, modern syntax like arrow functions, optional chaining, and async/await passes through unchanged because modern runtimes support them natively. But when you target ES5, the compiler has to transform all of that modern syntax into older JavaScript that ancient browsers can understand. Arrow functions become function declarations. Async/await becomes a state machine. Template literals become string concatenation. Same TypeScript source, dramatically different JavaScript output.",
+    "size_bytes": 672958
+  },
+  {
+    "index": 4,
+    "module": "module-16-tsconfig",
+    "audio_file": "04_module-16-tsconfig.mp3",
+    "text": "The strict flag in tsconfig.json is actually a shortcut that enables seven individual type-checking flags at once. Each one catches a different category of bug. strictNullChecks prevents you from using a value that might be null without checking first. noImplicitAny forces you to declare types instead of letting them default to the unsafe any type. strictPropertyInitialization ensures every class property is assigned in the constructor. When you enable strict mode, you are telling TypeScript to be as vigilant as possible. Every one of these checks catches real bugs that would otherwise slip into production.",
+    "size_bytes": 661673
+  },
+  {
+    "index": 5,
+    "module": "module-16-tsconfig",
+    "audio_file": "05_module-16-tsconfig.mp3",
+    "text": "When you enable declaration and sourceMap in your tsconfig, the compiler produces two extra files alongside every JavaScript file. Declaration files, with the .d.ts extension, contain only the type signatures from your code -- no implementation. These are what other TypeScript projects use to understand your module's types without reading the actual source. Source maps are .js.map files that map lines in the compiled JavaScript back to lines in your original TypeScript, which is essential for debugging. When you set a breakpoint in your TypeScript, the debugger uses the source map to find the right place in the running JavaScript.",
+    "size_bytes": 641611
+  },
+  {
+    "index": 6,
+    "module": "module-16-tsconfig",
+    "audio_file": "06_module-16-tsconfig.mp3",
+    "text": "The resolveJsonModule option lets you import JSON files directly in your TypeScript code, and TypeScript will infer the types from the JSON structure automatically. This is extremely useful for configuration files, data files, and any static data your application needs. Combined with the other options we have covered, you now have a complete picture of how tsconfig.json shapes your project.",
+    "size_bytes": 412151
+  }
+]

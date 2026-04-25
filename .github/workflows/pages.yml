@@ -11,7 +11,8 @@ permissions:
   pages: write
   id-token: write
 
-# Only one concurrent deploy; queue new pushes that land mid-run.
+# Only one concurrent deploy; if a new push lands while one is running,
+# queue the new one (don't cancel the in-flight deploy).
 concurrency:
   group: pages
   cancel-in-progress: false
@@ -35,9 +36,8 @@ jobs:
           cp index.html _site/
           [ -f favicon.png ] && cp favicon.png _site/ || true
           cp -r html _site/
-          [ -d audio ] && cp -r audio _site/ || true
-          [ -d images ] && cp -r images _site/ || true
-          [ -d lab ] && cp -r lab _site/ || true
+          cp -r audio _site/
+          cp -r images _site/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

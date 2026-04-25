@@ -1,0 +1,44 @@
+[
+  {
+    "index": 1,
+    "module": "module-13-error-handling",
+    "audio_file": "01_module-13-error-handling.mp3",
+    "text": "JavaScript's built-in Error class is generic \u2014 it just has a message and a stack trace. In a real application, you need to distinguish between different kinds of errors: validation failures, not-found errors, authentication errors, rate limits. The solution is a custom error hierarchy. You create a base AppError class that extends Error and adds a code property, then create specific error subclasses. This lets you use instanceof to narrow errors in your catch blocks, handling each kind differently.",
+    "size_bytes": 570976
+  },
+  {
+    "index": 2,
+    "module": "module-13-error-handling",
+    "audio_file": "02_module-13-error-handling.mp3",
+    "text": "Once you have your error hierarchy, you throw specific error types from your functions and catch them with instanceof narrowing. The catch block receives an unknown type \u2014 TypeScript does not know what was thrown. You narrow it step by step: is it a ValidationError? A NotFoundError? An AuthenticationError? Each instanceof check gives you access to that error's specific properties. The finally block runs regardless of whether an error occurred, making it the right place for cleanup like closing database connections.",
+    "size_bytes": 575991
+  },
+  {
+    "index": 3,
+    "module": "module-13-error-handling",
+    "audio_file": "03_module-13-error-handling.mp3",
+    "text": "Exceptions have a problem: they are invisible in your type signatures. A function that says it returns a number might actually throw three different kinds of errors, and the caller has no way to know that from the type alone. The Result type pattern solves this. Instead of throwing, your function returns a discriminated union: either an Ok variant with a value, or an Err variant with an error. The caller must check which variant they got before they can access the data. This makes error paths explicit and impossible to ignore.",
+    "size_bytes": 575573
+  },
+  {
+    "index": 4,
+    "module": "module-13-error-handling",
+    "audio_file": "04_module-13-error-handling.mp3",
+    "text": "When you have multiple Result-returning functions that depend on each other, you chain them manually. Call the first function, check if it is Ok, then pass the value to the next function. If any step fails, you return the error immediately. This is more verbose than exception-based code, but every error path is visible and every success path is type-checked. You can also write mapResult and flatMapResult helper functions to make the chaining more concise.",
+    "size_bytes": 458127
+  },
+  {
+    "index": 5,
+    "module": "module-13-error-handling",
+    "audio_file": "05_module-13-error-handling.mp3",
+    "text": "The Result type pattern works beautifully with async code. Instead of an async function that might throw, you write an async function that returns a Promise of Result. The caller awaits the Promise and then checks the ok field \u2014 no try/catch needed. You can also write a tryCatchToResult wrapper that takes any async function and converts its success or thrown error into a Result. This lets you gradually adopt the Result pattern even when you are working with libraries that throw exceptions.",
+    "size_bytes": 524164
+  },
+  {
+    "index": 6,
+    "module": "module-13-error-handling",
+    "audio_file": "06_module-13-error-handling.mp3",
+    "text": "When retrying async operations, you sometimes want to know about every failure, not just the last one. The fetchWithRetry function accumulates errors from each attempt. If any attempt succeeds, it returns the result. If all attempts fail, it returns an array of all the errors. This gives the caller full visibility into what went wrong across every retry.",
+    "size_bytes": 402120
+  }
+]

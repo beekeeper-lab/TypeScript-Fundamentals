@@ -1,0 +1,16 @@
+[
+  {
+    "index": 1,
+    "module": "module-01-variables-and-types",
+    "audio_file": "01_module-01-variables-and-types.mp3",
+    "text": "One of the most important things to understand about TypeScript is that you do not have to annotate every single variable. TypeScript has a powerful type inference engine that looks at the value you assign and figures out the type automatically. When you write let age = 20, TypeScript knows that is a number. When you use const, TypeScript goes even further \u2014 it infers a literal type, because a const can never change. The rule of thumb is simple: let TypeScript infer when it can, and annotate when it cannot or when you want to be explicit for clarity.",
+    "size_bytes": 607338
+  },
+  {
+    "index": 2,
+    "module": "module-01-variables-and-types",
+    "audio_file": "02_module-01-variables-and-types.mp3",
+    "text": "TypeScript has two types that accept any value: any and unknown. They look similar but behave very differently. Using any is like turning off the type checker \u2014 you can do anything with the value and TypeScript will not complain. Using unknown is the safe alternative \u2014 TypeScript forces you to check what type the value actually is before you can use it. Prefer unknown over any whenever you are dealing with values whose type you do not know at compile time. It keeps the safety net intact.",
+    "size_bytes": 544226
+  }
+]

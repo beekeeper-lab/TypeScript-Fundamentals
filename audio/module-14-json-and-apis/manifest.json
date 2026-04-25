@@ -1,0 +1,44 @@
+[
+  {
+    "index": 1,
+    "module": "module-14-json-and-apis",
+    "audio_file": "01_module-14-json-and-apis.mp3",
+    "text": "JSON dot stringify converts a JavaScript value into a JSON string. TypeScript does not change how stringify works at runtime, but it ensures the value you pass in is a valid type. The second argument is a replacer \u2014 a function that lets you transform or filter values during serialization. This is useful for redacting sensitive fields like passwords or API keys. The third argument controls formatting \u2014 pass a number for indentation or a string for a custom indent character.",
+    "size_bytes": 525000
+  },
+  {
+    "index": 2,
+    "module": "module-14-json-and-apis",
+    "audio_file": "02_module-14-json-and-apis.mp3",
+    "text": "JSON dot parse returns any \u2014 it has no idea what types the data should be. A type assertion like \"as Config\" tells TypeScript to trust you, but it performs no runtime check. For simple cases where you control the data source, that is fine. But you can also pass a reviver function as the second argument to JSON.parse. The reviver runs on every key-value pair and lets you transform values \u2014 for example, converting date strings back into Date objects. This is how you restore types that JSON cannot represent natively.",
+    "size_bytes": 582679
+  },
+  {
+    "index": 3,
+    "module": "module-14-json-and-apis",
+    "audio_file": "03_module-14-json-and-apis.mp3",
+    "text": "Here is the core problem: when data comes from an API, a file, or any external source, it arrives as an unknown blob. A type assertion like \"as User\" silences the compiler, but if the data does not actually match the User shape, your code will crash later in a confusing way \u2014 accessing a property that does not exist, calling a method on undefined. The solution is type guard functions that check the data at runtime and narrow it to the expected type only if it actually matches. This is the boundary between the untyped outside world and your typed code.",
+    "size_bytes": 634924
+  },
+  {
+    "index": 4,
+    "module": "module-14-json-and-apis",
+    "audio_file": "04_module-14-json-and-apis.mp3",
+    "text": "The safeParse function combines JSON.parse with a type guard into a single operation. It tries to parse the JSON string, then runs the type guard on the result. If both succeed, you get back a success response with typed data. If the JSON is malformed or the data does not match the guard, you get back an error response. This is the pattern you should use for every piece of external data that enters your application.",
+    "size_bytes": 415077
+  },
+  {
+    "index": 5,
+    "module": "module-14-json-and-apis",
+    "audio_file": "05_module-14-json-and-apis.mp3",
+    "text": "Writing individual type guard functions for every type gets tedious. A better approach is to build a composable schema validator \u2014 a set of small validator functions that you can combine to describe any shape. You create validators for primitives like string and number, then combinators for array and object that accept inner validators. The object combinator takes a shape definition \u2014 a record of field names to validators \u2014 and returns a validator for the whole object. The resulting type is inferred automatically from the schema, so you never have to write the type and the validator separately.",
+    "size_bytes": 594799
+  },
+  {
+    "index": 6,
+    "module": "module-14-json-and-apis",
+    "audio_file": "06_module-14-json-and-apis.mp3",
+    "text": "In a real application, you call fetch to get data from an API. The response dot json method returns a Promise of any \u2014 completely untyped. A typed fetch wrapper combines the HTTP request with schema validation in a single function. You pass the URL and a validator, and it handles the request, checks the HTTP status, parses the JSON, validates the shape, and returns a typed value. If anything goes wrong at any step, you get a clear error. This is the boundary defense pattern in action: external data enters untyped and exits fully validated.",
+    "size_bytes": 615697
+  }
+]

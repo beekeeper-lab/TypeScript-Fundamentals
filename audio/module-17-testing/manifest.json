@@ -1,0 +1,44 @@
+[
+  {
+    "index": 1,
+    "module": "module-17-testing",
+    "audio_file": "01_module-17-testing.mp3",
+    "text": "Tests serve two purposes that are equally important. First, they are documentation: a well-written test suite describes exactly what your code is supposed to do, with concrete examples. Second, they are safety nets: when you change your code, tests tell you immediately if you broke something. Vitest is a fast, TypeScript-native test runner that uses the familiar describe, it, and expect syntax. It works with TypeScript out of the box, with no extra configuration, and it runs so fast that you can leave it in watch mode while you code.",
+    "size_bytes": 597725
+  },
+  {
+    "index": 2,
+    "module": "module-17-testing",
+    "audio_file": "02_module-17-testing.mp3",
+    "text": "Setting up Vitest is straightforward. You install it as a dev dependency alongside TypeScript, add test scripts to your package.json, and create a directory structure that separates source code from test code. The convention is to put your source in src/ and your tests in tests/, with test files named to match the modules they test. Vitest finds and runs any file ending in .test.ts automatically.",
+    "size_bytes": 487802
+  },
+  {
+    "index": 3,
+    "module": "module-17-testing",
+    "audio_file": "03_module-17-testing.mp3",
+    "text": "Each test file follows the same pattern: import describe, it, and expect from Vitest, import the functions you want to test, and then write describe blocks that group related tests. Inside each describe block, individual it calls make specific assertions about behavior. Good tests cover the happy path, edge cases, and error conditions. Notice how readable these tests are -- they serve as documentation for exactly what each function is supposed to do.",
+    "size_bytes": 499505
+  },
+  {
+    "index": 4,
+    "module": "module-17-testing",
+    "audio_file": "04_module-17-testing.mp3",
+    "text": "Math tests are a great example of testing edge cases and error conditions. It is not enough to test that factorial of 5 is 120. You also need to test factorial of 0, which should be 1. And you need to test that factorial of negative 1 throws an error, and that factorial of 2.5 throws a different error. Testing the error paths is just as important as testing the happy paths -- these are the cases that crash production applications when they are not handled.",
+    "size_bytes": 525000
+  },
+  {
+    "index": 5,
+    "module": "module-17-testing",
+    "audio_file": "05_module-17-testing.mp3",
+    "text": "Testing asynchronous code requires two additional tools. First, you mark your test functions as async and use await with expect for promises. Second, you use Vitest's vi.fn to create mock functions -- fake functions whose behavior you control. Mocking lets you test retry logic without making real API calls, and it lets you verify that functions are called the right number of times. The retryAsync tests here demonstrate both: a mock that fails twice then succeeds, and a mock that always fails to verify the error path.",
+    "size_bytes": 626146
+  },
+  {
+    "index": 6,
+    "module": "module-17-testing",
+    "audio_file": "06_module-17-testing.mp3",
+    "text": "Running your tests is as simple as npm test. Vitest shows you which describe blocks and test cases passed, with green checkmarks for successes and red crosses for failures. Watch mode is even better for development: it re-runs tests automatically every time you save a file. Change a test to make it fail, fix it, and watch mode picks it up instantly. Code coverage reports tell you exactly which lines, branches, and functions your tests exercise, so you know where the gaps are.",
+    "size_bytes": 550078
+  }
+]

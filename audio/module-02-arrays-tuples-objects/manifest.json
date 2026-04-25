@@ -1,0 +1,16 @@
+[
+  {
+    "index": 1,
+    "module": "module-02-arrays-tuples-objects",
+    "audio_file": "01_module-02-arrays-tuples-objects.mp3",
+    "text": "Arrays and tuples look similar \u2014 they both use square brackets \u2014 but they serve different purposes. An array is a collection of values that are all the same type. You do not know how many there will be, and you access them by iterating. A tuple is a fixed-length structure where each position has its own specific type. Think of a tuple as a lightweight object without field names. When a function needs to return two values, a tuple is often the right choice.",
+    "size_bytes": 498251
+  },
+  {
+    "index": 2,
+    "module": "module-02-arrays-tuples-objects",
+    "audio_file": "02_module-02-arrays-tuples-objects.mp3",
+    "text": "The readonly modifier is one of TypeScript's most useful tools for preventing accidental mutation. When you mark a property or array as readonly, TypeScript will stop you at compile time if you try to change it. This is especially valuable for IDs, configuration values, and any data that should be set once and never modified. Note that readonly is a compile-time check only \u2014 it does not exist at runtime in JavaScript.",
+    "size_bytes": 465650
+  }
+]

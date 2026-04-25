@@ -1,0 +1,58 @@
+[
+  {
+    "index": 1,
+    "module": "module-10-type-narrowing",
+    "audio_file": "01_module-10-type-narrowing.mp3",
+    "text": "When you have a variable whose type is a union \u2014 say, string or number \u2014 TypeScript does not know which one it is. But the moment you write an if-check like typeof value equals string, TypeScript narrows the type inside that block to just string. The broad union gets refined into a specific type. This is called type narrowing, and it happens automatically based on your control flow. Every if, switch, and conditional you write is not just runtime logic \u2014 it is also a proof to the compiler about what type the data must be.",
+    "size_bytes": 591874
+  },
+  {
+    "index": 2,
+    "module": "module-10-type-narrowing",
+    "audio_file": "02_module-10-type-narrowing.mp3",
+    "text": "The typeof operator is the simplest narrowing tool. It works for the primitive types that JavaScript knows about: string, number, boolean, undefined, object, and function. When you check typeof inside an if-statement, TypeScript narrows the type in each branch. You can chain else-if blocks to handle every variant of a union, and TypeScript will track the remaining possibilities at each step.",
+    "size_bytes": 434303
+  },
+  {
+    "index": 3,
+    "module": "module-10-type-narrowing",
+    "audio_file": "03_module-10-type-narrowing.mp3",
+    "text": "When your union is made of class instances rather than primitives, typeof will not help \u2014 it just says object for all of them. Instead, use instanceof. It checks the prototype chain and tells TypeScript exactly which class the value belongs to. Inside each instanceof branch, you get full access to that class's properties and methods.",
+    "size_bytes": 377879
+  },
+  {
+    "index": 4,
+    "module": "module-10-type-narrowing",
+    "audio_file": "04_module-10-type-narrowing.mp3",
+    "text": "The in operator checks whether a property exists on an object. TypeScript uses this to narrow unions of object types. If you check whether swim is in creature, TypeScript knows it must be the type that has a swim property. This is especially useful when you are working with plain objects rather than class instances.",
+    "size_bytes": 331067
+  },
+  {
+    "index": 5,
+    "module": "module-10-type-narrowing",
+    "audio_file": "05_module-10-type-narrowing.mp3",
+    "text": "A discriminated union is a pattern where every variant in the union has a common property \u2014 a tag or discriminant \u2014 whose literal type is different for each variant. When you switch on that tag, TypeScript narrows each case to the exact variant. This is one of the most powerful patterns in TypeScript because it gives you exhaustive, type-safe branching over complex data shapes.",
+    "size_bytes": 407554
+  },
+  {
+    "index": 6,
+    "module": "module-10-type-narrowing",
+    "audio_file": "06_module-10-type-narrowing.mp3",
+    "text": "Sometimes you need narrowing logic that is more complex than a single typeof or instanceof check. You can write a function that returns a type predicate \u2014 a special return type that says \"if this function returns true, the argument is this specific type.\" This is called a custom type guard. It lets you encapsulate complex validation logic in a reusable function while still getting full type narrowing at the call site.",
+    "size_bytes": 425944
+  },
+  {
+    "index": 7,
+    "module": "module-10-type-narrowing",
+    "audio_file": "07_module-10-type-narrowing.mp3",
+    "text": "When you handle every case in a union with a switch or if-else chain, the remaining type becomes never \u2014 a type that represents something that should be impossible. You can assign the value to a variable of type never in the default branch. If you ever add a new variant to the union and forget to handle it, the compiler will refuse to assign it to never and give you a compile error. This is called an exhaustive check, and it is your guarantee that you have covered every case.",
+    "size_bytes": 493653
+  },
+  {
+    "index": 8,
+    "module": "module-10-type-narrowing",
+    "audio_file": "08_module-10-type-narrowing.mp3",
+    "text": "An assertion function is a function whose return type says \"asserts value is T.\" If the function returns normally, TypeScript treats the assertion as proven \u2014 the variable is narrowed from that point forward. If the assertion fails, the function throws. This is useful when you want to validate something once at the top of a function and then use the narrowed type for the rest of the function body, without wrapping everything in an if-block.",
+    "size_bytes": 451439
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "index": 1,
+    "module": "module-18-advanced-patterns",
+    "audio_file": "01_module-18-advanced-patterns.mp3",
+    "text": "Decorators are a way to add behavior to classes and their members without modifying the original code. TypeScript 5 supports the TC39 Stage 3 decorator standard, which does not require the experimentalDecorators flag. A method decorator is a function that wraps a class method, adding logic before or after it runs. The two most common uses are logging (recording when methods are called and what they return) and timing (measuring how long methods take). Decorators solve a real problem: cross-cutting concerns that would otherwise require you to copy the same boilerplate into every method.",
+    "size_bytes": 643701
+  },
+  {
+    "index": 2,
+    "module": "module-18-advanced-patterns",
+    "audio_file": "02_module-18-advanced-patterns.mp3",
+    "text": "The Builder pattern solves the problem of constructing complex objects step by step. Instead of a constructor with ten parameters, you chain method calls that each configure one aspect of the object. Each setter method returns this, which enables the fluent chaining syntax. The build method at the end validates that all required properties are set and returns the final object. This pattern is especially powerful in TypeScript because the type system can enforce that required properties exist at compile time.",
+    "size_bytes": 532524
+  },
+  {
+    "index": 3,
+    "module": "module-18-advanced-patterns",
+    "audio_file": "03_module-18-advanced-patterns.mp3",
+    "text": "The Singleton pattern ensures a class has only one instance and provides a global point of access to it. This is the right pattern for resources that should not be duplicated, like database connections, configuration managers, or logging services. The private constructor prevents direct instantiation -- the only way to get an instance is through the static getInstance method, which creates the instance on first call and returns the existing instance on every subsequent call. The generic Registry class shows a related pattern: a single registry that manages named instances of any type.",
+    "size_bytes": 611100
+  },
+  {
+    "index": 4,
+    "module": "module-18-advanced-patterns",
+    "audio_file": "04_module-18-advanced-patterns.mp3",
+    "text": "Mapped types let you create new types by transforming every property of an existing type. Think of them as a for loop over an object's keys, but at the type level. Immutable takes any type and makes all its properties readonly. Nullable takes any type and makes every property accept null. StringProps uses a conditional filter to keep only the properties whose values are strings. These are not utility functions that transform data at runtime -- they are utility types that transform type shapes at compile time. This is type-level programming.",
+    "size_bytes": 555929
+  },
+  {
+    "index": 5,
+    "module": "module-18-advanced-patterns",
+    "audio_file": "05_module-18-advanced-patterns.mp3",
+    "text": "Conditional types use a syntax that looks like the ternary operator, but at the type level. If type T extends some constraint, use one type; otherwise, use another. The infer keyword inside a conditional type lets you extract a type from inside another type. ElementType extracts the element type from an array. Unwrap extracts the resolved type from a Promise. These are the same mechanisms that power built-in utility types like ReturnType and Parameters.",
+    "size_bytes": 489892
+  },
+  {
+    "index": 6,
+    "module": "module-18-advanced-patterns",
+    "audio_file": "06_module-18-advanced-patterns.mp3",
+    "text": "Template literal types use the same backtick syntax as JavaScript template strings, but they operate at the type level. When you combine two union types inside a template literal type, TypeScript generates every possible combination. A Shade union with two values crossed with a Color union with three values produces six ColorVariant values. Combined with the Capitalize utility type, you can automatically generate event handler names from event names. The EventMap example shows how this works in practice: you define your events and their payload types, and a mapped type with template literals generates the complete handler interface automatically.",
+    "size_bytes": 670450
+  }
+]

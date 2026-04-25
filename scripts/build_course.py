@@ -54,12 +54,37 @@ EXTRAS = []
 REFERENCES = []
 
 
+def _sniff_image_mime(data: bytes, ext: str) -> str:
+    """Detect image MIME from magic bytes; fall back to extension.
+
+    Gemini-generated files often carry a `.png` extension but hold JPEG bytes.
+    Trusting the extension produces broken <img> tags that browsers silently
+    refuse to render. Sniff instead.
+    """
+    if data.startswith(b"\x89PNG\r\n\x1a\n"):
+        return "image/png"
+    if data[:3] == b"\xff\xd8\xff":
+        return "image/jpeg"
+    if data[:6] in (b"GIF87a", b"GIF89a"):
+        return "image/gif"
+    if data[:4] == b"RIFF" and data[8:12] == b"WEBP":
+        return "image/webp"
+    if data.lstrip().startswith(b"<svg") or data.lstrip().startswith(b"<?xml"):
+        return "image/svg+xml"
+    return {
+        "png": "image/png", "jpg": "image/jpeg", "jpeg": "image/jpeg",
+        "gif": "image/gif", "svg": "image/svg+xml", "webp": "image/webp",
+    }.get(ext.lstrip(".").lower(), "application/octet-stream")
+
+
 def image_to_base64(image_path: Path) -> str | None:
     """Convert an image file to a base64 data URI."""
     if not image_path.exists():
         return None
-    data = base64.b64encode(image_path.read_bytes()).decode()
-    return f"data:image/png;base64,{data}"
+    raw = image_path.read_bytes()
+    mime = _sniff_image_mime(raw, image_path.suffix)
+    data = base64.b64encode(raw).decode()
+    return f"data:{mime};base64,{data}"
 
 
 def resolve_image_path(src: str) -> Path | None:

@@ -1,0 +1,51 @@
+[
+  {
+    "index": 1,
+    "module": "module-07-classes",
+    "audio_file": "01_module-07-classes.mp3",
+    "text": "Classes combine data and behavior into a single unit. JavaScript already has classes, but TypeScript makes them significantly more powerful by adding access modifiers -- public, protected, private, and readonly -- that control who can see and change each property. TypeScript also gives you parameter properties, a shorthand that declares and initializes properties right in the constructor signature, cutting boilerplate in half. Today you'll build a BankAccount with private balance, a Vehicle hierarchy with inheritance and method overriding, classes that implement interfaces, and abstract classes that define contracts for subclasses.",
+    "size_bytes": 673376
+  },
+  {
+    "index": 2,
+    "module": "module-07-classes",
+    "audio_file": "02_module-07-classes.mp3",
+    "text": "TypeScript adds three access modifiers to JavaScript classes. Public is the default -- accessible everywhere. Protected means accessible inside the class and its subclasses, but not from outside. Private means accessible only inside the class itself. There's also readonly, which prevents reassignment after construction. These modifiers exist only at compile time -- JavaScript has no concept of protected or private in this way -- but they catch mistakes early and communicate intent clearly.",
+    "size_bytes": 530016
+  },
+  {
+    "index": 3,
+    "module": "module-07-classes",
+    "audio_file": "03_module-07-classes.mp3",
+    "text": "TypeScript has a shorthand that eliminates the repetition of declaring a property and then assigning it in the constructor. If you put an access modifier -- public, private, protected, or readonly -- directly on a constructor parameter, TypeScript automatically creates the property and assigns it. The User class below has three properties, but no constructor body at all. This is the idiomatic way to write TypeScript classes.",
+    "size_bytes": 440991
+  },
+  {
+    "index": 4,
+    "module": "module-07-classes",
+    "audio_file": "04_module-07-classes.mp3",
+    "text": "The BankAccount class demonstrates the core patterns. The balance is private -- outside code can read it through a getter but cannot set it directly. The owner and accountNumber are public and readonly, set once in the constructor and never changed. Methods like deposit and withdraw validate their inputs before modifying the private balance. And the transfer method composes withdraw and deposit together. This is encapsulation: the class controls how its data changes.",
+    "size_bytes": 542137
+  },
+  {
+    "index": 5,
+    "module": "module-07-classes",
+    "audio_file": "05_module-07-classes.mp3",
+    "text": "Inheritance lets you build specialized classes on top of general ones. ElectricVehicle extends Vehicle, adding a batteryLevel property and overriding the accelerate method to drain the battery. Notice the call to super.accelerate -- it runs the parent's version first, then the subclass adds its own logic. Truck extends Vehicle in a different direction, adding payload tracking. Both share the base Vehicle behavior without duplicating code.",
+    "size_bytes": 474427
+  },
+  {
+    "index": 6,
+    "module": "module-07-classes",
+    "audio_file": "06_module-07-classes.mp3",
+    "text": "The implements keyword connects classes to interfaces. When a class implements an interface, TypeScript enforces that the class provides every property and method the interface requires. A class can implement multiple interfaces, separated by commas. This is how you get polymorphism in TypeScript -- different classes that all satisfy the same contract. The Student class below implements both Serializable and Comparable, so it can be serialized to JSON and compared for sorting.",
+    "size_bytes": 517477
+  },
+  {
+    "index": 7,
+    "module": "module-07-classes",
+    "audio_file": "07_module-07-classes.mp3",
+    "text": "An abstract class is a class that cannot be instantiated directly -- you can only extend it. It can define abstract methods that subclasses must implement, and it can also have concrete methods with real implementations that subclasses inherit. This gives you the best of both worlds: enforced structure plus shared behavior. The Shape class below requires area and perimeter from every subclass, but provides a describe method that works for all of them automatically.",
+    "size_bytes": 552586
+  }
+]

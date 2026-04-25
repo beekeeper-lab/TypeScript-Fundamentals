@@ -1,0 +1,23 @@
+[
+  {
+    "index": 1,
+    "module": "module-00-what-is-typescript",
+    "audio_file": "01_module-00-what-is-typescript.mp3",
+    "text": "JavaScript is the language of the web, but it has a well-known weakness: it lets you make mistakes that you won't discover until your code is running in front of users. TypeScript was created to fix that. It adds a layer of static type checking on top of JavaScript, so the compiler can catch entire categories of bugs before your code ever runs. Every valid JavaScript file is already valid TypeScript \u2014 TypeScript just adds optional type annotations that the compiler uses to verify your code is correct.",
+    "size_bytes": 548824
+  },
+  {
+    "index": 2,
+    "module": "module-00-what-is-typescript",
+    "audio_file": "02_module-00-what-is-typescript.mp3",
+    "text": "TypeScript is never executed directly. Instead, the TypeScript compiler (tsc) reads your .ts files, checks them for type errors, and then strips away all the type annotations to produce plain JavaScript. That JavaScript is what actually runs in Node.js or the browser. Think of it as a spell-checker for your code \u2014 it runs before you \"publish,\" catches problems, and the final output is clean JavaScript.",
+    "size_bytes": 458963
+  },
+  {
+    "index": 3,
+    "module": "module-00-what-is-typescript",
+    "audio_file": "03_module-00-what-is-typescript.mp3",
+    "text": "This is the moment where TypeScript's value becomes concrete. You are going to write code with intentional mistakes and watch the compiler catch every single one. In plain JavaScript, these mistakes would silently produce wrong results. In TypeScript, you get a clear error message telling you exactly what is wrong and exactly where it is. Pay attention to the error messages \u2014 learning to read them is a skill that will save you hours of debugging.",
+    "size_bytes": 488638
+  }
+]

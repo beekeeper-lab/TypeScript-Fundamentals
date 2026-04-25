@@ -1,0 +1,16 @@
+[
+  {
+    "index": 1,
+    "module": "module-04-control-flow",
+    "audio_file": "01_module-04-control-flow.mp3",
+    "text": "TypeScript control flow is identical to JavaScript in syntax, but TypeScript does something remarkable with it: it uses your control flow to narrow types. When you have a value that could be a string or a number, and you write an if statement checking typeof value === \"string\", TypeScript knows that inside that if block the value is definitely a string. This is not a cast or an assertion \u2014 it is the compiler following your logic and deducing what the type must be. This is one of TypeScript's most powerful features, and it works with if/else, switch, ternary operators, and more.",
+    "size_bytes": 677973
+  },
+  {
+    "index": 2,
+    "module": "module-04-control-flow",
+    "audio_file": "02_module-04-control-flow.mp3",
+    "text": "Array iteration methods \u2014 map, filter, reduce, find, some, every \u2014 are the functional programming toolkit built into JavaScript and fully typed by TypeScript. The real power comes from chaining them together. When you write numbers.filter(n => n % 2 === 0).map(n => n ** 2).reduce((sum, n) => sum + n, 0), you are building a data processing pipeline. Each step transforms the data and TypeScript tracks the types through every link in the chain. This is often cleaner and safer than writing manual loops.",
+    "size_bytes": 588948
+  }
+]

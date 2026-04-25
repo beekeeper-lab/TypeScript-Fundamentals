@@ -1,0 +1,65 @@
+[
+  {
+    "index": 1,
+    "module": "module-19-capstone-project",
+    "audio_file": "01_module-19-capstone-project.mp3",
+    "text": "In this capstone, you will build a Task Tracker command-line application from scratch. This is not a toy example -- it has the same structure as a real production TypeScript project. There is a types file that defines all the data shapes. There is a store module that handles the core business logic. There is a CLI module that parses commands and formats output. There is an entry point that ties it all together. And there are tests that verify everything works. The project includes proper npm scripts, a tsconfig.json, and a .gitignore. When you finish this module, you will have built something you can point to and say: I know how to structure a TypeScript project.",
+    "size_bytes": 749862
+  },
+  {
+    "index": 2,
+    "module": "module-19-capstone-project",
+    "audio_file": "02_module-19-capstone-project.mp3",
+    "text": "Every project starts with npm init and installing your dependencies. For this project, you need TypeScript for compilation, Vitest for testing, and the Node.js type definitions. All three are dev dependencies because they are tools you use during development, not code that runs in production. The scripts section defines your entire workflow: build compiles TypeScript, start runs the compiled output, dev runs directly with ts-node, test runs your test suite, and clean removes the build output.",
+    "size_bytes": 547152
+  },
+  {
+    "index": 3,
+    "module": "module-19-capstone-project",
+    "audio_file": "03_module-19-capstone-project.mp3",
+    "text": "The types file is where you define every data shape your application uses. This is a practice that pays enormous dividends as your project grows. By centralizing your type definitions, every module in your project imports from a single source of truth. The Task interface defines what a task looks like. TaskFilter defines how to search for tasks. TaskStats defines the shape of aggregate statistics. And the CreateTaskInput and UpdateTaskInput types use Pick and Partial to derive input shapes from the Task interface, so they stay in sync automatically.",
+    "size_bytes": 619877
+  },
+  {
+    "index": 4,
+    "module": "module-19-capstone-project",
+    "audio_file": "04_module-19-capstone-project.mp3",
+    "text": "The TaskStore is the core of the application. It manages an array of tasks and provides methods for every operation: add, getById, update, delete, list with filters, get statistics, and clear. Notice how every method has precise input and output types. The add method takes a CreateTaskInput and returns a full Task with auto-generated id, status, and timestamps. The update method takes an UpdateTaskInput where every field is optional -- you update only what you pass. The list method accepts an optional TaskFilter that can filter by status, priority, or search text. This is the kind of clean, type-safe API that TypeScript makes possible.",
+    "size_bytes": 776194
+  },
+  {
+    "index": 5,
+    "module": "module-19-capstone-project",
+    "audio_file": "05_module-19-capstone-project.mp3",
+    "text": "The CLI module handles the user-facing layer. It takes raw command arguments, calls the appropriate TaskStore methods, and formats the results for display. The formatTask function produces a compact one-line summary with status icons and priority tags. The formatTaskDetail function produces a full multi-line view. And the runCli function is a switch statement that dispatches commands to store methods. Notice that the CLI module does not manage state -- it receives a TaskStore instance and delegates all logic to it. This separation of concerns makes both modules easier to test and maintain.",
+    "size_bytes": 678809
+  },
+  {
+    "index": 6,
+    "module": "module-19-capstone-project",
+    "audio_file": "06_module-19-capstone-project.mp3",
+    "text": "The entry point is the simplest file in the project. It creates a TaskStore, runs a series of demo commands to show the application working, and prints the output. In a real CLI application, you would read commands from process.argv or an interactive prompt. Here, we simulate a sequence of commands to demonstrate every feature: adding tasks, listing them, marking one as done, viewing statistics, inspecting a single task, filtering by status, deleting a task, and listing again to see the result.",
+    "size_bytes": 565124
+  },
+  {
+    "index": 7,
+    "module": "module-19-capstone-project",
+    "audio_file": "07_module-19-capstone-project.mp3",
+    "text": "The test suite for TaskStore covers every method with multiple scenarios. The beforeEach hook creates a fresh store for every test, ensuring tests are isolated and do not affect each other. The add tests verify that tasks get correct properties and auto-incrementing IDs. The update tests verify that properties change, that completedAt is set when a task is marked done, and that updating a missing task throws an error. The list tests use a second beforeEach to populate the store with sample data, then test filtering by priority, status, and search term. This is what a professional test suite looks like.",
+    "size_bytes": 686333
+  },
+  {
+    "index": 8,
+    "module": "module-19-capstone-project",
+    "audio_file": "08_module-19-capstone-project.mp3",
+    "text": "This is the final step: running the tests, building the project, and running the compiled output. When all tests pass, you know your core logic is correct. When the build succeeds, you know your TypeScript configuration is right. And when npm start produces the expected output, you know your entire pipeline works end to end. Check the dist directory -- you should see compiled JavaScript, declaration files, and source maps for every module. This is what a complete, well-structured TypeScript project looks like.",
+    "size_bytes": 570140
+  },
+  {
+    "index": 9,
+    "module": "module-19-capstone-project",
+    "audio_file": "09_module-19-capstone-project.mp3",
+    "text": "You have completed all 20 modules of TypeScript Fundamentals. You started with a single hello.ts file and built your way up to a complete, tested, well-structured CLI application. Along the way, you learned type annotations, interfaces, classes, generics, utility types, type narrowing, modules, async/await, error handling, JSON and APIs, npm, tsconfig, testing with Vitest, and advanced patterns including decorators, mapped types, and template literal types. These are not just academic concepts -- they are the tools that professional TypeScript developers use every day. The next step is to build something of your own. Pick a project, set up the structure you learned here, and start writing TypeScript with confidence.",
+    "size_bytes": 843485
+  }
+]

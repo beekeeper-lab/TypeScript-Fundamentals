@@ -1,0 +1,44 @@
+[
+  {
+    "index": 1,
+    "module": "module-05-type-aliases-and-unions",
+    "audio_file": "01_module-05-type-aliases-and-unions.mp3",
+    "text": "So far you've been annotating variables with built-in types like string, number, and boolean. But real programs have richer shapes -- a user ID might be a string or a number, a function might return success data or an error, and an event system might handle clicks, keypresses, scrolls, and resizes all through the same pipeline. TypeScript gives you three tools for modeling these situations: type aliases that give names to complex types, union types that say \"this or that,\" and intersection types that say \"this and that.\" Today you'll use all three, and you'll learn the discriminated union pattern -- one of the most important patterns in TypeScript.",
+    "size_bytes": 715172
+  },
+  {
+    "index": 2,
+    "module": "module-05-type-aliases-and-unions",
+    "audio_file": "02_module-05-type-aliases-and-unions.mp3",
+    "text": "A type alias gives a name to any type expression. It doesn't create a new type -- it's just a convenient shorthand. You can alias primitives, unions, tuples, objects, and function signatures. Once you define an alias, you use it exactly like a built-in type.",
+    "size_bytes": 334829
+  },
+  {
+    "index": 3,
+    "module": "module-05-type-aliases-and-unions",
+    "audio_file": "03_module-05-type-aliases-and-unions.mp3",
+    "text": "A union type says a value can be one of several types. The pipe symbol means \"or.\" When you have a union, TypeScript only lets you access properties that exist on all members of the union -- unless you narrow it first. The most common way to narrow is with typeof checks, which TypeScript understands and tracks through your control flow.",
+    "size_bytes": 364504
+  },
+  {
+    "index": 4,
+    "module": "module-05-type-aliases-and-unions",
+    "audio_file": "04_module-05-type-aliases-and-unions.mp3",
+    "text": "Here is the most important pattern in this module. A discriminated union is a union of object types that all share a common \"tag\" field -- a literal-typed property like kind or status or type. When you switch on that tag field, TypeScript knows exactly which variant you're dealing with inside each case. It narrows the type automatically. This pattern shows up everywhere: shapes, API responses, event systems, state machines, Redux actions. Learn it once and you'll recognize it constantly.",
+    "size_bytes": 559273
+  },
+  {
+    "index": 5,
+    "module": "module-05-type-aliases-and-unions",
+    "audio_file": "05_module-05-type-aliases-and-unions.mp3",
+    "text": "If unions mean \"or,\" intersections mean \"and.\" An intersection type combines multiple types into one that has all of their properties. This is useful for composing reusable type fragments -- things like timestamps, soft-delete flags, and identifiers -- into larger types without repeating yourself.",
+    "size_bytes": 331067
+  },
+  {
+    "index": 6,
+    "module": "module-05-type-aliases-and-unions",
+    "audio_file": "06_module-05-type-aliases-and-unions.mp3",
+    "text": "Now put it all together. This exercise uses discriminated unions to model a typed event system -- the same pattern that powers DOM events, Redux actions, and message-passing architectures. Each event type has a shared type field as its discriminant, plus fields specific to that kind of event. The handler function switches on the discriminant and TypeScript narrows inside each case.",
+    "size_bytes": 405464
+  }
+]
